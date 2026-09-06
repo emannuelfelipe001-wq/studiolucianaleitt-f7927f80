@@ -6,7 +6,7 @@ import { useCart } from "@/lib/cart";
 import { GENERAL_MESSAGE, whatsappLink } from "@/lib/whatsapp";
 
 const navItems = [
-  { label: "Início", to: "/", hash: "" },
+  { label: "Início", hash: "topo" },
   { label: "Procedimentos", hash: "procedimentos" },
   { label: "Sobre", hash: "sobre" },
   { label: "Antes e Depois", hash: "antes-e-depois" },
@@ -36,7 +36,7 @@ export function Header() {
             <Link
               key={item.label}
               to="/"
-              hash={item.hash || undefined}
+              hash={item.hash}
               className="text-sm text-foreground/80 transition-colors hover:text-primary"
             >
               {item.label}
@@ -85,7 +85,7 @@ export function Header() {
               <Link
                 key={item.label}
                 to="/"
-                hash={item.hash || undefined}
+                hash={item.hash}
                 onClick={() => setOpen(false)}
                 className="border-b border-border/60 py-3 text-sm last:border-0"
               >
