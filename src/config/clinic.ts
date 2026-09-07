@@ -113,193 +113,23 @@ export type Procedure = {
 };
 
 /* ---------------- PROCEDIMENTOS (preços EXEMPLO) ---------------- */
-export const procedures: Procedure[] = [
-  {
-    id: "limpeza-de-pele-profunda",
-    name: "Limpeza de Pele Profunda",
-    category: "limpeza",
-    shortDescription: "Remove cravos e impurezas, deixando a pele leve e uniforme.",
-    description:
-      "Protocolo completo de higienização, esfoliação, extração cuidadosa e finalização calmante. Indicado para pele com cravos, textura irregular e aspecto cansado.",
-    benefits: ["Poros mais limpos", "Textura uniforme", "Pele leve e renovada"],
-    duration: "1h20",
-    price: 180,
-    image: imgLimpeza,
-    featured: true,
-  },
-  {
-    id: "limpeza-de-pele-express",
-    name: "Limpeza Express",
-    category: "limpeza",
-    shortDescription: "Versão rápida para manter a pele limpa entre as sessões.",
-    description:
-      "Higienização, esfoliação suave e máscara final. Ideal para manutenção mensal ou para quem tem pouco tempo.",
-    benefits: ["Rápida", "Ótima para manutenção", "Sem tempo de recuperação"],
-    duration: "45min",
-    price: 120,
-    image: imgLimpeza,
-  },
-  {
-    id: "microagulhamento-facial",
-    name: "Microagulhamento Facial",
-    category: "rejuvenescimento",
-    shortDescription: "Estimula colágeno e melhora firmeza e marcas finas.",
-    description:
-      "Estímulo controlado da pele para renovação e produção de colágeno, com ativos aplicados durante a sessão. Resultados progressivos ao longo do protocolo.",
-    benefits: ["Mais firmeza", "Suaviza linhas finas", "Pele mais lisa"],
-    duration: "1h",
-    price: 320,
-    image: imgRejuvenescimento,
-    featured: true,
-  },
-  {
-    id: "peeling-de-renovacao",
-    name: "Peeling de Renovação",
-    category: "rejuvenescimento",
-    shortDescription: "Renova a superfície da pele e ilumina o rosto.",
-    description:
-      "Aplicação de ativos renovadores para melhorar manchas superficiais, textura e brilho. A intensidade é ajustada ao seu tipo de pele.",
-    benefits: ["Mais luminosidade", "Textura refinada", "Aspecto uniforme"],
-    duration: "50min",
-    price: 260,
-    image: imgRejuvenescimento,
-  },
-  {
-    id: "hidratacao-facial-profunda",
-    name: "Hidratação Facial Profunda",
-    category: "hidratacao",
-    shortDescription: "Repõe água e conforto imediato para a pele.",
-    description:
-      "Máscara e ativos hidratantes em camadas para devolver maciez, viço e conforto. Excelente antes de eventos.",
-    benefits: ["Efeito viço imediato", "Pele macia", "Conforto e frescor"],
-    duration: "50min",
-    price: 160,
-    image: imgHidratacao,
-    featured: true,
-  },
-  {
-    id: "hidratacao-com-vitamina-c",
-    name: "Hidratação com Vitamina C",
-    category: "hidratacao",
-    shortDescription: "Hidrata e ilumina, com efeito antioxidante.",
-    description:
-      "Combina hidratação intensa com ativos antioxidantes para uma pele mais luminosa e protegida da rotina do dia a dia.",
-    benefits: ["Brilho saudável", "Antioxidante", "Uniformiza o tom"],
-    duration: "1h",
-    price: 190,
-    image: imgHidratacao,
-  },
-  {
-    id: "protocolo-anti-acne",
-    name: "Protocolo Anti-Acne",
-    category: "acne",
-    shortDescription: "Controla oleosidade e acalma a pele com acne ativa.",
-    description:
-      "Sessão pensada para pele acneica: higienização profunda, ativos secativos e finalização calmante, sem agredir a barreira da pele.",
-    benefits: ["Menos oleosidade", "Reduz vermelhidão", "Pele mais calma"],
-    duration: "1h10",
-    price: 200,
-    image: imgAcne,
-  },
-  {
-    id: "led-terapia-facial",
-    name: "LED Terapia Facial",
-    category: "acne",
-    shortDescription: "Luz terapêutica para acalmar e equilibrar a pele.",
-    description:
-      "Aplicação de luz em comprimentos específicos para auxiliar no controle da acne e na recuperação da pele. Indolor e confortável.",
-    benefits: ["Indolor", "Auxilia no controle da acne", "Recuperação da pele"],
-    duration: "30min",
-    price: 130,
-    image: imgAcne,
-  },
-  {
-    id: "hidratacao-labial",
-    name: "Hidratação Labial",
-    category: "labios",
-    shortDescription: "Lábios macios, com brilho natural e saudável.",
-    description:
-      "Esfoliação delicada e máscara nutritiva para lábios ressecados. Finalização com efeito de brilho natural.",
-    benefits: ["Lábios macios", "Brilho natural", "Sensação de conforto"],
-    duration: "30min",
-    price: 90,
-    image: imgLabios,
-    featured: true,
-  },
-  {
-    id: "realce-labial-natural",
-    name: "Realce Labial Natural",
-    category: "labios",
-    shortDescription: "Valoriza o contorno com aspecto discreto e elegante.",
-    description:
-      "Protocolo estético para valorizar o desenho dos lábios com resultado leve e natural, respeitando as suas proporções.",
-    benefits: ["Contorno valorizado", "Resultado discreto", "Aspecto elegante"],
-    duration: "45min",
-    price: 240,
-    image: imgLabios,
-  },
-  {
-    id: "drenagem-facial",
-    name: "Drenagem Facial",
-    category: "contorno",
-    shortDescription: "Reduz inchaço e deixa o rosto mais definido.",
-    description:
-      "Manobras manuais suaves que estimulam a circulação, ajudam a reduzir o inchaço e trazem sensação de leveza ao rosto.",
-    benefits: ["Menos inchaço", "Rosto mais definido", "Relaxamento profundo"],
-    duration: "50min",
-    price: 150,
-    image: imgContorno,
-  },
-  {
-    id: "lifting-facial-manual",
-    name: "Lifting Facial Manual",
-    category: "contorno",
-    shortDescription: "Massagem modeladora com efeito de sustentação.",
-    description:
-      "Técnica manual que trabalha a musculatura e o contorno do rosto, com efeito de sustentação e ativação imediata.",
-    benefits: ["Contorno mais firme", "Efeito lifting", "Sem agulhas"],
-    duration: "1h",
-    price: 220,
-    image: imgContorno,
-    featured: true,
-  },
-  {
-    id: "revitalizacao-facial",
-    name: "Revitalização Facial",
-    category: "tratamentos",
-    shortDescription: "Sessão completa de viço para pele cansada.",
-    description:
-      "Combinação de higienização, ativos revitalizantes e massagem relaxante para devolver energia e brilho ao rosto.",
-    benefits: ["Viço imediato", "Relaxamento", "Pele descansada"],
-    duration: "1h15",
-    price: 230,
-    image: imgTratamentos,
-  },
-  {
-    id: "clareamento-de-manchas",
-    name: "Clareamento de Manchas",
-    category: "tratamentos",
-    shortDescription: "Protocolo progressivo para tom mais uniforme.",
-    description:
-      "Ativos clareadores aplicados em sessões para suavizar manchas superficiais e uniformizar o tom da pele.",
-    benefits: ["Tom uniforme", "Suaviza manchas", "Resultado progressivo"],
-    duration: "1h",
-    price: 250,
-    image: imgTratamentos,
-  },
-  {
-    id: "tratamento-para-olheiras",
-    name: "Tratamento para Olheiras",
-    category: "tratamentos",
-    shortDescription: "Cuidado específico para a área dos olhos.",
-    description:
-      "Protocolo delicado para a região dos olhos, com ativos que ajudam a suavizar olheiras e o aspecto de cansaço.",
-    benefits: ["Olhar descansado", "Área mais iluminada", "Cuidado delicado"],
-    duration: "40min",
-    price: 170,
-    image: imgTratamentos,
-  },
-];
+/* ---------------- PROCEDIMENTOS ----------------
+ *  Lista vazia: adicione aqui os procedimentos reais.
+ *  Exemplo de item:
+ *  {
+ *    id: "limpeza-de-pele",
+ *    name: "Limpeza de Pele",
+ *    category: "limpeza",
+ *    shortDescription: "Descrição curta.",
+ *    description: "Descrição completa.",
+ *    benefits: ["Benefício 1", "Benefício 2"],
+ *    duration: "1h",
+ *    price: 180,
+ *    image: "/caminho-da-foto.jpg",
+ *    featured: true,
+ *  },
+ */
+export const procedures: Procedure[] = [];
 
 /* ---------------- ANTES E DEPOIS (imagens de exemplo) ---------------- */
 export const beforeAfter = {
