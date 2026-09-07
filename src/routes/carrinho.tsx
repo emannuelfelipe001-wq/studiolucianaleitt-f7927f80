@@ -59,8 +59,7 @@ function CartPage() {
           Escolha os procedimentos que deseja realizar e volte aqui para agendar.
         </p>
         <Link
-          to="/"
-          hash="procedimentos"
+          to="/catalogo"
           className="mt-7 rounded-full bg-rose-gradient px-6 py-3.5 text-sm font-medium text-primary-foreground"
         >
           Ver procedimentos
@@ -144,8 +143,7 @@ function CartPage() {
               Limpar carrinho
             </button>
             <Link
-              to="/"
-              hash="procedimentos"
+              to="/catalogo"
               className="rounded-full border border-border px-5 py-2.5 text-sm transition-colors hover:border-primary/40 hover:text-primary"
             >
               Continuar escolhendo

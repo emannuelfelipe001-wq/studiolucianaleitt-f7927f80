@@ -45,7 +45,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-border/70 px-4 py-5 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} {clinic.name}. Imagens e valores demonstrativos.
+        © {new Date().getFullYear()} {clinic.name}. Todos os direitos reservados.
       </div>
     </footer>
   );
