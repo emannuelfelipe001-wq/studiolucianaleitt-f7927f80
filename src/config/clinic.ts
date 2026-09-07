@@ -15,13 +15,6 @@
 // Imagens demonstrativas (troque os arquivos em src/assets/ ou os imports abaixo)
 import heroImg from "@/assets/hero.jpg";
 import sobreImg from "@/assets/sobre.jpg";
-import imgLimpeza from "@/assets/proc-limpeza.jpg";
-import imgRejuvenescimento from "@/assets/proc-rejuvenescimento.jpg";
-import imgHidratacao from "@/assets/proc-hidratacao.jpg";
-import imgAcne from "@/assets/proc-acne.jpg";
-import imgLabios from "@/assets/proc-labios.jpg";
-import imgContorno from "@/assets/proc-contorno.jpg";
-import imgTratamentos from "@/assets/proc-tratamentos.jpg";
 import ba1 from "@/assets/ba-1.jpg";
 import ba2 from "@/assets/ba-2.jpg";
 import ba3 from "@/assets/ba-3.jpg";
