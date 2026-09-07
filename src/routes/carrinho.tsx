@@ -5,7 +5,7 @@ import { findProcedure, formatPrice } from "@/config/clinic";
 import { useCart } from "@/lib/cart";
 import { bookingMessage, whatsappLink } from "@/lib/whatsapp";
 
-const title = "Carrinho e agendamento — Luciana Leitt Estética";
+const title = "Carrinho e agendamento — Studio Luciana Leitt";
 const description =
   "Revise os procedimentos escolhidos, informe data e horário e confirme seu agendamento pelo WhatsApp.";
 

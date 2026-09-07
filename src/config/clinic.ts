@@ -29,9 +29,9 @@ import ba4 from "@/assets/ba-4.jpg";
 
 /* ---------------- DADOS DA CLÍNICA ---------------- */
 export const clinic = {
-  name: "Luciana Leitt Estética",
-  shortName: "Luciana Leitt",
-  tagline: "Estética facial com cuidado em cada detalhe",
+  name: "Studio Luciana Leitt",
+  shortName: "Studio Luciana Leitt",
+  tagline: "Estética Facial",
   // WhatsApp: apenas números, com código do país
   whatsapp: "5562982008960",
   whatsappDisplay: "+55 62 98200-8960",
