@@ -33,8 +33,7 @@ export function Hero() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              to="/"
-              hash="procedimentos"
+              to="/catalogo"
               className="rounded-full bg-rose-gradient px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-soft transition-transform hover:scale-[1.03]"
             >
               Ver procedimentos
@@ -89,11 +88,7 @@ export function Featured() {
           <span className="text-xs tracking-[0.25em] text-primary uppercase">Destaques</span>
           <h2 className="mt-2 text-3xl md:text-4xl">Mais procurados</h2>
         </div>
-        <Link
-          to="/"
-          hash="procedimentos"
-          className="hidden text-sm text-primary hover:underline md:inline"
-        >
+        <Link to="/catalogo" className="hidden text-sm text-primary hover:underline md:inline">
           Ver catálogo completo
         </Link>
       </div>
