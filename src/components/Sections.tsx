@@ -82,6 +82,7 @@ export function Benefits() {
 
 export function Featured() {
   const featured = procedures.filter((p) => p.featured);
+  if (featured.length === 0) return null;
   return (
     <section className="mx-auto max-w-6xl px-4 py-8">
       <div className="flex items-end justify-between gap-4">
