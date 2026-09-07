@@ -38,11 +38,14 @@ export const clinic = {
   // Instagram: preencha quando tiver o @ oficial
   instagram: "", // EXEMPLO: "lucianaleitt.estetica"
   address: {
-    street: "Rua Exemplo, 123 — Sala 4", // EXEMPLO
-    district: "Setor Bueno", // EXEMPLO
-    city: "Goiânia", // EXEMPLO
-    state: "GO", // EXEMPLO
+    street: "Alameda Vereador Gerson Sebastião dos Anjos",
+    district: "Centro", // EXEMPLO — confirme o bairro
+    city: "Nova Crixás",
+    state: "GO",
   },
+  // Link exato compartilhado do Google Maps + coordenadas usadas no mapa
+  mapsShareUrl: "https://maps.app.goo.gl/79PooLaS1A2mMM4u9",
+  coords: { lat: -14.0955963, lng: -50.3411102 },
   hours: [
     { days: "Segunda a sexta", time: "09h às 19h" }, // EXEMPLO
     { days: "Sábado", time: "09h às 14h" }, // EXEMPLO
@@ -52,7 +55,12 @@ export const clinic = {
 };
 
 export const addressLine = `${clinic.address.street} — ${clinic.address.district}, ${clinic.address.city} - ${clinic.address.state}`;
-export const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(addressLine)}`;
+export const mapsUrl = clinic.mapsShareUrl;
+export const mapEmbedUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${
+  clinic.coords.lng - 0.004
+}%2C${clinic.coords.lat - 0.003}%2C${clinic.coords.lng + 0.004}%2C${
+  clinic.coords.lat + 0.003
+}&layer=mapnik&marker=${clinic.coords.lat}%2C${clinic.coords.lng}`;
 export const instagramUrl = clinic.instagram
   ? `https://instagram.com/${clinic.instagram}`
   : "";
