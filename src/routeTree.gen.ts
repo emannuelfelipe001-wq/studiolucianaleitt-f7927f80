@@ -10,7 +10,13 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AntesEDepoisRouteImport } from './routes/antes-e-depois'
 import { Route as CarrinhoRouteImport } from './routes/carrinho'
+import { Route as CatalogoRouteImport } from './routes/catalogo'
+import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as DepoimentosRouteImport } from './routes/depoimentos'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as ProcedimentosSlugRouteImport } from './routes/procedimentos.$slug'
 
 const IndexRoute = IndexRouteImport.update({
@@ -18,9 +24,39 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AntesEDepoisRoute = AntesEDepoisRouteImport.update({
+  id: '/antes-e-depois',
+  path: '/antes-e-depois',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CarrinhoRoute = CarrinhoRouteImport.update({
   id: '/carrinho',
   path: '/carrinho',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CatalogoRoute = CatalogoRouteImport.update({
+  id: '/catalogo',
+  path: '/catalogo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DepoimentosRoute = DepoimentosRouteImport.update({
+  id: '/depoimentos',
+  path: '/depoimentos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProcedimentosSlugRoute = ProcedimentosSlugRouteImport.update({
@@ -31,31 +67,83 @@ const ProcedimentosSlugRoute = ProcedimentosSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/antes-e-depois': typeof AntesEDepoisRoute
   '/carrinho': typeof CarrinhoRoute
+  '/catalogo': typeof CatalogoRoute
+  '/contato': typeof ContatoRoute
+  '/depoimentos': typeof DepoimentosRoute
+  '/faq': typeof FaqRoute
+  '/sobre': typeof SobreRoute
   '/procedimentos/$slug': typeof ProcedimentosSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/antes-e-depois': typeof AntesEDepoisRoute
   '/carrinho': typeof CarrinhoRoute
+  '/catalogo': typeof CatalogoRoute
+  '/contato': typeof ContatoRoute
+  '/depoimentos': typeof DepoimentosRoute
+  '/faq': typeof FaqRoute
+  '/sobre': typeof SobreRoute
   '/procedimentos/$slug': typeof ProcedimentosSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/antes-e-depois': typeof AntesEDepoisRoute
   '/carrinho': typeof CarrinhoRoute
+  '/catalogo': typeof CatalogoRoute
+  '/contato': typeof ContatoRoute
+  '/depoimentos': typeof DepoimentosRoute
+  '/faq': typeof FaqRoute
+  '/sobre': typeof SobreRoute
   '/procedimentos/$slug': typeof ProcedimentosSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/carrinho' | '/procedimentos/$slug'
+  fullPaths:
+    | '/'
+    | '/antes-e-depois'
+    | '/carrinho'
+    | '/catalogo'
+    | '/contato'
+    | '/depoimentos'
+    | '/faq'
+    | '/sobre'
+    | '/procedimentos/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/carrinho' | '/procedimentos/$slug'
-  id: '__root__' | '/' | '/carrinho' | '/procedimentos/$slug'
+  to:
+    | '/'
+    | '/antes-e-depois'
+    | '/carrinho'
+    | '/catalogo'
+    | '/contato'
+    | '/depoimentos'
+    | '/faq'
+    | '/sobre'
+    | '/procedimentos/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/antes-e-depois'
+    | '/carrinho'
+    | '/catalogo'
+    | '/contato'
+    | '/depoimentos'
+    | '/faq'
+    | '/sobre'
+    | '/procedimentos/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AntesEDepoisRoute: typeof AntesEDepoisRoute
   CarrinhoRoute: typeof CarrinhoRoute
+  CatalogoRoute: typeof CatalogoRoute
+  ContatoRoute: typeof ContatoRoute
+  DepoimentosRoute: typeof DepoimentosRoute
+  FaqRoute: typeof FaqRoute
+  SobreRoute: typeof SobreRoute
   ProcedimentosSlugRoute: typeof ProcedimentosSlugRoute
 }
 
@@ -68,11 +156,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/antes-e-depois': {
+      id: '/antes-e-depois'
+      path: '/antes-e-depois'
+      fullPath: '/antes-e-depois'
+      preLoaderRoute: typeof AntesEDepoisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/carrinho': {
       id: '/carrinho'
       path: '/carrinho'
       fullPath: '/carrinho'
       preLoaderRoute: typeof CarrinhoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/catalogo': {
+      id: '/catalogo'
+      path: '/catalogo'
+      fullPath: '/catalogo'
+      preLoaderRoute: typeof CatalogoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/depoimentos': {
+      id: '/depoimentos'
+      path: '/depoimentos'
+      fullPath: '/depoimentos'
+      preLoaderRoute: typeof DepoimentosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/procedimentos/$slug': {
@@ -87,7 +217,13 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AntesEDepoisRoute: AntesEDepoisRoute,
   CarrinhoRoute: CarrinhoRoute,
+  CatalogoRoute: CatalogoRoute,
+  ContatoRoute: ContatoRoute,
+  DepoimentosRoute: DepoimentosRoute,
+  FaqRoute: FaqRoute,
+  SobreRoute: SobreRoute,
   ProcedimentosSlugRoute: ProcedimentosSlugRoute,
 }
 export const routeTree = rootRouteImport

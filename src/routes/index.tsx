@@ -1,16 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Catalog } from "@/components/Catalog";
-import {
-  About,
-  BeforeAfter,
-  Benefits,
-  Faq,
-  Featured,
-  Hero,
-  InstagramArea,
-  LocationContact,
-  Testimonials,
-} from "@/components/Sections";
+import { Benefits, Featured, Hero, InstagramArea } from "@/components/Sections";
 
 const title = "Studio Luciana Leitt — Estética Facial em Goiânia";
 const description =
