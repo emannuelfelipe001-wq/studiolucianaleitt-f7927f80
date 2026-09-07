@@ -19,6 +19,7 @@ import ba1 from "@/assets/ba-1.jpg";
 import ba2 from "@/assets/ba-2.jpg";
 import ba3 from "@/assets/ba-3.jpg";
 import ba4 from "@/assets/ba-4.jpg";
+import microOlhosImg from "@/assets/micropigmentacao-olhos.jpg.asset.json";
 
 /* ---------------- DADOS DA CLÍNICA ---------------- */
 export const clinic = {
@@ -92,6 +93,7 @@ export const categories = [
   { id: "hidratacao", name: "Hidratação" },
   { id: "acne", name: "Acne" },
   { id: "labios", name: "Lábios" },
+  { id: "olhos", name: "Olhos" },
   { id: "contorno", name: "Contorno Facial" },
   { id: "tratamentos", name: "Tratamentos Faciais" },
 ] as const;
