@@ -131,7 +131,27 @@ export type Procedure = {
  *    featured: true,
  *  },
  */
-export const procedures: Procedure[] = [];
+export const procedures: Procedure[] = [
+  {
+    id: "micropigmentacao-olhos-delineado-inferior",
+    name: "Micropigmentação de Olhos — Delineado Inferior",
+    category: "olhos",
+    shortDescription:
+      "Delineado inferior definitivo que realça o olhar com traço preciso e efeito natural.",
+    description:
+      "A micropigmentação de olhos na linha do delineado inferior é um procedimento que deposita pigmento na região da linha d'água inferior, criando um efeito de delineado duradouro e discreto. Área do corpo: região dos olhos (pálpebra inferior). O resultado realça o contorno dos olhos, dá profundidade ao olhar e dispensa o delineador no dia a dia. O procedimento é feito com dermógrafo, anestesia tópica e pigmentos específicos para a área dos olhos, com traço fino e acabamento natural.",
+    benefits: [
+      "Olhar mais marcante e definido todos os dias",
+      "Dispensa o uso diário de delineador",
+      "Traço fino, preciso e com efeito natural",
+      "Resultado duradouro, com retoque conforme necessário",
+    ],
+    duration: "1h",
+    price: 300,
+    image: microOlhosImg.url,
+    featured: true,
+  },
+];
 
 /* ---------------- ANTES E DEPOIS (imagens de exemplo) ---------------- */
 export const beforeAfter = {
