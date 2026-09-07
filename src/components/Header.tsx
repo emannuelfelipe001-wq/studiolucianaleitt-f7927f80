@@ -24,10 +24,10 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 md:h-20">
         <Link to="/" className="group flex flex-col leading-none">
           <span className="font-display text-lg font-semibold tracking-tight md:text-2xl">
-            Luciana Leitt
+            {clinic.shortName}
           </span>
           <span className="text-[0.6rem] tracking-[0.28em] text-muted-foreground uppercase md:text-[0.65rem]">
-            Estética
+            Estética Facial
           </span>
         </Link>
 

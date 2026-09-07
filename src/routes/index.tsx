@@ -12,7 +12,7 @@ import {
   Testimonials,
 } from "@/components/Sections";
 
-const title = "Luciana Leitt Estética — Estética facial em Goiânia";
+const title = "Studio Luciana Leitt — Estética Facial em Goiânia";
 const description =
   "Clínica de estética facial com protocolos personalizados: limpeza de pele, rejuvenescimento, hidratação, lábios e contorno. Agende pelo WhatsApp.";
 
