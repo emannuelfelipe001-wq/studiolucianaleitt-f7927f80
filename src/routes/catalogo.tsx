@@ -1,11 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Benefits, Featured, Hero, InstagramArea } from "@/components/Sections";
+import { Catalog } from "@/components/Catalog";
+import { Featured } from "@/components/Sections";
 
-const title = "Studio Luciana Leitt — Estética Facial em Goiânia";
+const title = "Procedimentos Faciais — Studio Luciana Leitt";
 const description =
-  "Clínica de estética facial com protocolos personalizados: limpeza de pele, rejuvenescimento, hidratação, lábios e contorno. Agende pelo WhatsApp.";
+  "Catálogo de procedimentos faciais: limpeza de pele, rejuvenescimento, hidratação, acne, lábios, contorno e tratamentos. Busque, filtre e agende pelo WhatsApp.";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/catalogo")({
   head: () => ({
     meta: [
       { title },
@@ -16,16 +17,14 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: Index,
+  component: CatalogoPage,
 });
 
-function Index() {
+function CatalogoPage() {
   return (
     <>
-      <Hero />
-      <Benefits />
+      <Catalog />
       <Featured />
-      <InstagramArea />
     </>
   );
 }

@@ -6,14 +6,14 @@ import { useCart } from "@/lib/cart";
 import { GENERAL_MESSAGE, whatsappLink } from "@/lib/whatsapp";
 
 const navItems = [
-  { label: "Início", hash: "topo" },
-  { label: "Procedimentos", hash: "procedimentos" },
-  { label: "Sobre", hash: "sobre" },
-  { label: "Antes e Depois", hash: "antes-e-depois" },
-  { label: "Depoimentos", hash: "depoimentos" },
-  { label: "FAQ", hash: "faq" },
-  { label: "Contato", hash: "contato" },
-];
+  { label: "Início", to: "/" },
+  { label: "Procedimentos", to: "/catalogo" },
+  { label: "Sobre", to: "/sobre" },
+  { label: "Antes e Depois", to: "/antes-e-depois" },
+  { label: "Depoimentos", to: "/depoimentos" },
+  { label: "FAQ", to: "/faq" },
+  { label: "Contato", to: "/contato" },
+] as const;
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -35,8 +35,9 @@ export function Header() {
           {navItems.map((item) => (
             <Link
               key={item.label}
-              to="/"
-              hash={item.hash}
+              to={item.to}
+              activeOptions={{ exact: true }}
+              activeProps={{ className: "text-primary font-medium" }}
               className="text-sm text-foreground/80 transition-colors hover:text-primary"
             >
               {item.label}
@@ -84,10 +85,11 @@ export function Header() {
             {navItems.map((item) => (
               <Link
                 key={item.label}
-                to="/"
-                hash={item.hash}
+                to={item.to}
+                activeOptions={{ exact: true }}
+                activeProps={{ className: "text-primary font-medium" }}
                 onClick={() => setOpen(false)}
-                className="border-b border-border/60 py-3 text-sm last:border-0"
+                className="border-b border-border/60 py-3 text-sm"
               >
                 {item.label}
               </Link>

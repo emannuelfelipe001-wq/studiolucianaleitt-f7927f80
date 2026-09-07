@@ -8,6 +8,7 @@ import {
   clinic,
   faq,
   instagramUrl,
+  mapEmbedUrl,
   mapsUrl,
   procedures,
   testimonials,
@@ -33,8 +34,7 @@ export function Hero() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              to="/"
-              hash="procedimentos"
+              to="/catalogo"
               className="rounded-full bg-rose-gradient px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-soft transition-transform hover:scale-[1.03]"
             >
               Ver procedimentos
@@ -89,11 +89,7 @@ export function Featured() {
           <span className="text-xs tracking-[0.25em] text-primary uppercase">Destaques</span>
           <h2 className="mt-2 text-3xl md:text-4xl">Mais procurados</h2>
         </div>
-        <Link
-          to="/"
-          hash="procedimentos"
-          className="hidden text-sm text-primary hover:underline md:inline"
-        >
+        <Link to="/catalogo" className="hidden text-sm text-primary hover:underline md:inline">
           Ver catálogo completo
         </Link>
       </div>
@@ -296,20 +292,24 @@ export function LocationContact() {
           </div>
         </div>
 
-        {/* Espaço preparado para o mapa: basta inserir o iframe do Google Maps aqui */}
-        <div className="card-soft flex min-h-64 flex-col items-center justify-center gap-2 bg-blush/40 p-7 text-center">
-          <MapPin className="size-6 text-primary" />
-          <p className="text-sm text-muted-foreground">
-            Área reservada para o mapa. Com o endereço confirmado, o mapa é exibido aqui.
-          </p>
-          <a
-            href={mapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-primary hover:underline"
-          >
-            Abrir no Google Maps
-          </a>
+        {/* Mapa da localização (coordenadas em src/config/clinic.ts) */}
+        <div className="card-soft overflow-hidden">
+          <iframe
+            src={mapEmbedUrl}
+            title={`Mapa — ${addressLine}`}
+            loading="lazy"
+            className="h-72 w-full border-0 md:h-full md:min-h-80"
+          />
+          <div className="border-t border-border/70 px-5 py-3 text-center">
+            <a
+              href={mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-primary hover:underline"
+            >
+              Abrir no Google Maps
+            </a>
+          </div>
         </div>
       </div>
     </section>
