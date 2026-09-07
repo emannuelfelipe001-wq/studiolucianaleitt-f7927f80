@@ -25,13 +25,7 @@ function Index() {
       <Hero />
       <Benefits />
       <Featured />
-      <Catalog />
-      <About />
-      <BeforeAfter />
-      <Testimonials />
-      <Faq />
       <InstagramArea />
-      <LocationContact />
     </>
   );
 }
