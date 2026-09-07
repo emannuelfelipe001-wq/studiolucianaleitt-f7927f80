@@ -112,7 +112,7 @@ export type Procedure = {
   featured?: boolean;
 };
 
-/* ---------------- PROCEDIMENTOS (preços EXEMPLO) ---------------- */
+
 /* ---------------- PROCEDIMENTOS ----------------
  *  Lista vazia: adicione aqui os procedimentos reais.
  *  Exemplo de item:
