@@ -18,6 +18,7 @@ import sobreImg from "@/assets/sobre.jpg";
 import microOlhosImg from "@/assets/micropigmentacao-olhos.jpg.asset.json";
 import perfuracaoLobuloImg from "@/assets/perfuracao-lobulo.jpg.asset.json";
 import browLaminationImg from "@/assets/brow-lamination.jpg.asset.json";
+import baCiliosVolumeBrasileiro from "@/assets/ba-cilios-volume-brasileiro.jpg.asset.json";
 import perfuracaoHelixImg from "@/assets/perfuracao-helix.jpg.asset.json";
 import extensaoCiliosImg from "@/assets/extensao-cilios-brasileiro.jpg.asset.json";
 import microLabialImg from "@/assets/micropigmentacao-labial.jpg.asset.json";
