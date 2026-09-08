@@ -149,23 +149,25 @@ export function BeforeAfter() {
           {beforeAfter.notice}
         </p>
       </div>
-      <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
-        {beforeAfter.items.map((item) => (
-          <figure key={item.label} className="card-soft overflow-hidden">
-            <img
-              src={item.image}
-              alt={item.label}
-              loading="lazy"
-              width={900}
-              height={900}
-              className="aspect-square w-full object-cover"
-            />
-            <figcaption className="px-3 py-2.5 text-center text-xs text-muted-foreground">
-              {item.label}
-            </figcaption>
-          </figure>
-        ))}
-      </div>
+      {beforeAfter.items.length > 0 && (
+        <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
+          {beforeAfter.items.map((item) => (
+            <figure key={item.label} className="card-soft overflow-hidden">
+              <img
+                src={item.image}
+                alt={item.label}
+                loading="lazy"
+                width={900}
+                height={900}
+                className="aspect-square w-full object-cover"
+              />
+              <figcaption className="px-3 py-2.5 text-center text-xs text-muted-foreground">
+                {item.label}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      )}
     </section>
   );
 }

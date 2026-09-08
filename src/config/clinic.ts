@@ -15,10 +15,6 @@
 // Imagens demonstrativas (troque os arquivos em src/assets/ ou os imports abaixo)
 import heroImg from "@/assets/hero.jpg";
 import sobreImg from "@/assets/sobre.jpg";
-import ba1 from "@/assets/ba-1.jpg";
-import ba2 from "@/assets/ba-2.jpg";
-import ba3 from "@/assets/ba-3.jpg";
-import ba4 from "@/assets/ba-4.jpg";
 import microOlhosImg from "@/assets/micropigmentacao-olhos.jpg.asset.json";
 import perfuracaoLobuloImg from "@/assets/perfuracao-lobulo.jpg.asset.json";
 import browLaminationImg from "@/assets/brow-lamination.jpg.asset.json";
@@ -275,16 +271,11 @@ export const procedures: Procedure[] = [
   },
 ];
 
-/* ---------------- ANTES E DEPOIS (imagens de exemplo) ---------------- */
+/* ---------------- ANTES E DEPOIS ----------------
+   Adicione aqui as fotos reais: { image: minhaFoto, label: "Nome" } */
 export const beforeAfter = {
-  notice:
-    "As imagens abaixo são apenas demonstrativas e serão substituídas por fotos reais de clientes, com autorização.",
-  items: [
-    { image: ba1, label: "Pele com textura irregular" },
-    { image: ba2, label: "Pele hidratada e com viço" },
-    { image: ba3, label: "Área dos olhos" },
-    { image: ba4, label: "Lábios e contorno" },
-  ],
+  notice: "Em breve, fotos reais de resultados publicadas com autorização das clientes.",
+  items: [] as { image: string; label: string }[],
 };
 
 /* ---------------- DEPOIMENTOS (EXEMPLO — fácil substituir) ---------------- */
