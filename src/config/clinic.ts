@@ -23,6 +23,7 @@ import perfuracaoHelixImg from "@/assets/perfuracao-helix.jpg.asset.json";
 import extensaoCiliosImg from "@/assets/extensao-cilios-brasileiro.jpg.asset.json";
 import microLabialImg from "@/assets/micropigmentacao-labial.jpg.asset.json";
 import extensaoCiliosHibridoImg from "@/assets/extensao-cilios-hibrido.jpg.asset.json";
+import dermaplaningImg from "@/assets/dermaplaning.jpg.asset.json";
 
 /* ---------------- DADOS DA CLÍNICA ---------------- */
 export const clinic = {
@@ -270,6 +271,25 @@ export const procedures: Procedure[] = [
     image: microLabialImg.url,
     featured: true,
   },
+  {
+    id: "dermaplaning",
+    name: "Dermaplaning",
+    category: "limpeza",
+    shortDescription:
+      "Esfoliação com lâmina que remove células mortas e os pelinhos do rosto, deixando a pele lisa e iluminada.",
+    description:
+      "O Dermaplaning é uma esfoliação física feita com lâmina estéril específica para estética, que remove as células mortas da superfície da pele junto com os pelinhos finos (buço facial). Área do corpo: rosto (face, testa, maçãs do rosto, queixo e buço). O resultado é uma pele imediatamente mais lisa, uniforme e iluminada, com melhor absorção dos produtos de skincare e maquiagem com acabamento impecável. É um procedimento indolor, sem agulhas e sem tempo de recuperação, indicado para deixar a pele renovada antes de eventos.",
+    benefits: [
+      "Pele lisa, uniforme e iluminada na hora",
+      "Remove pelinhos finos e células mortas",
+      "Maquiagem com acabamento mais bonito",
+      "Sem dor e sem tempo de recuperação",
+    ],
+    duration: "30min",
+    price: 190,
+    image: dermaplaningImg.url,
+    featured: true,
+  },
 ];
 
 /* ---------------- ANTES E DEPOIS ----------------
@@ -280,6 +300,10 @@ export const beforeAfter = {
     {
       image: baCiliosVolumeBrasileiro.url,
       label: "Cílios Volume Brasileiro — antes (acima) e depois (abaixo)",
+    },
+    {
+      image: dermaplaningImg.url,
+      label: "Dermaplaning — antes (acima) e depois (abaixo)",
     },
   ] as { image: string; label: string }[],
 };
