@@ -436,6 +436,11 @@ export const beforeAfter = {
   ] as { image: string; label: string }[],
 };
 
+/* ---------------- BIJUTERIAS (catálogo de fotos — adicione itens aqui) ----------------
+   Para cada foto enviada, adicione um item:
+   { image: <asset>.url, name: "Nome da peça", description: "Descrição da peça" } */
+export const jewelry = [] as { image: string; name: string; description: string }[];
+
 /* ---------------- DEPOIMENTOS (EXEMPLO — fácil substituir) ---------------- */
 export const testimonials = [
   {
