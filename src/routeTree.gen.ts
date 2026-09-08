@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AntesEDepoisRouteImport } from './routes/antes-e-depois'
+import { Route as BijuteriasRouteImport } from './routes/bijuterias'
 import { Route as CarrinhoRouteImport } from './routes/carrinho'
 import { Route as CatalogoRouteImport } from './routes/catalogo'
 import { Route as ContatoRouteImport } from './routes/contato'
@@ -27,6 +28,11 @@ const IndexRoute = IndexRouteImport.update({
 const AntesEDepoisRoute = AntesEDepoisRouteImport.update({
   id: '/antes-e-depois',
   path: '/antes-e-depois',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BijuteriasRoute = BijuteriasRouteImport.update({
+  id: '/bijuterias',
+  path: '/bijuterias',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CarrinhoRoute = CarrinhoRouteImport.update({
@@ -68,6 +74,7 @@ const ProcedimentosSlugRoute = ProcedimentosSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/antes-e-depois': typeof AntesEDepoisRoute
+  '/bijuterias': typeof BijuteriasRoute
   '/carrinho': typeof CarrinhoRoute
   '/catalogo': typeof CatalogoRoute
   '/contato': typeof ContatoRoute
@@ -79,6 +86,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/antes-e-depois': typeof AntesEDepoisRoute
+  '/bijuterias': typeof BijuteriasRoute
   '/carrinho': typeof CarrinhoRoute
   '/catalogo': typeof CatalogoRoute
   '/contato': typeof ContatoRoute
@@ -91,6 +99,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/antes-e-depois': typeof AntesEDepoisRoute
+  '/bijuterias': typeof BijuteriasRoute
   '/carrinho': typeof CarrinhoRoute
   '/catalogo': typeof CatalogoRoute
   '/contato': typeof ContatoRoute
@@ -104,6 +113,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/antes-e-depois'
+    | '/bijuterias'
     | '/carrinho'
     | '/catalogo'
     | '/contato'
@@ -115,6 +125,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/antes-e-depois'
+    | '/bijuterias'
     | '/carrinho'
     | '/catalogo'
     | '/contato'
@@ -126,6 +137,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/antes-e-depois'
+    | '/bijuterias'
     | '/carrinho'
     | '/catalogo'
     | '/contato'
@@ -138,6 +150,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AntesEDepoisRoute: typeof AntesEDepoisRoute
+  BijuteriasRoute: typeof BijuteriasRoute
   CarrinhoRoute: typeof CarrinhoRoute
   CatalogoRoute: typeof CatalogoRoute
   ContatoRoute: typeof ContatoRoute
@@ -161,6 +174,13 @@ declare module '@tanstack/react-router' {
       path: '/antes-e-depois'
       fullPath: '/antes-e-depois'
       preLoaderRoute: typeof AntesEDepoisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bijuterias': {
+      id: '/bijuterias'
+      path: '/bijuterias'
+      fullPath: '/bijuterias'
+      preLoaderRoute: typeof BijuteriasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/carrinho': {
@@ -218,6 +238,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AntesEDepoisRoute: AntesEDepoisRoute,
+  BijuteriasRoute: BijuteriasRoute,
   CarrinhoRoute: CarrinhoRoute,
   CatalogoRoute: CatalogoRoute,
   ContatoRoute: ContatoRoute,
