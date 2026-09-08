@@ -53,7 +53,7 @@ export function OpenStatus({ className = "" }: { className?: string }) {
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 text-[0.7rem] font-medium tracking-wide ${
+      className={`inline-flex items-center gap-1.5 text-[0.8rem] font-semibold tracking-wide ${
         open ? "text-whatsapp" : "text-destructive"
       } ${className}`}
     >

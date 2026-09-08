@@ -34,7 +34,7 @@ export function Hero() {
             Protocolos faciais personalizados para uma pele saudável, com viço natural e
             atendimento exclusivo.
           </p>
-          <OpenStatus className="mt-4 flex text-xs" />
+          <OpenStatus className="mt-4 flex text-sm" />
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               to="/catalogo"
