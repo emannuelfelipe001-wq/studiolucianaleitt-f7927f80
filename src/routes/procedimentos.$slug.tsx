@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, Check, Clock, Plus, ShoppingBag } from "lucide-react";
+import { ArrowLeft, Check, Clock, Plus, ShoppingBag, X } from "lucide-react";
 import { categoryName, findProcedure, formatPrice, procedures } from "@/config/clinic";
 import { useCart } from "@/lib/cart";
 import { ProcedureCard } from "@/components/ProcedureCard";
