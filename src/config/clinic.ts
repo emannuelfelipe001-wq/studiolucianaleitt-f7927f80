@@ -174,6 +174,25 @@ export const procedures: Procedure[] = [
     image: perfuracaoLobuloImg.url,
     featured: true,
   },
+  {
+    id: "brow-lamination",
+    name: "Brow Lamination",
+    category: "sobrancelha",
+    shortDescription:
+      "Alinhamento dos fios das sobrancelhas para um visual mais disciplinado, volumoso e natural.",
+    description:
+      "O Brow Lamination é um procedimento estético para as sobrancelhas que modela e alinha os fios, deixando-as mais disciplinadas, volumosas e com efeito natural de sobrancelha 'penteada'. A técnica utiliza produtos específicos que relaxam os fios e os fixam na direção desejada. Área do corpo: sobrancelhas. O resultado dura em média algumas semanas e facilita a rotina de maquiagem, dispensando o uso de gel ou máscara para sobrancelhas no dia a dia.",
+    benefits: [
+      "Fios alinhados e disciplinados",
+      "Visual mais volumoso e natural",
+      "Efeito duradouro por várias semanas",
+      "Facilita a rotina de maquiagem",
+    ],
+    duration: "1h 20min",
+    price: 120,
+    image: browLaminationImg.url,
+    featured: true,
+  },
 ];
 
 /* ---------------- ANTES E DEPOIS (imagens de exemplo) ---------------- */
