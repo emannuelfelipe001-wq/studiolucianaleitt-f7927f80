@@ -186,25 +186,6 @@ export const procedures: Procedure[] = [
     featured: true,
   },
   {
-    id: "fio-a-fio",
-    name: "Fio a Fio",
-    category: "cilios",
-    shortDescription:
-      "Aplicação clássica de fios um a um para um olhar delicado, natural e elegante.",
-    description:
-      "A técnica Fio a Fio é a extensão de cílios clássica que aplica um fio sintético fino sobre cada cílio natural, criando um olhar alongado, delicado e natural. Área do corpo: cílios (pálpebra superior). O resultado valoriza o formato dos olhos sem pesar ou parecer artificial, ideal para quem quer acordar com o olhar pronto todos os dias. O procedimento é feito com cola hipoalergênica e fios selecionados de acordo com a saúde e curvatura dos cílios naturais, garantindo conforto e durabilidade.",
-    benefits: [
-      "Olhar alongado e natural",
-      "Fios leves que não pesam nos cílios naturais",
-      "Efeito delicado e elegante",
-      "Dispensa o uso de máscara de cílios",
-    ],
-    duration: "2h",
-    price: 600,
-    image: fioAFioImg.url,
-    featured: true,
-  },
-  {
     id: "cilios-volume-russo",
     name: "Extensão de Cílios Russo",
     category: "cilios",
@@ -221,6 +202,25 @@ export const procedures: Procedure[] = [
     duration: "1h 30min",
     price: 180,
     image: ciliosVolumeRussoImg.url,
+    featured: true,
+  },
+  {
+    id: "fio-a-fio",
+    name: "Fio a Fio",
+    category: "cilios",
+    shortDescription:
+      "Aplicação clássica de fios um a um para um olhar delicado, natural e elegante.",
+    description:
+      "A técnica Fio a Fio é a extensão de cílios clássica que aplica um fio sintético fino sobre cada cílio natural, criando um olhar alongado, delicado e natural. Área do corpo: cílios (pálpebra superior). O resultado valoriza o formato dos olhos sem pesar ou parecer artificial, ideal para quem quer acordar com o olhar pronto todos os dias. O procedimento é feito com cola hipoalergênica e fios selecionados de acordo com a saúde e curvatura dos cílios naturais, garantindo conforto e durabilidade.",
+    benefits: [
+      "Olhar alongado e natural",
+      "Fios leves que não pesam nos cílios naturais",
+      "Efeito delicado e elegante",
+      "Dispensa o uso de máscara de cílios",
+    ],
+    duration: "2h",
+    price: 600,
+    image: fioAFioImg.url,
     featured: true,
   },
   /* ---------------- PIERCING / ORELHA ---------------- */
