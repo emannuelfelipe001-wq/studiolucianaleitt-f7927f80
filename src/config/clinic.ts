@@ -23,6 +23,7 @@ import microOlhosImg from "@/assets/micropigmentacao-olhos.jpg.asset.json";
 import perfuracaoLobuloImg from "@/assets/perfuracao-lobulo.jpg.asset.json";
 import browLaminationImg from "@/assets/brow-lamination.jpg.asset.json";
 import perfuracaoHelixImg from "@/assets/perfuracao-helix.jpg.asset.json";
+import extensaoCiliosImg from "@/assets/extensao-cilios-brasileiro.jpg.asset.json";
 
 /* ---------------- DADOS DA CLÍNICA ---------------- */
 export const clinic = {
@@ -97,6 +98,7 @@ export const categories = [
   { id: "acne", name: "Acne" },
   { id: "labios", name: "Lábios" },
   { id: "olhos", name: "Olhos" },
+  { id: "cilios", name: "Cílios" },
   { id: "contorno", name: "Contorno Facial" },
   { id: "tratamentos", name: "Tratamentos Faciais" },
   { id: "piercing", name: "Piercing" },
@@ -211,6 +213,25 @@ export const procedures: Procedure[] = [
     duration: "20min",
     price: 90,
     image: perfuracaoHelixImg.url,
+    featured: true,
+  },
+  {
+    id: "extensao-de-cilios-brasileiro",
+    name: "Extensão de Cílios Brasileiro",
+    category: "cilios",
+    shortDescription:
+      "Aplicação de fios leves e naturais para um olhar mais aberto, iluminado e com efeito delicado.",
+    description:
+      "A Extensão de Cílios Brasileiro é uma técnica que aplica fios finos e levemente curvados sobre os cílios naturais, criando um olhar mais aberto, iluminado e com volume natural. Área do corpo: cílios (pálpebra superior). O resultado é delicado, sem pesar ou parecer artificial, ideal para quem quer acordar com os cílios prontos todos os dias. O procedimento é feito com cola hipoalergênica e fios selecionados de acordo com o formato dos seus olhos.",
+    benefits: [
+      "Olhar mais aberto e iluminado",
+      "Volume natural e delicado",
+      "Dispensa o uso de máscara de cílios",
+      "Fios leves que não pesam nos cílios naturais",
+    ],
+    duration: "1h 30min",
+    price: 170,
+    image: extensaoCiliosImg.url,
     featured: true,
   },
 ];
