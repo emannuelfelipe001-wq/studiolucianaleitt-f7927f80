@@ -98,6 +98,7 @@ export const categories = [
   { id: "acne", name: "Acne" },
   { id: "labios", name: "Lábios" },
   { id: "olhos", name: "Olhos" },
+  { id: "cilios", name: "Cílios" },
   { id: "contorno", name: "Contorno Facial" },
   { id: "tratamentos", name: "Tratamentos Faciais" },
   { id: "piercing", name: "Piercing" },
