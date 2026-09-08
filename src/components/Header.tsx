@@ -102,10 +102,11 @@ export function Header() {
               href={whatsappLink(GENERAL_MESSAGE)}
               target="_blank"
               rel="noopener noreferrer"
-              className="my-3 rounded-full bg-rose-gradient px-5 py-3 text-center text-sm font-medium text-primary-foreground"
+              className="mt-3 rounded-full bg-rose-gradient px-5 py-3 text-center text-sm font-medium text-primary-foreground"
             >
               Agendar pelo WhatsApp — {clinic.whatsappDisplay}
             </a>
+            <OpenStatus className="mt-2 mb-3 justify-center" />
           </nav>
         </div>
       )}
