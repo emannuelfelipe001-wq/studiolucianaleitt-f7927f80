@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Minus, Plus, ShoppingBag, Trash2 } from "lucide-react";
+import { Clock, Minus, Plus, ShoppingBag, Trash2 } from "lucide-react";
 import { findProcedure, formatPrice } from "@/config/clinic";
 import { useCart } from "@/lib/cart";
 import { bookingMessage, whatsappLink } from "@/lib/whatsapp";
+import { formatDuration, parseDuration } from "@/lib/utils";
 
 const title = "Carrinho e agendamento — Studio Luciana Leitt";
 const description =
@@ -34,6 +35,12 @@ function CartPage() {
   const detailed = items
     .map((i) => ({ ...i, procedure: findProcedure(i.id)! }))
     .filter((i) => i.procedure);
+
+  const totalMinutes = detailed.reduce(
+    (sum, i) => sum + parseDuration(i.procedure.duration) * i.qty,
+    0,
+  );
+  const totalDuration = formatDuration(totalMinutes);
 
   const ready = name.trim() !== "" && date !== "" && time !== "";
 
@@ -158,6 +165,13 @@ function CartPage() {
               {formatPrice(subtotal)}
             </span>
           </div>
+
+          {count >= 2 && (
+            <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
+              <Clock className="size-4" />
+              <span>Tempo estimado: {totalDuration}</span>
+            </div>
+          )}
 
           {step === "cart" ? (
             <button

@@ -29,6 +29,7 @@ import fioAFioImg from "@/assets/fio-a-fio.jpg.asset.json";
 import delineadoLapisImg from "@/assets/delineado-a-lapis.jpg.asset.json";
 import ciliosVolumeRussoImg from "@/assets/cilios-volume-russo.jpg.asset.json";
 import aplicacaoHennaImg from "@/assets/aplicacao-henna.jpg.asset.json";
+import designSobrancelhasImg from "@/assets/design-sobrancelhas.jpg.asset.json";
 
 /* ---------------- DADOS DA CLÍNICA ---------------- */
 export const clinic = {
@@ -388,6 +389,25 @@ export const procedures: Procedure[] = [
     duration: "20min",
     price: 20,
     image: aplicacaoHennaImg.url,
+    featured: true,
+  },
+  {
+    id: "design-de-sobrancelhas",
+    name: "Design de Sobrancelhas",
+    category: "sobrancelha",
+    shortDescription:
+      "Design personalizado das sobrancelhas para valorizar o formato do rosto e realçar o olhar.",
+    description:
+      "O Design de Sobrancelhas é um procedimento estético que define o formato ideal das sobrancelhas de acordo com as medidas e traços do seu rosto. Área do corpo: sobrancelhas. A técnica inclui a avaliação da simetria facial, marcação precisa e remoção dos fios extras para criar um visual harmonioso e natural. O resultado valoriza o olhar e deixa o rosto mais equilibrado, sem deixar a sobrancelha artificialmente fina. Ideal para quem quer manutenção regular ou preparar as sobrancelhas para outros procedimentos como henna ou micropigmentação.",
+    benefits: [
+      "Formato personalizado para o seu rosto",
+      "Olhar mais harmonioso e equilibrado",
+      "Resultado natural sem exageros",
+      "Preparação ideal para henna ou micropigmentação",
+    ],
+    duration: "10min",
+    price: 45,
+    image: designSobrancelhasImg.url,
     featured: true,
   },
 ];
