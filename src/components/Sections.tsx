@@ -60,7 +60,7 @@ export function Hero() {
             alt="Procedimento de estética facial em clínica"
             width={1600}
             height={1200}
-            className="relative aspect-[4/3] w-full rounded-[2rem] object-cover shadow-card"
+            className="relative aspect-[3/4] w-full rounded-[2rem] object-cover object-[center_20%] shadow-card md:aspect-[4/3]"
           />
         </div>
       </div>
