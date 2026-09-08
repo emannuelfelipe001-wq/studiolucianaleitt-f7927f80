@@ -27,6 +27,7 @@ import dermaplaningImg from "@/assets/dermaplaning.jpg.asset.json";
 import foxEyesImg from "@/assets/fox-eyes.jpg.asset.json";
 import fioAFioImg from "@/assets/fio-a-fio.jpg.asset.json";
 import delineadoLapisImg from "@/assets/delineado-a-lapis.jpg.asset.json";
+import ciliosVolumeRussoImg from "@/assets/cilios-volume-russo.jpg.asset.json";
 
 /* ---------------- DADOS DA CLÍNICA ---------------- */
 export const clinic = {
@@ -348,6 +349,25 @@ export const procedures: Procedure[] = [
     duration: "40min",
     price: 300,
     image: delineadoLapisImg.url,
+    featured: true,
+  },
+  {
+    id: "cilios-volume-russo",
+    name: "Cílios Volume Russo",
+    category: "cilios",
+    shortDescription:
+      "Técnica de extensão com leques de fios ultrafinos para um olhar volumoso, marcante e glamouroso.",
+    description:
+      "O Cílios Volume Russo é uma técnica avançada de extensão de cílios que aplica leques de fios ultrafinos e leves sobre cada cílio natural, criando um olhar volumoso, denso e glamouroso. Área do corpo: cílios (pálpebra superior). O resultado é mais marcante e dramático que as técnicas clássica e híbrida, ideal para quem deseja olhos de destaque sem precisar de máscara de cílios no dia a dia. O procedimento é realizado com cola hipoalergênica e fios selecionados de acordo com a saúde e curvatura dos seus cílios naturais, garantindo conforto e durabilidade.",
+    benefits: [
+      "Olhar volumoso, denso e marcante",
+      "Efeito glamouroso e duradouro",
+      "Dispensa o uso de máscara de cílios",
+      "Fios leves que respeitam os cílios naturais",
+    ],
+    duration: "1h 30min",
+    price: 180,
+    image: ciliosVolumeRussoImg.url,
     featured: true,
   },
 ];
