@@ -24,6 +24,7 @@ import extensaoCiliosImg from "@/assets/extensao-cilios-brasileiro.jpg.asset.jso
 import microLabialImg from "@/assets/micropigmentacao-labial.jpg.asset.json";
 import extensaoCiliosHibridoImg from "@/assets/extensao-cilios-hibrido.jpg.asset.json";
 import dermaplaningImg from "@/assets/dermaplaning.jpg.asset.json";
+import foxEyesImg from "@/assets/fox-eyes.jpg";
 
 /* ---------------- DADOS DA CLÍNICA ---------------- */
 export const clinic = {
