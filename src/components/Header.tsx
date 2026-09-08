@@ -61,10 +61,13 @@ export function Header() {
             aria-label="Carrinho"
             className="relative flex size-10 items-center justify-center rounded-full border border-border bg-card text-foreground transition-colors hover:border-primary/40 hover:text-primary"
           >
-            <Heart className="size-6" fill="currentColor" />
+            <ShoppingBag className="size-6" />
             {count > 0 && (
-              <span className="absolute inset-0 flex items-center justify-center text-[0.6rem] font-bold text-primary-foreground">
-                {count}
+              <span className="absolute -top-1 -right-1 flex size-5 items-center justify-center rounded-full bg-primary text-[0.6rem] font-bold text-primary-foreground shadow-sm">
+                <Heart className="size-3" fill="currentColor" strokeWidth={0} />
+                <span className="absolute inset-0 flex items-center justify-center text-[0.55rem] font-bold">
+                  {count}
+                </span>
               </span>
             )}
           </Link>
