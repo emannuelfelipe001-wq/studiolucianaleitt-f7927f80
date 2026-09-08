@@ -63,13 +63,19 @@ export function Header() {
           >
             <ShoppingBag className="size-6" />
             {count > 0 && (
-              <span className="absolute -top-1 -right-1 flex size-5 items-center justify-center rounded-full bg-primary text-[0.6rem] font-bold text-primary-foreground shadow-sm">
-                <Heart className="size-3" fill="currentColor" strokeWidth={0} />
-                <span className="absolute inset-0 flex items-center justify-center text-[0.55rem] font-bold">
+              <span className="absolute -top-2 -right-2 grid size-7 place-items-center">
+                <Heart
+                  className="absolute inset-0 size-7 text-primary drop-shadow-sm"
+                  fill="currentColor"
+                  strokeWidth={0}
+                  aria-hidden
+                />
+                <span className="relative z-10 -mt-0.5 text-[0.7rem] leading-none font-bold text-primary-foreground">
                   {count}
                 </span>
               </span>
             )}
+
           </Link>
 
           <button
