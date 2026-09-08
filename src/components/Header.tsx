@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Heart, Menu, X } from "lucide-react";
+import { Heart, Menu, ShoppingBag, X } from "lucide-react";
 import { clinic } from "@/config/clinic";
 import { useCart } from "@/lib/cart";
 import { GENERAL_MESSAGE, whatsappLink } from "@/lib/whatsapp";
