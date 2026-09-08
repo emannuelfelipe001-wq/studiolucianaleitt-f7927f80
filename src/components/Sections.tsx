@@ -143,6 +143,8 @@ export function About() {
 }
 
 export function BeforeAfter() {
+  const [zoom, setZoom] = useState<{ image: string; label: string } | null>(null);
+
   return (
     <section id="antes-e-depois" className="mx-auto max-w-6xl px-4 py-16 md:py-24">
       <div className="text-center">
