@@ -107,7 +107,7 @@ export function Featured() {
   );
 }
 
-export function About() {
+export function About({ as: Heading = "h2" }: { as?: "h1" | "h2" }) {
   return (
     <section id="sobre" className="bg-soft-gradient">
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-2 md:py-24">
@@ -121,7 +121,7 @@ export function About() {
         />
         <div>
           <span className="text-xs tracking-[0.25em] text-primary uppercase">Quem atende</span>
-          <h2 className="mt-3 text-3xl md:text-4xl">{about.title}</h2>
+          <Heading className="mt-3 text-3xl md:text-4xl">{about.title}</Heading>
           {about.paragraphs.map((p) => (
             <p key={p} className="mt-4 text-sm leading-relaxed text-muted-foreground">
               {p}
@@ -143,14 +143,14 @@ export function About() {
   );
 }
 
-export function BeforeAfter() {
+export function BeforeAfter({ as: Heading = "h2" }: { as?: "h1" | "h2" }) {
   const [zoom, setZoom] = useState<{ image: string; label: string } | null>(null);
 
   return (
     <section id="antes-e-depois" className="mx-auto max-w-6xl px-4 py-16 md:py-24">
       <div className="text-center">
         <span className="text-xs tracking-[0.25em] text-primary uppercase">Resultados</span>
-        <h2 className="mt-3 text-3xl md:text-4xl">Antes e depois</h2>
+        <Heading className="mt-3 text-3xl md:text-4xl">Antes e depois</Heading>
         <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">
           {beforeAfter.notice}
         </p>
@@ -210,13 +210,13 @@ export function BeforeAfter() {
   );
 }
 
-export function Testimonials() {
+export function Testimonials({ as: Heading = "h2" }: { as?: "h1" | "h2" }) {
   return (
     <section id="depoimentos" className="bg-soft-gradient">
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
         <div className="text-center">
           <span className="text-xs tracking-[0.25em] text-primary uppercase">Depoimentos</span>
-          <h2 className="mt-3 text-3xl md:text-4xl">O que dizem as clientes</h2>
+          <Heading className="mt-3 text-3xl md:text-4xl">O que dizem as clientes</Heading>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {testimonials.map((t) => (
@@ -233,12 +233,12 @@ export function Testimonials() {
   );
 }
 
-export function Faq() {
+export function Faq({ as: Heading = "h2" }: { as?: "h1" | "h2" }) {
   return (
     <section id="faq" className="mx-auto max-w-3xl px-4 py-16 md:py-24">
       <div className="text-center">
         <span className="text-xs tracking-[0.25em] text-primary uppercase">Dúvidas</span>
-        <h2 className="mt-3 text-3xl md:text-4xl">Perguntas frequentes</h2>
+        <Heading className="mt-3 text-3xl md:text-4xl">Perguntas frequentes</Heading>
       </div>
       <div className="mt-8 space-y-3">
         {faq.map((item) => (
@@ -287,12 +287,12 @@ export function InstagramArea() {
   );
 }
 
-export function LocationContact() {
+export function LocationContact({ as: Heading = "h2" }: { as?: "h1" | "h2" }) {
   return (
     <section id="contato" className="mx-auto max-w-6xl px-4 py-16 md:py-20">
       <div className="text-center">
         <span className="text-xs tracking-[0.25em] text-primary uppercase">Localização</span>
-        <h2 className="mt-3 text-3xl md:text-4xl">Onde nos encontrar</h2>
+        <Heading className="mt-3 text-3xl md:text-4xl">Onde nos encontrar</Heading>
       </div>
 
       <div className="mt-10 grid gap-6 md:grid-cols-2">
