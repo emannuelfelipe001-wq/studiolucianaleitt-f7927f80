@@ -104,7 +104,7 @@ export function Header() {
               rel="noopener noreferrer"
               className="mt-3 rounded-full bg-rose-gradient px-5 py-3 text-center text-sm font-medium text-primary-foreground"
             >
-              Agendar pelo WhatsApp — {clinic.whatsappDisplay}
+              Agendar pelo WhatsApp
             </a>
             <OpenStatus className="mt-2 mb-3 justify-center" />
           </nav>
