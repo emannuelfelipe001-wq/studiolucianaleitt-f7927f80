@@ -24,6 +24,7 @@ import perfuracaoLobuloImg from "@/assets/perfuracao-lobulo.jpg.asset.json";
 import browLaminationImg from "@/assets/brow-lamination.jpg.asset.json";
 import perfuracaoHelixImg from "@/assets/perfuracao-helix.jpg.asset.json";
 import extensaoCiliosImg from "@/assets/extensao-cilios-brasileiro.jpg.asset.json";
+import microLabialImg from "@/assets/micropigmentacao-labial.jpg.asset.json";
 
 /* ---------------- DADOS DA CLÍNICA ---------------- */
 export const clinic = {
