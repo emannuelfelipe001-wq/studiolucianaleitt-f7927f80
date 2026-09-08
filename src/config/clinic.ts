@@ -20,6 +20,7 @@ import ba2 from "@/assets/ba-2.jpg";
 import ba3 from "@/assets/ba-3.jpg";
 import ba4 from "@/assets/ba-4.jpg";
 import microOlhosImg from "@/assets/micropigmentacao-olhos.jpg.asset.json";
+import perfuracaoLobuloImg from "@/assets/perfuracao-lobulo.jpg.asset.json";
 
 /* ---------------- DADOS DA CLÍNICA ---------------- */
 export const clinic = {
@@ -96,6 +97,7 @@ export const categories = [
   { id: "olhos", name: "Olhos" },
   { id: "contorno", name: "Contorno Facial" },
   { id: "tratamentos", name: "Tratamentos Faciais" },
+  { id: "piercing", name: "Piercing" },
 ] as const;
 
 export type CategoryId = (typeof categories)[number]["id"];
@@ -149,6 +151,25 @@ export const procedures: Procedure[] = [
     duration: "1h",
     price: 300,
     image: microOlhosImg.url,
+    featured: true,
+  },
+  {
+    id: "perfuracao-lobulo",
+    name: "Perfuração de Lóbulo",
+    category: "piercing",
+    shortDescription:
+      "Perfuração segura do lóbulo da orelha com material descartável e joia hipoalergênica.",
+    description:
+      "A perfuração de lóbulo é um procedimento realizado no lóbulo da orelha com técnica segura, material descartável e esterilizado. A joia utilizada é hipoalergênica, ideal para quem está perfurando pela primeira vez ou trocando acessório. Área do corpo: lóbulo da orelha. O procedimento é rápido, com cuidados de assepsia e orientações pós-procedimento para uma cicatrização tranquila.",
+    benefits: [
+      "Procedimento rápido e seguro",
+      "Material descartável e esterilizado",
+      "Joia hipoalergênica de primeira colocação",
+      "Orientações completas de cuidados pós-procedimento",
+    ],
+    duration: "10min",
+    price: 100,
+    image: perfuracaoLobuloImg.url,
     featured: true,
   },
 ];
