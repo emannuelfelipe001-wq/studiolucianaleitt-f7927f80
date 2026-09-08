@@ -293,7 +293,7 @@ export function LocationContact() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-5 py-3 text-sm font-medium text-whatsapp-foreground transition-transform hover:scale-[1.03]"
             >
-              <MessageCircle className="size-4" /> {clinic.whatsappDisplay}
+              <MessageCircle className="size-4" /> WhatsApp
             </a>
           </div>
         </div>
