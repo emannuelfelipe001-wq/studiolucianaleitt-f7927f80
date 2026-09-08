@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Minus, Plus, ShoppingBag, Trash2 } from "lucide-react";
+import { Clock, Minus, Plus, ShoppingBag, Trash2 } from "lucide-react";
 import { findProcedure, formatPrice } from "@/config/clinic";
 import { useCart } from "@/lib/cart";
 import { bookingMessage, whatsappLink } from "@/lib/whatsapp";
+import { formatDuration, parseDuration } from "@/lib/utils";
 
 const title = "Carrinho e agendamento — Studio Luciana Leitt";
 const description =
