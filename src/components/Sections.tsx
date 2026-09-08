@@ -25,7 +25,7 @@ export function Hero() {
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-[0.15em] text-primary uppercase">
             <Sparkles className="size-3.5" /> Estética facial
           </span>
-          <OpenStatus className="mt-4 flex text-xs" />
+          
           <h1 className="mt-5 text-4xl leading-[1.1] md:text-6xl">
             Sua pele cuidada com <span className="text-rose-gradient">delicadeza</span> e
             precisão
