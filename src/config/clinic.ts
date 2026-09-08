@@ -22,6 +22,7 @@ import ba4 from "@/assets/ba-4.jpg";
 import microOlhosImg from "@/assets/micropigmentacao-olhos.jpg.asset.json";
 import perfuracaoLobuloImg from "@/assets/perfuracao-lobulo.jpg.asset.json";
 import browLaminationImg from "@/assets/brow-lamination.jpg.asset.json";
+import perfuracaoHelixImg from "@/assets/perfuracao-helix.jpg.asset.json";
 
 /* ---------------- DADOS DA CLÍNICA ---------------- */
 export const clinic = {
