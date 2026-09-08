@@ -25,6 +25,7 @@ import browLaminationImg from "@/assets/brow-lamination.jpg.asset.json";
 import perfuracaoHelixImg from "@/assets/perfuracao-helix.jpg.asset.json";
 import extensaoCiliosImg from "@/assets/extensao-cilios-brasileiro.jpg.asset.json";
 import microLabialImg from "@/assets/micropigmentacao-labial.jpg.asset.json";
+import extensaoCiliosHibridoImg from "@/assets/extensao-cilios-hibrido.jpg.asset.json";
 
 /* ---------------- DADOS DA CLÍNICA ---------------- */
 export const clinic = {
@@ -233,6 +234,25 @@ export const procedures: Procedure[] = [
     duration: "1h 30min",
     price: 170,
     image: extensaoCiliosImg.url,
+    featured: true,
+  },
+  {
+    id: "extensao-de-cilios-hibrido",
+    name: "Extensão de Cílios Híbrido",
+    category: "cilios",
+    shortDescription:
+      "Técnica mista que une fios clássicos e volume para um olhar mais preenchido, leve e natural.",
+    description:
+      "A Extensão de Cílios Híbrido é uma técnica que combina fios clássicos (um a um) com leques de volume, criando um olhar mais preenchido, definido e com leve densidade sem perder o aspecto natural. Área do corpo: cílios (pálpebra superior). O resultado fica entre o efeito clássico e o volume russo, ideal para quem deseja mais volume do que a extensão tradicional, mas sem o visual muito marcante do volume completo. Os fios são aplicados de acordo com o formato dos seus olhos e com a saúde dos cílios naturais, usando cola hipoalergênica e fios leves.",
+    benefits: [
+      "Olhar mais preenchido e definido",
+      "Efeito intermediário entre clássico e volume",
+      "Resultado leve e natural",
+      "Dispensa o uso de máscara de cílios",
+    ],
+    duration: "1h 30min",
+    price: 170,
+    image: extensaoCiliosHibridoImg.url,
     featured: true,
   },
   {
