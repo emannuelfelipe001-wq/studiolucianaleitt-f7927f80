@@ -29,6 +29,7 @@ import fioAFioImg from "@/assets/fio-a-fio.jpg.asset.json";
 import delineadoLapisImg from "@/assets/delineado-a-lapis.jpg.asset.json";
 import ciliosVolumeRussoImg from "@/assets/cilios-volume-russo.jpg.asset.json";
 import aplicacaoHennaImg from "@/assets/aplicacao-henna.jpg.asset.json";
+import designSobrancelhasImg from "@/assets/design-sobrancelhas.jpg.asset.json";
 
 /* ---------------- DADOS DA CLÍNICA ---------------- */
 export const clinic = {
