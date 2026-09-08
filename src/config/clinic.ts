@@ -28,6 +28,7 @@ import foxEyesImg from "@/assets/fox-eyes.jpg.asset.json";
 import fioAFioImg from "@/assets/fio-a-fio.jpg.asset.json";
 import delineadoLapisImg from "@/assets/delineado-a-lapis.jpg.asset.json";
 import ciliosVolumeRussoImg from "@/assets/cilios-volume-russo.jpg.asset.json";
+import aplicacaoHennaImg from "@/assets/aplicacao-henna.jpg.asset.json";
 
 /* ---------------- DADOS DA CLÍNICA ---------------- */
 export const clinic = {
@@ -368,6 +369,25 @@ export const procedures: Procedure[] = [
     duration: "1h 30min",
     price: 180,
     image: ciliosVolumeRussoImg.url,
+    featured: true,
+  },
+  {
+    id: "aplicacao-de-henna",
+    name: "Aplicação de Henna",
+    category: "sobrancelha",
+    shortDescription:
+      "Coloração natural das sobrancelhas com henna para fios mais definidos, preenchidos e harmoniosos.",
+    description:
+      "A Aplicação de Henna é um procedimento estético para sobrancelhas que utiliza henna vegetal para colorir a pele e os fios, criando um efeito de sobrancelha mais preenchida, definida e harmoniosa. Área do corpo: sobrancelhas. A técnica é ideal para quem deseja corrigir falhas, dar mais volume visual e uniformizar o formato das sobrancelhas de forma natural e temporária. O resultado dura em média alguns dias na pele e pode permanecer mais tempo nos fios, dependendo do tipo de pele e dos cuidados pós-procedimento.",
+    benefits: [
+      "Sobrancelhas mais preenchidas e definidas",
+      "Cor natural que harmoniza com o tom da pele",
+      "Correção discreta de falhas e assimetrias",
+      "Procedimento rápido e sem dor",
+    ],
+    duration: "20min",
+    price: 20,
+    image: aplicacaoHennaImg.url,
     featured: true,
   },
 ];
