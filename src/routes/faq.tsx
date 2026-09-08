@@ -20,5 +20,5 @@ export const Route = createFileRoute("/faq")({
 });
 
 function FaqPage() {
-  return <Faq />;
+  return <Faq as="h1" />;
 }

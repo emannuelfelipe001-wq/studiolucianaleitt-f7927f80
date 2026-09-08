@@ -20,5 +20,5 @@ export const Route = createFileRoute("/antes-e-depois")({
 });
 
 function BeforeAfterPage() {
-  return <BeforeAfter />;
+  return <BeforeAfter as="h1" />;
 }

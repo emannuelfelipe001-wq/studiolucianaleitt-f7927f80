@@ -20,5 +20,5 @@ export const Route = createFileRoute("/depoimentos")({
 });
 
 function TestimonialsPage() {
-  return <Testimonials />;
+  return <Testimonials as="h1" />;
 }

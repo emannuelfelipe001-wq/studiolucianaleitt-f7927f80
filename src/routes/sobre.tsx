@@ -22,7 +22,7 @@ export const Route = createFileRoute("/sobre")({
 function SobrePage() {
   return (
     <>
-      <About />
+      <About as="h1" />
       <Benefits />
     </>
   );

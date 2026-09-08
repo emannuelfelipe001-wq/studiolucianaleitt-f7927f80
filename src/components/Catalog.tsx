@@ -3,7 +3,7 @@ import { Search } from "lucide-react";
 import { categories, procedures } from "@/config/clinic";
 import { ProcedureCard } from "@/components/ProcedureCard";
 
-export function Catalog() {
+export function Catalog({ as: Heading = "h2" }: { as?: "h1" | "h2" }) {
   const [category, setCategory] = useState<string>("todos");
   const [query, setQuery] = useState("");
 
@@ -20,7 +20,7 @@ export function Catalog() {
     <section id="procedimentos" className="mx-auto max-w-6xl px-4 py-16 md:py-24">
       <div className="text-center">
         <span className="text-xs tracking-[0.25em] text-primary uppercase">Catálogo</span>
-        <h2 className="mt-3 text-3xl md:text-4xl">Procedimentos faciais</h2>
+        <Heading className="mt-3 text-3xl md:text-4xl">Procedimentos faciais</Heading>
         <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">
           Escolha o cuidado ideal, adicione ao carrinho e finalize o agendamento pelo WhatsApp.
         </p>
