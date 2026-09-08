@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { OpenStatus } from "@/components/OpenStatus";
 import { Clock, Heart, Instagram, MapPin, MessageCircle, Sparkles } from "lucide-react";
