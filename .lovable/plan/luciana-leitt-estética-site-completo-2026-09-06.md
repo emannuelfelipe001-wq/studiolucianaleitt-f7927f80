@@ -1,4 +1,4 @@
-# Luciana Leitt Estética — site completo
+# Luciana Leitte Estética — site completo
 
 Site de clínica de estética facial com catálogo, carrinho e agendamento que termina no WhatsApp. Visual minimalista, feminino e premium: rosa suave e branco, detalhes em rosa/vermelho, degradês discretos, cantos arredondados, sombras suaves e microanimações leves.
 

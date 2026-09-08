@@ -6,7 +6,7 @@ import { useCart } from "@/lib/cart";
 import { bookingMessage, whatsappLink } from "@/lib/whatsapp";
 import { formatDuration, parseDuration } from "@/lib/utils";
 
-const title = "Carrinho e agendamento — Studio Luciana Leitt";
+const title = "Carrinho e agendamento — Studio Luciana Leitte";
 const description =
   "Revise os procedimentos escolhidos, informe data e horário e confirme seu agendamento pelo WhatsApp.";
 

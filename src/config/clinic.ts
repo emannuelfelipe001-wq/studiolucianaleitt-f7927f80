@@ -33,8 +33,8 @@ import designSobrancelhasImg from "@/assets/design-sobrancelhas.jpg.asset.json";
 
 /* ---------------- DADOS DA CLÍNICA ---------------- */
 export const clinic = {
-  name: "Studio Luciana Leitt",
-  shortName: "Studio Luciana Leitt",
+  name: "Studio Luciana Leitte",
+  shortName: "Studio Luciana Leitte",
   tagline: "Estética Facial",
   // WhatsApp: apenas números, com código do país
   whatsapp: "5562982008960",
