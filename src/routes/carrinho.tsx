@@ -36,6 +36,12 @@ function CartPage() {
     .map((i) => ({ ...i, procedure: findProcedure(i.id)! }))
     .filter((i) => i.procedure);
 
+  const totalMinutes = detailed.reduce(
+    (sum, i) => sum + parseDuration(i.procedure.duration) * i.qty,
+    0,
+  );
+  const totalDuration = formatDuration(totalMinutes);
+
   const ready = name.trim() !== "" && date !== "" && time !== "";
 
   const confirm = () => {
@@ -159,6 +165,13 @@ function CartPage() {
               {formatPrice(subtotal)}
             </span>
           </div>
+
+          {count >= 2 && (
+            <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
+              <Clock className="size-4" />
+              <span>Tempo estimado: {totalDuration}</span>
+            </div>
+          )}
 
           {step === "cart" ? (
             <button
