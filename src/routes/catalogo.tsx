@@ -4,7 +4,7 @@ import { Featured } from "@/components/Sections";
 
 const title = "Procedimentos Faciais — Studio Luciana Leitt";
 const description =
-  "Catálogo de procedimentos faciais: limpeza de pele, rejuvenescimento, hidratação, acne, lábios, contorno e tratamentos. Busque, filtre e agende pelo WhatsApp.";
+  "Catálogo completo: extensão de cílios, design e brow lamination, micropigmentação, dermaplaning e perfurações. Busque, filtre e agende pelo WhatsApp.";
 
 export const Route = createFileRoute("/catalogo")({
   head: () => ({
@@ -23,7 +23,7 @@ export const Route = createFileRoute("/catalogo")({
 function CatalogoPage() {
   return (
     <>
-      <Catalog />
+      <Catalog as="h1" />
       <Featured />
     </>
   );

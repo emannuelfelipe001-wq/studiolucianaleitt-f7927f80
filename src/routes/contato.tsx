@@ -22,7 +22,7 @@ export const Route = createFileRoute("/contato")({
 function ContatoPage() {
   return (
     <>
-      <LocationContact />
+      <LocationContact as="h1" />
       <InstagramArea />
     </>
   );
