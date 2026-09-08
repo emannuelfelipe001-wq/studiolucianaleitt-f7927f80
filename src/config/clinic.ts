@@ -13,8 +13,9 @@
  */
 
 // Imagens demonstrativas (troque os arquivos em src/assets/ ou os imports abaixo)
-import heroImg from "@/assets/hero.jpg";
+import heroAsset from "@/assets/hero.jpg.asset.json";
 import sobreImg from "@/assets/sobre.jpg";
+const heroImg = heroAsset.url;
 import microOlhosImg from "@/assets/micropigmentacao-olhos.jpg.asset.json";
 import perfuracaoLobuloImg from "@/assets/perfuracao-lobulo.jpg.asset.json";
 import browLaminationImg from "@/assets/brow-lamination.jpg.asset.json";
