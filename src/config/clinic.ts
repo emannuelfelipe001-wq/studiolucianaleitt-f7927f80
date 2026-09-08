@@ -353,12 +353,12 @@ export const procedures: Procedure[] = [
   },
   {
     id: "cilios-volume-russo",
-    name: "Cílios Volume Russo",
+    name: "Extensão de Cílios Russo",
     category: "cilios",
     shortDescription:
       "Técnica de extensão com leques de fios ultrafinos para um olhar volumoso, marcante e glamouroso.",
     description:
-      "O Cílios Volume Russo é uma técnica avançada de extensão de cílios que aplica leques de fios ultrafinos e leves sobre cada cílio natural, criando um olhar volumoso, denso e glamouroso. Área do corpo: cílios (pálpebra superior). O resultado é mais marcante e dramático que as técnicas clássica e híbrida, ideal para quem deseja olhos de destaque sem precisar de máscara de cílios no dia a dia. O procedimento é realizado com cola hipoalergênica e fios selecionados de acordo com a saúde e curvatura dos seus cílios naturais, garantindo conforto e durabilidade.",
+      "A Extensão de Cílios Russo é uma técnica avançada de extensão de cílios que aplica leques de fios ultrafinos e leves sobre cada cílio natural, criando um olhar volumoso, denso e glamouroso. Área do corpo: cílios (pálpebra superior). O resultado é mais marcante e dramático que as técnicas clássica e híbrida, ideal para quem deseja olhos de destaque sem precisar de máscara de cílios no dia a dia. O procedimento é realizado com cola hipoalergênica e fios selecionados de acordo com a saúde e curvatura dos seus cílios naturais, garantindo conforto e durabilidade.",
     benefits: [
       "Olhar volumoso, denso e marcante",
       "Efeito glamouroso e duradouro",
