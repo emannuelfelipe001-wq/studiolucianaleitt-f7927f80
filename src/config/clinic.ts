@@ -215,6 +215,25 @@ export const procedures: Procedure[] = [
     image: perfuracaoHelixImg.url,
     featured: true,
   },
+  {
+    id: "extensao-de-cilios-brasileiro",
+    name: "Extensão de Cílios Brasileiro",
+    category: "cilios",
+    shortDescription:
+      "Aplicação de fios leves e naturais para um olhar mais aberto, iluminado e com efeito delicado.",
+    description:
+      "A Extensão de Cílios Brasileiro é uma técnica que aplica fios finos e levemente curvados sobre os cílios naturais, criando um olhar mais aberto, iluminado e com volume natural. Área do corpo: cílios (pálpebra superior). O resultado é delicado, sem pesar ou parecer artificial, ideal para quem quer acordar com os cílios prontos todos os dias. O procedimento é feito com cola hipoalergênica e fios selecionados de acordo com o formato dos seus olhos.",
+    benefits: [
+      "Olhar mais aberto e iluminado",
+      "Volume natural e delicado",
+      "Dispensa o uso de máscara de cílios",
+      "Fios leves que não pesam nos cílios naturais",
+    ],
+    duration: "1h 30min",
+    price: 170,
+    image: extensaoCiliosImg.url,
+    featured: true,
+  },
 ];
 
 /* ---------------- ANTES E DEPOIS (imagens de exemplo) ---------------- */
