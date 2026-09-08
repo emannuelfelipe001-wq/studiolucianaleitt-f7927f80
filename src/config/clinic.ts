@@ -25,6 +25,8 @@ import microLabialImg from "@/assets/micropigmentacao-labial.jpg.asset.json";
 import extensaoCiliosHibridoImg from "@/assets/extensao-cilios-hibrido.jpg.asset.json";
 import dermaplaningImg from "@/assets/dermaplaning.jpg.asset.json";
 import foxEyesImg from "@/assets/fox-eyes.jpg";
+import fioAFioImg from "@/assets/fio-a-fio.jpg";
+import delineadoLapisImg from "@/assets/delineado-a-lapis.jpg";
 
 /* ---------------- DADOS DA CLÍNICA ---------------- */
 export const clinic = {
@@ -308,6 +310,44 @@ export const procedures: Procedure[] = [
     duration: "1h 20min",
     price: 180,
     image: foxEyesImg,
+    featured: true,
+  },
+  {
+    id: "fio-a-fio",
+    name: "Fio a Fio",
+    category: "cilios",
+    shortDescription:
+      "Aplicação clássica de fios um a um para um olhar delicado, natural e elegante.",
+    description:
+      "A técnica Fio a Fio é a extensão de cílios clássica que aplica um fio sintético fino sobre cada cílio natural, criando um olhar alongado, delicado e natural. Área do corpo: cílios (pálpebra superior). O resultado valoriza o formato dos olhos sem pesar ou parecer artificial, ideal para quem quer acordar com o olhar pronto todos os dias. O procedimento é feito com cola hipoalergênica e fios selecionados de acordo com a saúde e curvatura dos cílios naturais, garantindo conforto e durabilidade.",
+    benefits: [
+      "Olhar alongado e natural",
+      "Fios leves que não pesam nos cílios naturais",
+      "Efeito delicado e elegante",
+      "Dispensa o uso de máscara de cílios",
+    ],
+    duration: "2h",
+    price: 600,
+    image: fioAFioImg,
+    featured: true,
+  },
+  {
+    id: "delineado-a-lapis",
+    name: "Delineado a Lápis",
+    category: "olhos",
+    shortDescription:
+      "Delineado suave estilo lápis na linha dos cílios para olhar definido e natural.",
+    description:
+      "O Delineado a Lápis é um procedimento de micropigmentação que reproduz o efeito de um delineador de lápis rente à raiz dos cílios, criando um olhar mais definido, profundo e natural. Área do corpo: região dos olhos (linha dos cílios superiores). O traço é suave e esfumado, sem a marcação forte de um delineado líquido, ideal para quem deseja olhar maquiado de forma sutil no dia a dia. A técnica utiliza dermógrafo, anestesia tópica e pigmentos específicos para a região ocular, com acabamento delicado e duradouro.",
+    benefits: [
+      "Olhar definido e profundo com efeito natural",
+      "Efeito de lápis rente aos cílios, sem marcar demais",
+      "Dispensa o uso diário de delineador",
+      "Acabamento suave e duradouro",
+    ],
+    duration: "40min",
+    price: 300,
+    image: delineadoLapisImg,
     featured: true,
   },
 ];
