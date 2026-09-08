@@ -54,12 +54,12 @@ export function OpenStatus({ className = "" }: { className?: string }) {
   return (
     <span
       className={`inline-flex items-center gap-1.5 text-[0.7rem] font-medium tracking-wide ${
-        open ? "text-whatsapp" : "text-muted-foreground"
+        open ? "text-whatsapp" : "text-destructive"
       } ${className}`}
     >
       <span
         aria-hidden
-        className={`size-2 rounded-full ${open ? "bg-whatsapp" : "bg-muted-foreground/60"}`}
+        className={`size-2 rounded-full ${open ? "bg-whatsapp" : "bg-destructive"}`}
       />
       {open ? "Aberto" : "Fechado"}
     </span>
