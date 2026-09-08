@@ -52,13 +52,20 @@ function ProcedureDetail() {
       </Link>
 
       <div className="mt-6 grid gap-10 md:grid-cols-2">
-        <img
-          src={procedure.image}
-          alt={procedure.name}
-          width={1024}
-          height={768}
-          className="aspect-[4/3] w-full rounded-[2rem] object-cover shadow-card"
-        />
+        <button
+          type="button"
+          onClick={() => setZoomOpen(true)}
+          className="block w-full cursor-zoom-in overflow-hidden rounded-[2rem] shadow-card"
+          aria-label={`Ampliar imagem: ${procedure.name}`}
+        >
+          <img
+            src={procedure.image}
+            alt={procedure.name}
+            width={1024}
+            height={768}
+            className="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-[1.04]"
+          />
+        </button>
         <div>
           <span className="text-xs tracking-[0.25em] text-primary uppercase">
             {categoryName(procedure.category)}
