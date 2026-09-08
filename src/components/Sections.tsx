@@ -159,19 +159,51 @@ export function BeforeAfter() {
         <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
           {beforeAfter.items.map((item) => (
             <figure key={item.label} className="card-soft overflow-hidden">
-              <img
-                src={item.image}
-                alt={item.label}
-                loading="lazy"
-                width={900}
-                height={900}
-                className="aspect-square w-full object-cover"
-              />
+              <button
+                type="button"
+                onClick={() => setZoom(item)}
+                className="block w-full cursor-zoom-in"
+                aria-label={`Ampliar imagem: ${item.label}`}
+              >
+                <img
+                  src={item.image}
+                  alt={item.label}
+                  loading="lazy"
+                  width={900}
+                  height={900}
+                  className="aspect-square w-full object-cover transition-transform duration-300 hover:scale-[1.04]"
+                />
+              </button>
               <figcaption className="px-3 py-2.5 text-center text-xs text-muted-foreground">
                 {item.label}
               </figcaption>
             </figure>
           ))}
+        </div>
+      )}
+
+      {zoom && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={zoom.label}
+          onClick={() => setZoom(null)}
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-4 bg-foreground/70 p-4 backdrop-blur-sm"
+        >
+          <img
+            src={zoom.image}
+            alt={zoom.label}
+            onClick={(e) => e.stopPropagation()}
+            className="max-h-[80vh] w-auto max-w-full rounded-2xl object-contain shadow-card"
+          />
+          <p className="text-center text-sm text-background">{zoom.label}</p>
+          <button
+            type="button"
+            onClick={() => setZoom(null)}
+            className="rounded-full bg-card px-5 py-2 text-sm font-medium text-primary shadow-soft"
+          >
+            Fechar
+          </button>
         </div>
       )}
     </section>
