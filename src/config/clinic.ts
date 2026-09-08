@@ -24,9 +24,9 @@ import extensaoCiliosImg from "@/assets/extensao-cilios-brasileiro.jpg.asset.jso
 import microLabialImg from "@/assets/micropigmentacao-labial.jpg.asset.json";
 import extensaoCiliosHibridoImg from "@/assets/extensao-cilios-hibrido.jpg.asset.json";
 import dermaplaningImg from "@/assets/dermaplaning.jpg.asset.json";
-import foxEyesImg from "@/assets/fox-eyes.jpg";
-import fioAFioImg from "@/assets/fio-a-fio.jpg";
-import delineadoLapisImg from "@/assets/delineado-a-lapis.jpg";
+import foxEyesImg from "@/assets/fox-eyes.jpg.asset.json";
+import fioAFioImg from "@/assets/fio-a-fio.jpg.asset.json";
+import delineadoLapisImg from "@/assets/delineado-a-lapis.jpg.asset.json";
 
 /* ---------------- DADOS DA CLÍNICA ---------------- */
 export const clinic = {
@@ -309,7 +309,7 @@ export const procedures: Procedure[] = [
     ],
     duration: "1h 20min",
     price: 180,
-    image: foxEyesImg,
+    image: foxEyesImg.url,
     featured: true,
   },
   {
@@ -328,7 +328,7 @@ export const procedures: Procedure[] = [
     ],
     duration: "2h",
     price: 600,
-    image: fioAFioImg,
+    image: fioAFioImg.url,
     featured: true,
   },
   {
@@ -347,7 +347,7 @@ export const procedures: Procedure[] = [
     ],
     duration: "40min",
     price: 300,
-    image: delineadoLapisImg,
+    image: delineadoLapisImg.url,
     featured: true,
   },
 ];
