@@ -4,6 +4,7 @@ import { Menu, ShoppingBag, X } from "lucide-react";
 import { clinic } from "@/config/clinic";
 import { useCart } from "@/lib/cart";
 import { GENERAL_MESSAGE, whatsappLink } from "@/lib/whatsapp";
+import { OpenStatus } from "@/components/OpenStatus";
 
 const navItems = [
   { label: "Início", to: "/" },
