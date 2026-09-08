@@ -146,82 +146,7 @@ export type Procedure = {
  *  },
  */
 export const procedures: Procedure[] = [
-  {
-    id: "micropigmentacao-olhos-delineado-inferior",
-    name: "Micropigmentação de Olhos — Delineado Inferior",
-    category: "olhos",
-    shortDescription:
-      "Delineado inferior definitivo que realça o olhar com traço preciso e efeito natural.",
-    description:
-      "A micropigmentação de olhos na linha do delineado inferior é um procedimento que deposita pigmento na região da linha d'água inferior, criando um efeito de delineado duradouro e discreto. Área do corpo: região dos olhos (pálpebra inferior). O resultado realça o contorno dos olhos, dá profundidade ao olhar e dispensa o delineador no dia a dia. O procedimento é feito com dermógrafo, anestesia tópica e pigmentos específicos para a área dos olhos, com traço fino e acabamento natural.",
-    benefits: [
-      "Olhar mais marcante e definido todos os dias",
-      "Dispensa o uso diário de delineador",
-      "Traço fino, preciso e com efeito natural",
-      "Resultado duradouro, com retoque conforme necessário",
-    ],
-    duration: "1h",
-    price: 300,
-    image: microOlhosImg.url,
-    featured: true,
-  },
-  {
-    id: "perfuracao-lobulo",
-    name: "Perfuração de Lóbulo",
-    category: "piercing",
-    shortDescription:
-      "Perfuração segura do lóbulo da orelha com material descartável e joia hipoalergênica.",
-    description:
-      "A perfuração de lóbulo é um procedimento realizado no lóbulo da orelha com técnica segura, material descartável e esterilizado. A joia utilizada é hipoalergênica, ideal para quem está perfurando pela primeira vez ou trocando acessório. Área do corpo: lóbulo da orelha. O procedimento é rápido, com cuidados de assepsia e orientações pós-procedimento para uma cicatrização tranquila.",
-    benefits: [
-      "Procedimento rápido e seguro",
-      "Material descartável e esterilizado",
-      "Joia hipoalergênica de primeira colocação",
-      "Orientações completas de cuidados pós-procedimento",
-    ],
-    duration: "10min",
-    price: 100,
-    image: perfuracaoLobuloImg.url,
-    featured: true,
-  },
-  {
-    id: "brow-lamination",
-    name: "Brow Lamination",
-    category: "sobrancelha",
-    shortDescription:
-      "Alinhamento dos fios das sobrancelhas para um visual mais disciplinado, volumoso e natural.",
-    description:
-      "O Brow Lamination é um procedimento estético para as sobrancelhas que modela e alinha os fios, deixando-as mais disciplinadas, volumosas e com efeito natural de sobrancelha 'penteada'. A técnica utiliza produtos específicos que relaxam os fios e os fixam na direção desejada. Área do corpo: sobrancelhas. O resultado dura em média algumas semanas e facilita a rotina de maquiagem, dispensando o uso de gel ou máscara para sobrancelhas no dia a dia.",
-    benefits: [
-      "Fios alinhados e disciplinados",
-      "Visual mais volumoso e natural",
-      "Efeito duradouro por várias semanas",
-      "Facilita a rotina de maquiagem",
-    ],
-    duration: "1h 20min",
-    price: 120,
-    image: browLaminationImg.url,
-    featured: true,
-  },
-  {
-    id: "perfuracao-helix",
-    name: "Perfuração de Hélix",
-    category: "piercing",
-    shortDescription:
-      "Perfuração na cartilagem superior da orelha com material descartável e joia hipoalergênica.",
-    description:
-      "A perfuração de hélix é realizada na cartilagem superior da orelha, criando um ponto de destaque delicado e moderno. O procedimento segue rigorosos cuidados de assepsia, com material descartável e esterilizado, além de joia hipoalergênica para uma cicatrização mais tranquila. Área do corpo: cartilagem da orelha (hélix). Ao final, são passadas orientações completas de cuidados pós-procedimento para garantir a saúde da perfuração.",
-    benefits: [
-      "Perfuração precisa na cartilagem",
-      "Material descartável e esterilizado",
-      "Joia hipoalergênica de qualidade",
-      "Orientações completas de cuidados pós-procedimento",
-    ],
-    duration: "20min",
-    price: 90,
-    image: perfuracaoHelixImg.url,
-    featured: true,
-  },
+  /* ---------------- CÍLIOS ---------------- */
   {
     id: "extensao-de-cilios-brasileiro",
     name: "Extensão de Cílios Brasileiro",
@@ -261,63 +186,6 @@ export const procedures: Procedure[] = [
     featured: true,
   },
   {
-    id: "micropigmentacao-labial",
-    name: "Micropigmentação Labial",
-    category: "labios",
-    shortDescription:
-      "Pigmentação delicada nos lábios para cor uniforme, efeito natural e lábios mais definidos.",
-    description:
-      "A Micropigmentação Labial é um procedimento que deposita pigmento na camada superficial dos lábios, corrigindo a tonalidade, definindo o contorno e criando um efeito de cor saudável e natural. Área do corpo: lábios. A técnica é ideal para quem deseja lábios mais uniformes, com contorno discreto e aparência de leve hidratação, sem o efeito de batom pesado. O procedimento é realizado com dermógrafo, anestesia tópica e pigmentos específicos para a região labial, e pode incluir retoque após a cicatrização.",
-    benefits: [
-      "Cor uniforme e natural nos lábios",
-      "Contorno labial mais definido",
-      "Efeito de lábios saudáveis e hidratados",
-      "Dispensa o uso constante de batom",
-    ],
-    duration: "2h",
-    price: 650,
-    image: microLabialImg.url,
-    featured: true,
-  },
-  {
-    id: "dermaplaning",
-    name: "Dermaplaning",
-    category: "limpeza",
-    shortDescription:
-      "Esfoliação com lâmina que remove células mortas e os pelinhos do rosto, deixando a pele lisa e iluminada.",
-    description:
-      "O Dermaplaning é uma esfoliação física feita com lâmina estéril específica para estética, que remove as células mortas da superfície da pele junto com os pelinhos finos (buço facial). Área do corpo: rosto (face, testa, maçãs do rosto, queixo e buço). O resultado é uma pele imediatamente mais lisa, uniforme e iluminada, com melhor absorção dos produtos de skincare e maquiagem com acabamento impecável. É um procedimento indolor, sem agulhas e sem tempo de recuperação, indicado para deixar a pele renovada antes de eventos.",
-    benefits: [
-      "Pele lisa, uniforme e iluminada na hora",
-      "Remove pelinhos finos e células mortas",
-      "Maquiagem com acabamento mais bonito",
-      "Sem dor e sem tempo de recuperação",
-    ],
-    duration: "30min",
-    price: 190,
-    image: dermaplaningImg.url,
-    featured: true,
-  },
-  {
-    id: "fox-eyes",
-    name: "Fox Eyes",
-    category: "olhos",
-    shortDescription:
-      "Levantamento suave do canto externo dos olhos para um olhar mais alongado e estilizado.",
-    description:
-      "O Fox Eyes é um procedimento estético não cirúrgico que levanta a cauda das sobrancelhas e o canto externo dos olhos, criando um efeito de olhar mais alongado, aberto e estilizado, semelhante ao formato de olho de raposa. Área do corpo: região dos olhos e sobrancelhas. A técnica pode ser realizada com fios de sustentação ou com aplicação de toxina botulínica, conforme a avaliação individual. O resultado é natural, sem alterar a expressão do rosto, e ajuda a valorizar o contorno ocular.",
-    benefits: [
-      "Olhar mais alongado e estilizado",
-      "Levantamento suave do canto externo dos olhos",
-      "Procedimento não cirúrgico e rápido",
-      "Resultado natural que valoriza o contorno ocular",
-    ],
-    duration: "1h 20min",
-    price: 180,
-    image: foxEyesImg.url,
-    featured: true,
-  },
-  {
     id: "fio-a-fio",
     name: "Fio a Fio",
     category: "cilios",
@@ -337,25 +205,6 @@ export const procedures: Procedure[] = [
     featured: true,
   },
   {
-    id: "delineado-a-lapis",
-    name: "Delineado a Lápis",
-    category: "olhos",
-    shortDescription:
-      "Delineado suave estilo lápis na linha dos cílios para olhar definido e natural.",
-    description:
-      "O Delineado a Lápis é um procedimento de micropigmentação que reproduz o efeito de um delineador de lápis rente à raiz dos cílios, criando um olhar mais definido, profundo e natural. Área do corpo: região dos olhos (linha dos cílios superiores). O traço é suave e esfumado, sem a marcação forte de um delineado líquido, ideal para quem deseja olhar maquiado de forma sutil no dia a dia. A técnica utiliza dermógrafo, anestesia tópica e pigmentos específicos para a região ocular, com acabamento delicado e duradouro.",
-    benefits: [
-      "Olhar definido e profundo com efeito natural",
-      "Efeito de lápis rente aos cílios, sem marcar demais",
-      "Dispensa o uso diário de delineador",
-      "Acabamento suave e duradouro",
-    ],
-    duration: "40min",
-    price: 300,
-    image: delineadoLapisImg.url,
-    featured: true,
-  },
-  {
     id: "cilios-volume-russo",
     name: "Extensão de Cílios Russo",
     category: "cilios",
@@ -372,6 +221,65 @@ export const procedures: Procedure[] = [
     duration: "1h 30min",
     price: 180,
     image: ciliosVolumeRussoImg.url,
+    featured: true,
+  },
+  /* ---------------- PIERCING / ORELHA ---------------- */
+  {
+    id: "perfuracao-lobulo",
+    name: "Perfuração de Lóbulo",
+    category: "piercing",
+    shortDescription:
+      "Perfuração segura do lóbulo da orelha com material descartável e joia hipoalergênica.",
+    description:
+      "A perfuração de lóbulo é um procedimento realizado no lóbulo da orelha com técnica segura, material descartável e esterilizado. A joia utilizada é hipoalergênica, ideal para quem está perfurando pela primeira vez ou trocando acessório. Área do corpo: lóbulo da orelha. O procedimento é rápido, com cuidados de assepsia e orientações pós-procedimento para uma cicatrização tranquila.",
+    benefits: [
+      "Procedimento rápido e seguro",
+      "Material descartável e esterilizado",
+      "Joia hipoalergênica de primeira colocação",
+      "Orientações completas de cuidados pós-procedimento",
+    ],
+    duration: "10min",
+    price: 100,
+    image: perfuracaoLobuloImg.url,
+    featured: true,
+  },
+  {
+    id: "perfuracao-helix",
+    name: "Perfuração de Hélix",
+    category: "piercing",
+    shortDescription:
+      "Perfuração na cartilagem superior da orelha com material descartável e joia hipoalergênica.",
+    description:
+      "A perfuração de hélix é realizada na cartilagem superior da orelha, criando um ponto de destaque delicado e moderno. O procedimento segue rigorosos cuidados de assepsia, com material descartável e esterilizado, além de joia hipoalergênica para uma cicatrização mais tranquila. Área do corpo: cartilagem da orelha (hélix). Ao final, são passadas orientações completas de cuidados pós-procedimento para garantir a saúde da perfuração.",
+    benefits: [
+      "Perfuração precisa na cartilagem",
+      "Material descartável e esterilizado",
+      "Joia hipoalergênica de qualidade",
+      "Orientações completas de cuidados pós-procedimento",
+    ],
+    duration: "20min",
+    price: 90,
+    image: perfuracaoHelixImg.url,
+    featured: true,
+  },
+  /* ---------------- SOBRANCELHA ---------------- */
+  {
+    id: "brow-lamination",
+    name: "Brow Lamination",
+    category: "sobrancelha",
+    shortDescription:
+      "Alinhamento dos fios das sobrancelhas para um visual mais disciplinado, volumoso e natural.",
+    description:
+      "O Brow Lamination é um procedimento estético para as sobrancelhas que modela e alinha os fios, deixando-as mais disciplinadas, volumosas e com efeito natural de sobrancelha 'penteada'. A técnica utiliza produtos específicos que relaxam os fios e os fixam na direção desejada. Área do corpo: sobrancelhas. O resultado dura em média algumas semanas e facilita a rotina de maquiagem, dispensando o uso de gel ou máscara para sobrancelhas no dia a dia.",
+    benefits: [
+      "Fios alinhados e disciplinados",
+      "Visual mais volumoso e natural",
+      "Efeito duradouro por várias semanas",
+      "Facilita a rotina de maquiagem",
+    ],
+    duration: "1h 20min",
+    price: 120,
+    image: browLaminationImg.url,
     featured: true,
   },
   {
@@ -410,6 +318,104 @@ export const procedures: Procedure[] = [
     duration: "10min",
     price: 45,
     image: designSobrancelhasImg.url,
+    featured: true,
+  },
+  /* ---------------- LÁBIOS / BOCA ---------------- */
+  {
+    id: "micropigmentacao-labial",
+    name: "Micropigmentação Labial",
+    category: "labios",
+    shortDescription:
+      "Pigmentação delicada nos lábios para cor uniforme, efeito natural e lábios mais definidos.",
+    description:
+      "A Micropigmentação Labial é um procedimento que deposita pigmento na camada superficial dos lábios, corrigindo a tonalidade, definindo o contorno e criando um efeito de cor saudável e natural. Área do corpo: lábios. A técnica é ideal para quem deseja lábios mais uniformes, com contorno discreto e aparência de leve hidratação, sem o efeito de batom pesado. O procedimento é realizado com dermógrafo, anestesia tópica e pigmentos específicos para a região labial, e pode incluir retoque após a cicatrização.",
+    benefits: [
+      "Cor uniforme e natural nos lábios",
+      "Contorno labial mais definido",
+      "Efeito de lábios saudáveis e hidratados",
+      "Dispensa o uso constante de batom",
+    ],
+    duration: "2h",
+    price: 650,
+    image: microLabialImg.url,
+    featured: true,
+  },
+  /* ---------------- OLHOS ---------------- */
+  {
+    id: "micropigmentacao-olhos-delineado-inferior",
+    name: "Micropigmentação de Olhos — Delineado Inferior",
+    category: "olhos",
+    shortDescription:
+      "Delineado inferior definitivo que realça o olhar com traço preciso e efeito natural.",
+    description:
+      "A micropigmentação de olhos na linha do delineado inferior é um procedimento que deposita pigmento na região da linha d'água inferior, criando um efeito de delineado duradouro e discreto. Área do corpo: região dos olhos (pálpebra inferior). O resultado realça o contorno dos olhos, dá profundidade ao olhar e dispensa o delineador no dia a dia. O procedimento é feito com dermógrafo, anestesia tópica e pigmentos específicos para a área dos olhos, com traço fino e acabamento natural.",
+    benefits: [
+      "Olhar mais marcante e definido todos os dias",
+      "Dispensa o uso diário de delineador",
+      "Traço fino, preciso e com efeito natural",
+      "Resultado duradouro, com retoque conforme necessário",
+    ],
+    duration: "1h",
+    price: 300,
+    image: microOlhosImg.url,
+    featured: true,
+  },
+  {
+    id: "fox-eyes",
+    name: "Fox Eyes",
+    category: "olhos",
+    shortDescription:
+      "Levantamento suave do canto externo dos olhos para um olhar mais alongado e estilizado.",
+    description:
+      "O Fox Eyes é um procedimento estético não cirúrgico que levanta a cauda das sobrancelhas e o canto externo dos olhos, criando um efeito de olhar mais alongado, aberto e estilizado, semelhante ao formato de olho de raposa. Área do corpo: região dos olhos e sobrancelhas. A técnica pode ser realizada com fios de sustentação ou com aplicação de toxina botulínica, conforme a avaliação individual. O resultado é natural, sem alterar a expressão do rosto, e ajuda a valorizar o contorno ocular.",
+    benefits: [
+      "Olhar mais alongado e estilizado",
+      "Levantamento suave do canto externo dos olhos",
+      "Procedimento não cirúrgico e rápido",
+      "Resultado natural que valoriza o contorno ocular",
+    ],
+    duration: "1h 20min",
+    price: 180,
+    image: foxEyesImg.url,
+    featured: true,
+  },
+  {
+    id: "delineado-a-lapis",
+    name: "Delineado a Lápis",
+    category: "olhos",
+    shortDescription:
+      "Delineado suave estilo lápis na linha dos cílios para olhar definido e natural.",
+    description:
+      "O Delineado a Lápis é um procedimento de micropigmentação que reproduz o efeito de um delineador de lápis rente à raiz dos cílios, criando um olhar mais definido, profundo e natural. Área do corpo: região dos olhos (linha dos cílios superiores). O traço é suave e esfumado, sem a marcação forte de um delineado líquido, ideal para quem deseja olhar maquiado de forma sutil no dia a dia. A técnica utiliza dermógrafo, anestesia tópica e pigmentos específicos para a região ocular, com acabamento delicado e duradouro.",
+    benefits: [
+      "Olhar definido e profundo com efeito natural",
+      "Efeito de lápis rente aos cílios, sem marcar demais",
+      "Dispensa o uso diário de delineador",
+      "Acabamento suave e duradouro",
+    ],
+    duration: "40min",
+    price: 300,
+    image: delineadoLapisImg.url,
+    featured: true,
+  },
+  /* ---------------- LIMPEZA DE PELE ---------------- */
+  {
+    id: "dermaplaning",
+    name: "Dermaplaning",
+    category: "limpeza",
+    shortDescription:
+      "Esfoliação com lâmina que remove células mortas e os pelinhos do rosto, deixando a pele lisa e iluminada.",
+    description:
+      "O Dermaplaning é uma esfoliação física feita com lâmina estéril específica para estética, que remove as células mortas da superfície da pele junto com os pelinhos finos (buço facial). Área do corpo: rosto (face, testa, maçãs do rosto, queixo e buço). O resultado é uma pele imediatamente mais lisa, uniforme e iluminada, com melhor absorção dos produtos de skincare e maquiagem com acabamento impecável. É um procedimento indolor, sem agulhas e sem tempo de recuperação, indicado para deixar a pele renovada antes de eventos.",
+    benefits: [
+      "Pele lisa, uniforme e iluminada na hora",
+      "Remove pelinhos finos e células mortas",
+      "Maquiagem com acabamento mais bonito",
+      "Sem dor e sem tempo de recuperação",
+    ],
+    duration: "30min",
+    price: 190,
+    image: dermaplaningImg.url,
     featured: true,
   },
 ];
