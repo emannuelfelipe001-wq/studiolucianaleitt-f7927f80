@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { BeforeAfter } from "@/components/Sections";
 
-const title = "Antes e Depois — Studio Luciana Leitt";
+const title = "Antes e Depois — Studio Luciana Leitte";
 const description =
-  "Galeria de resultados de estética facial do Studio Luciana Leitt. Imagens demonstrativas, substituídas por fotos reais com autorização.";
+  "Galeria de resultados de estética facial do Studio Luciana Leitte. Imagens demonstrativas, substituídas por fotos reais com autorização.";
 
 export const Route = createFileRoute("/antes-e-depois")({
   head: () => ({

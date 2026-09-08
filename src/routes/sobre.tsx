@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { About, Benefits } from "@/components/Sections";
 
-const title = "Sobre a Luciana — Studio Luciana Leitt";
+const title = "Sobre a Luciana — Studio Luciana Leitte";
 const description =
-  "Conheça o Studio Luciana Leitt: atendimento individual, foco em estética facial e ambiente acolhedor em Nova Crixás - GO.";
+  "Conheça o Studio Luciana Leitte: atendimento individual, foco em estética facial e ambiente acolhedor em Nova Crixás - GO.";
 
 export const Route = createFileRoute("/sobre")({
   head: () => ({

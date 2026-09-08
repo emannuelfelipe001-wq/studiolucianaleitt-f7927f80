@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { InstagramArea, LocationContact } from "@/components/Sections";
 
-const title = "Contato e Localização — Studio Luciana Leitt";
+const title = "Contato e Localização — Studio Luciana Leitte";
 const description =
-  "Endereço, horários de atendimento e WhatsApp do Studio Luciana Leitt em Nova Crixás - GO.";
+  "Endereço, horários de atendimento e WhatsApp do Studio Luciana Leitte em Nova Crixás - GO.";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({

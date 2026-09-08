@@ -17,7 +17,7 @@ export const Route = createFileRoute("/procedimentos/$slug")({
         meta: [{ title: "Procedimento não encontrado" }, { name: "robots", content: "noindex" }],
       };
     }
-    const title = `${loaderData.procedure.name} — Studio Luciana Leitt`;
+    const title = `${loaderData.procedure.name} — Studio Luciana Leitte`;
     const description = loaderData.procedure.shortDescription;
     return {
       meta: [

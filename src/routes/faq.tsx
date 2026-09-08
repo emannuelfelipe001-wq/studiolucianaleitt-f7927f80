@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Faq } from "@/components/Sections";
 
-const title = "Perguntas Frequentes — Studio Luciana Leitt";
+const title = "Perguntas Frequentes — Studio Luciana Leitte";
 const description =
-  "Dúvidas sobre agendamento, avaliação da pele, número de sessões e formas de pagamento no Studio Luciana Leitt.";
+  "Dúvidas sobre agendamento, avaliação da pele, número de sessões e formas de pagamento no Studio Luciana Leitte.";
 
 export const Route = createFileRoute("/faq")({
   head: () => ({

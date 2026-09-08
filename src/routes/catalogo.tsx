@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Catalog } from "@/components/Catalog";
 import { Featured } from "@/components/Sections";
 
-const title = "Procedimentos Faciais — Studio Luciana Leitt";
+const title = "Procedimentos Faciais — Studio Luciana Leitte";
 const description =
   "Catálogo completo: extensão de cílios, design e brow lamination, micropigmentação, dermaplaning e perfurações. Busque, filtre e agende pelo WhatsApp.";
 
