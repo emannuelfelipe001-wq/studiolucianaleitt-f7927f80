@@ -271,16 +271,11 @@ export const procedures: Procedure[] = [
   },
 ];
 
-/* ---------------- ANTES E DEPOIS (imagens de exemplo) ---------------- */
+/* ---------------- ANTES E DEPOIS ----------------
+   Adicione aqui as fotos reais: { image: minhaFoto, label: "Nome" } */
 export const beforeAfter = {
-  notice:
-    "As imagens abaixo são apenas demonstrativas e serão substituídas por fotos reais de clientes, com autorização.",
-  items: [
-    { image: ba1, label: "Pele com textura irregular" },
-    { image: ba2, label: "Pele hidratada e com viço" },
-    { image: ba3, label: "Área dos olhos" },
-    { image: ba4, label: "Lábios e contorno" },
-  ],
+  notice: "Em breve, fotos reais de resultados publicadas com autorização das clientes.",
+  items: [] as { image: string; label: string }[],
 };
 
 /* ---------------- DEPOIMENTOS (EXEMPLO — fácil substituir) ---------------- */
