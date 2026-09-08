@@ -46,14 +46,17 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a
-            href={whatsappLink(GENERAL_MESSAGE)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden rounded-full bg-rose-gradient px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft transition-transform hover:scale-[1.03] md:inline-flex"
-          >
-            Agendar pelo WhatsApp
-          </a>
+          <div className="hidden flex-col items-center gap-1 md:flex">
+            <a
+              href={whatsappLink(GENERAL_MESSAGE)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex rounded-full bg-rose-gradient px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft transition-transform hover:scale-[1.03]"
+            >
+              Agendar pelo WhatsApp
+            </a>
+            <OpenStatus />
+          </div>
 
           <Link
             to="/carrinho"
