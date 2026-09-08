@@ -4,6 +4,7 @@ import { Menu, ShoppingBag, X } from "lucide-react";
 import { clinic } from "@/config/clinic";
 import { useCart } from "@/lib/cart";
 import { GENERAL_MESSAGE, whatsappLink } from "@/lib/whatsapp";
+import { OpenStatus } from "@/components/OpenStatus";
 
 const navItems = [
   { label: "Início", to: "/" },
@@ -46,14 +47,17 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a
-            href={whatsappLink(GENERAL_MESSAGE)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden rounded-full bg-rose-gradient px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft transition-transform hover:scale-[1.03] md:inline-flex"
-          >
-            Agendar pelo WhatsApp
-          </a>
+          <div className="hidden flex-col items-center gap-1 md:flex">
+            <a
+              href={whatsappLink(GENERAL_MESSAGE)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex rounded-full bg-rose-gradient px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft transition-transform hover:scale-[1.03]"
+            >
+              Agendar pelo WhatsApp
+            </a>
+            <OpenStatus />
+          </div>
 
           <Link
             to="/carrinho"
@@ -98,10 +102,11 @@ export function Header() {
               href={whatsappLink(GENERAL_MESSAGE)}
               target="_blank"
               rel="noopener noreferrer"
-              className="my-3 rounded-full bg-rose-gradient px-5 py-3 text-center text-sm font-medium text-primary-foreground"
+              className="mt-3 rounded-full bg-rose-gradient px-5 py-3 text-center text-sm font-medium text-primary-foreground"
             >
               Agendar pelo WhatsApp — {clinic.whatsappDisplay}
             </a>
+            <OpenStatus className="mt-2 mb-3 justify-center" />
           </nav>
         </div>
       )}
