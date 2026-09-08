@@ -47,9 +47,8 @@ export const clinic = {
   mapsShareUrl: "https://maps.app.goo.gl/79PooLaS1A2mMM4u9",
   coords: { lat: -14.0955963, lng: -50.3411102 },
   hours: [
-    { days: "Segunda a sexta", time: "09h às 19h" }, // EXEMPLO
-    { days: "Sábado", time: "09h às 14h" }, // EXEMPLO
-    { days: "Domingo", time: "Fechado" }, // EXEMPLO
+    { days: "Segunda a sábado", time: "9:00 às 18:00" },
+    { days: "Domingo", time: "Fechado" },
   ],
   images: { hero: heroImg, sobre: sobreImg },
 };
