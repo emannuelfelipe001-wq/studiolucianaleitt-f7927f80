@@ -291,6 +291,25 @@ export const procedures: Procedure[] = [
     image: dermaplaningImg.url,
     featured: true,
   },
+  {
+    id: "fox-eyes",
+    name: "Fox Eyes",
+    category: "olhos",
+    shortDescription:
+      "Levantamento suave do canto externo dos olhos para um olhar mais alongado e estilizado.",
+    description:
+      "O Fox Eyes é um procedimento estético não cirúrgico que levanta a cauda das sobrancelhas e o canto externo dos olhos, criando um efeito de olhar mais alongado, aberto e estilizado, semelhante ao formato de olho de raposa. Área do corpo: região dos olhos e sobrancelhas. A técnica pode ser realizada com fios de sustentação ou com aplicação de toxina botulínica, conforme a avaliação individual. O resultado é natural, sem alterar a expressão do rosto, e ajuda a valorizar o contorno ocular.",
+    benefits: [
+      "Olhar mais alongado e estilizado",
+      "Levantamento suave do canto externo dos olhos",
+      "Procedimento não cirúrgico e rápido",
+      "Resultado natural que valoriza o contorno ocular",
+    ],
+    duration: "1h 20min",
+    price: 180,
+    image: foxEyesImg,
+    featured: true,
+  },
 ];
 
 /* ---------------- ANTES E DEPOIS ----------------
