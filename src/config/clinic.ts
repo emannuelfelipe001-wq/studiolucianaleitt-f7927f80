@@ -18,6 +18,7 @@ import sobreImg from "@/assets/sobre.jpg";
 import microOlhosImg from "@/assets/micropigmentacao-olhos.jpg.asset.json";
 import perfuracaoLobuloImg from "@/assets/perfuracao-lobulo.jpg.asset.json";
 import browLaminationImg from "@/assets/brow-lamination.jpg.asset.json";
+import baCiliosVolumeBrasileiro from "@/assets/ba-cilios-volume-brasileiro.jpg.asset.json";
 import perfuracaoHelixImg from "@/assets/perfuracao-helix.jpg.asset.json";
 import extensaoCiliosImg from "@/assets/extensao-cilios-brasileiro.jpg.asset.json";
 import microLabialImg from "@/assets/micropigmentacao-labial.jpg.asset.json";
@@ -274,8 +275,13 @@ export const procedures: Procedure[] = [
 /* ---------------- ANTES E DEPOIS ----------------
    Adicione aqui as fotos reais: { image: minhaFoto, label: "Nome" } */
 export const beforeAfter = {
-  notice: "Em breve, fotos reais de resultados publicadas com autorização das clientes.",
-  items: [] as { image: string; label: string }[],
+  notice: "Resultados reais de clientes, publicados com autorização.",
+  items: [
+    {
+      image: baCiliosVolumeBrasileiro.url,
+      label: "Cílios Volume Brasileiro — antes (acima) e depois (abaixo)",
+    },
+  ] as { image: string; label: string }[],
 };
 
 /* ---------------- DEPOIMENTOS (EXEMPLO — fácil substituir) ---------------- */
