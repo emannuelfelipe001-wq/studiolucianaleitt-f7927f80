@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, Check, Clock, Plus, ShoppingBag } from "lucide-react";
+import { ArrowLeft, Check, Clock, Plus, ShoppingBag, X } from "lucide-react";
 import { categoryName, findProcedure, formatPrice, procedures } from "@/config/clinic";
 import { useCart } from "@/lib/cart";
 import { ProcedureCard } from "@/components/ProcedureCard";
@@ -35,6 +36,7 @@ export const Route = createFileRoute("/procedimentos/$slug")({
 function ProcedureDetail() {
   const { procedure } = Route.useLoaderData();
   const { add } = useCart();
+  const [zoomOpen, setZoomOpen] = useState(false);
   const related = procedures
     .filter((p) => p.category === procedure.category && p.id !== procedure.id)
     .slice(0, 3);
@@ -50,13 +52,20 @@ function ProcedureDetail() {
       </Link>
 
       <div className="mt-6 grid gap-10 md:grid-cols-2">
-        <img
-          src={procedure.image}
-          alt={procedure.name}
-          width={1024}
-          height={768}
-          className="aspect-[4/3] w-full rounded-[2rem] object-cover shadow-card"
-        />
+        <button
+          type="button"
+          onClick={() => setZoomOpen(true)}
+          className="block w-full cursor-zoom-in overflow-hidden rounded-[2rem] shadow-card"
+          aria-label={`Ampliar imagem: ${procedure.name}`}
+        >
+          <img
+            src={procedure.image}
+            alt={procedure.name}
+            width={1024}
+            height={768}
+            className="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-[1.04]"
+          />
+        </button>
         <div>
           <span className="text-xs tracking-[0.25em] text-primary uppercase">
             {categoryName(procedure.category)}
@@ -110,6 +119,32 @@ function ProcedureDetail() {
             ))}
           </div>
         </section>
+      )}
+
+      {zoomOpen && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={procedure.name}
+          onClick={() => setZoomOpen(false)}
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-4 bg-foreground/70 p-4 backdrop-blur-sm"
+        >
+          <button
+            type="button"
+            onClick={() => setZoomOpen(false)}
+            className="absolute top-4 right-4 rounded-full bg-card p-2 text-primary shadow-soft"
+            aria-label="Fechar imagem ampliada"
+          >
+            <X className="size-5" />
+          </button>
+          <img
+            src={procedure.image}
+            alt={procedure.name}
+            onClick={(e) => e.stopPropagation()}
+            className="max-h-[80vh] w-auto max-w-full rounded-2xl object-contain shadow-card"
+          />
+          <p className="text-center text-sm text-background">{procedure.name}</p>
+        </div>
       )}
     </div>
   );
