@@ -97,6 +97,7 @@ export const categories = [
   { id: "olhos", name: "Olhos" },
   { id: "contorno", name: "Contorno Facial" },
   { id: "tratamentos", name: "Tratamentos Faciais" },
+  { id: "piercing", name: "Piercing" },
 ] as const;
 
 export type CategoryId = (typeof categories)[number]["id"];
