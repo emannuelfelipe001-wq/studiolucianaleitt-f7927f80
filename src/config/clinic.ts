@@ -22,6 +22,7 @@ import ba4 from "@/assets/ba-4.jpg";
 import microOlhosImg from "@/assets/micropigmentacao-olhos.jpg.asset.json";
 import perfuracaoLobuloImg from "@/assets/perfuracao-lobulo.jpg.asset.json";
 import browLaminationImg from "@/assets/brow-lamination.jpg.asset.json";
+import perfuracaoHelixImg from "@/assets/perfuracao-helix.jpg.asset.json";
 
 /* ---------------- DADOS DA CLÍNICA ---------------- */
 export const clinic = {
@@ -191,6 +192,25 @@ export const procedures: Procedure[] = [
     duration: "1h 20min",
     price: 120,
     image: browLaminationImg.url,
+    featured: true,
+  },
+  {
+    id: "perfuracao-helix",
+    name: "Perfuração de Hélix",
+    category: "piercing",
+    shortDescription:
+      "Perfuração na cartilagem superior da orelha com material descartável e joia hipoalergênica.",
+    description:
+      "A perfuração de hélix é realizada na cartilagem superior da orelha, criando um ponto de destaque delicado e moderno. O procedimento segue rigorosos cuidados de assepsia, com material descartável e esterilizado, além de joia hipoalergênica para uma cicatrização mais tranquila. Área do corpo: cartilagem da orelha (hélix). Ao final, são passadas orientações completas de cuidados pós-procedimento para garantir a saúde da perfuração.",
+    benefits: [
+      "Perfuração precisa na cartilagem",
+      "Material descartável e esterilizado",
+      "Joia hipoalergênica de qualidade",
+      "Orientações completas de cuidados pós-procedimento",
+    ],
+    duration: "20min",
+    price: 90,
+    image: perfuracaoHelixImg.url,
     featured: true,
   },
 ];
