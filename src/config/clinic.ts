@@ -24,6 +24,7 @@ import perfuracaoLobuloImg from "@/assets/perfuracao-lobulo.jpg.asset.json";
 import browLaminationImg from "@/assets/brow-lamination.jpg.asset.json";
 import perfuracaoHelixImg from "@/assets/perfuracao-helix.jpg.asset.json";
 import extensaoCiliosImg from "@/assets/extensao-cilios-brasileiro.jpg.asset.json";
+import microLabialImg from "@/assets/micropigmentacao-labial.jpg.asset.json";
 
 /* ---------------- DADOS DA CLÍNICA ---------------- */
 export const clinic = {
@@ -232,6 +233,25 @@ export const procedures: Procedure[] = [
     duration: "1h 30min",
     price: 170,
     image: extensaoCiliosImg.url,
+    featured: true,
+  },
+  {
+    id: "micropigmentacao-labial",
+    name: "Micropigmentação Labial",
+    category: "labios",
+    shortDescription:
+      "Pigmentação delicada nos lábios para cor uniforme, efeito natural e lábios mais definidos.",
+    description:
+      "A Micropigmentação Labial é um procedimento que deposita pigmento na camada superficial dos lábios, corrigindo a tonalidade, definindo o contorno e criando um efeito de cor saudável e natural. Área do corpo: lábios. A técnica é ideal para quem deseja lábios mais uniformes, com contorno discreto e aparência de leve hidratação, sem o efeito de batom pesado. O procedimento é realizado com dermógrafo, anestesia tópica e pigmentos específicos para a região labial, e pode incluir retoque após a cicatrização.",
+    benefits: [
+      "Cor uniforme e natural nos lábios",
+      "Contorno labial mais definido",
+      "Efeito de lábios saudáveis e hidratados",
+      "Dispensa o uso constante de batom",
+    ],
+    duration: "2h",
+    price: 650,
+    image: microLabialImg.url,
     featured: true,
   },
 ];
