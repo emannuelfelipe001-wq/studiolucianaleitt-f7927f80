@@ -36,6 +36,7 @@ export const Route = createFileRoute("/procedimentos/$slug")({
 function ProcedureDetail() {
   const { procedure } = Route.useLoaderData();
   const { add } = useCart();
+  const [zoomOpen, setZoomOpen] = useState(false);
   const related = procedures
     .filter((p) => p.category === procedure.category && p.id !== procedure.id)
     .slice(0, 3);
