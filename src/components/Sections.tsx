@@ -273,7 +273,7 @@ export function InstagramArea() {
             rel="noopener noreferrer"
             className="rounded-full bg-rose-gradient px-6 py-3 text-sm font-medium text-primary-foreground"
           >
-            @{clinic.instagram}
+            @{clinic.instagramDisplay}
           </a>
         ) : (
           <p className="max-w-md text-sm text-muted-foreground">
