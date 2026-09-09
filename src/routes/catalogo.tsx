@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Catalog } from "@/components/Catalog";
-import { Featured } from "@/components/Sections";
 
 const title = "Procedimentos Faciais — Studio Luciana Leitte";
 const description =
@@ -21,10 +20,5 @@ export const Route = createFileRoute("/catalogo")({
 });
 
 function CatalogoPage() {
-  return (
-    <>
-      <Catalog as="h1" />
-      <Featured />
-    </>
-  );
+  return <Catalog as="h1" />;
 }

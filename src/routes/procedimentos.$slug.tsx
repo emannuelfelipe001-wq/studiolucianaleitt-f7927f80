@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Check, Clock, Plus, ShoppingBag, X } from "lucide-react";
 import { categoryName, findProcedure, formatPrice, procedures } from "@/config/clinic";
@@ -37,15 +37,30 @@ function ProcedureDetail() {
   const { procedure } = Route.useLoaderData();
   const { add } = useCart();
   const [zoomOpen, setZoomOpen] = useState(false);
+  const [added, setAdded] = useState(false);
+  const resetTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const related = procedures
     .filter((p) => p.category === procedure.category && p.id !== procedure.id)
     .slice(0, 3);
 
+  useEffect(
+    () => () => {
+      if (resetTimer.current) clearTimeout(resetTimer.current);
+    },
+    [],
+  );
+
+  const addToCart = () => {
+    add(procedure.id);
+    setAdded(true);
+    if (resetTimer.current) clearTimeout(resetTimer.current);
+    resetTimer.current = setTimeout(() => setAdded(false), 1600);
+  };
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 md:py-14">
       <Link
-        to="/"
-        hash="procedimentos"
+        to="/catalogo"
         className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
       >
         <ArrowLeft className="size-4" /> Voltar aos procedimentos
@@ -95,10 +110,11 @@ function ProcedureDetail() {
           <div className="mt-6 flex flex-wrap gap-3">
             <button
               type="button"
-              onClick={() => add(procedure.id)}
+              onClick={addToCart}
               className="inline-flex items-center gap-2 rounded-full bg-rose-gradient px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-soft transition-transform hover:scale-[1.03]"
             >
-              <Plus className="size-4" /> Adicionar ao carrinho
+              {added ? <Check className="size-4" /> : <Plus className="size-4" />}
+              {added ? "Adicionado ao carrinho" : "Adicionar ao carrinho"}
             </button>
             <Link
               to="/carrinho"

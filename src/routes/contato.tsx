@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { InstagramArea, LocationContact } from "@/components/Sections";
+import { LocationContact } from "@/components/Sections";
 
 const title = "Contato e Localização — Studio Luciana Leitte";
 const description =
@@ -20,10 +20,5 @@ export const Route = createFileRoute("/contato")({
 });
 
 function ContatoPage() {
-  return (
-    <>
-      <LocationContact as="h1" />
-      <InstagramArea />
-    </>
-  );
+  return <LocationContact as="h1" />;
 }

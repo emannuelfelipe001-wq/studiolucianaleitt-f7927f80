@@ -1,4 +1,5 @@
-# Tarefas
-
-- [x] Adicionar procedimento "Design de Sobrancelhas" (10min, R$ 45,00)
-- [x] Mostrar tempo total estimado no carrinho quando houver 2+ procedimentos
+- [x] Auditar todas as páginas e interações
+- [x] Corrigir menu mobile
+- [x] Corrigir adição ao carrinho
+- [x] Adicionar Instagram em Contato
+- [x] Validar celular e computador

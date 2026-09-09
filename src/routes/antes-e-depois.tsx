@@ -3,7 +3,7 @@ import { BeforeAfter } from "@/components/Sections";
 
 const title = "Antes e Depois — Studio Luciana Leitte";
 const description =
-  "Galeria de resultados de estética facial do Studio Luciana Leitte. Imagens demonstrativas, substituídas por fotos reais com autorização.";
+  "Galeria de resultados de procedimentos realizados no Studio Luciana Leitte em Nova Crixás - GO.";
 
 export const Route = createFileRoute("/antes-e-depois")({
   head: () => ({

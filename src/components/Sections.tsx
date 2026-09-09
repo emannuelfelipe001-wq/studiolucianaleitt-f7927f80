@@ -57,7 +57,7 @@ export function Hero() {
           <div className="absolute -inset-3 rounded-[2.5rem] bg-rose/25 blur-2xl" aria-hidden />
           <img
             src={clinic.images.hero}
-            alt="Procedimento de estética facial em clínica"
+            alt="Luciana Leitte, fundadora do Studio Luciana Leitte"
             width={1600}
             height={1200}
             className="relative aspect-[3/4] w-full rounded-[2rem] object-cover object-[center_20%] shadow-card md:aspect-[4/3]"
@@ -313,7 +313,8 @@ export function LocationContact({ as: Heading = "h2" }: { as?: "h1" | "h2" }) {
             ))}
           </ul>
 
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="mt-6 flex flex-col items-start gap-3">
+            <div className="flex flex-wrap gap-3">
             <a
               href={mapsUrl}
               target="_blank"
@@ -329,6 +330,15 @@ export function LocationContact({ as: Heading = "h2" }: { as?: "h1" | "h2" }) {
               className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-5 py-3 text-sm font-medium text-whatsapp-foreground transition-transform hover:scale-[1.03]"
             >
               <MessageCircle className="size-4" /> WhatsApp
+            </a>
+            </div>
+            <a
+              href={instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+            >
+              <Instagram className="size-4" /> @{clinic.instagramDisplay}
             </a>
           </div>
         </div>

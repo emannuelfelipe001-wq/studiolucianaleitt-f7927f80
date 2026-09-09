@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef } from "react";
 import { Link } from "@tanstack/react-router";
 import { Heart, Menu, ShoppingBag, X } from "lucide-react";
 import { clinic } from "@/config/clinic";
@@ -18,8 +18,10 @@ const navItems = [
 ] as const;
 
 export function Header() {
-  const [open, setOpen] = useState(false);
+  const mobileMenuRef = useRef<HTMLDetailsElement>(null);
   const { count } = useCart();
+
+  const closeMobileMenu = () => mobileMenuRef.current?.removeAttribute("open");
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-md">
@@ -79,44 +81,43 @@ export function Header() {
 
           </Link>
 
-          <button
-            type="button"
-            aria-label="Abrir menu"
-            onClick={() => setOpen((v) => !v)}
-            className="rounded-full border border-border bg-card p-2.5 lg:hidden"
-          >
-            {open ? <X className="size-5" /> : <Menu className="size-5" />}
-          </button>
+          <details ref={mobileMenuRef} className="group lg:hidden">
+            <summary
+              aria-label="Abrir menu"
+              className="grid size-10 cursor-pointer list-none place-items-center rounded-full border border-border bg-card marker:hidden [&::-webkit-details-marker]:hidden"
+            >
+              <Menu className="size-5 group-open:hidden" />
+              <X className="hidden size-5 group-open:block" />
+            </summary>
+
+            <div className="fixed inset-x-0 top-16 z-50 max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-border bg-background shadow-card">
+              <nav className="mx-auto flex max-w-6xl flex-col px-4 py-2">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.label}
+                    to={item.to}
+                    activeOptions={{ exact: true }}
+                    activeProps={{ className: "text-primary font-medium" }}
+                    onClick={closeMobileMenu}
+                    className="border-b border-border/60 py-3 text-sm"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+                <a
+                  href={whatsappLink(GENERAL_MESSAGE)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 rounded-full bg-rose-gradient px-5 py-3 text-center text-sm font-medium text-primary-foreground"
+                >
+                  Agendar pelo WhatsApp
+                </a>
+                <OpenStatus className="mt-2 mb-3 justify-center" />
+              </nav>
+            </div>
+          </details>
         </div>
       </div>
-
-      {open && (
-        <div className="border-t border-border bg-background lg:hidden">
-          <nav className="mx-auto flex max-w-6xl flex-col px-4 py-2">
-            {navItems.map((item) => (
-              <Link
-                key={item.label}
-                to={item.to}
-                activeOptions={{ exact: true }}
-                activeProps={{ className: "text-primary font-medium" }}
-                onClick={() => setOpen(false)}
-                className="border-b border-border/60 py-3 text-sm"
-              >
-                {item.label}
-              </Link>
-            ))}
-            <a
-              href={whatsappLink(GENERAL_MESSAGE)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 rounded-full bg-rose-gradient px-5 py-3 text-center text-sm font-medium text-primary-foreground"
-            >
-              Agendar pelo WhatsApp
-            </a>
-            <OpenStatus className="mt-2 mb-3 justify-center" />
-          </nav>
-        </div>
-      )}
     </header>
   );
 }
