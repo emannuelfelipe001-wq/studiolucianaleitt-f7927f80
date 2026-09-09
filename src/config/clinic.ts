@@ -32,6 +32,20 @@ import delineadoLapisImg from "@/assets/delineado-a-lapis.jpg.asset.json";
 import ciliosVolumeRussoImg from "@/assets/cilios-volume-russo.jpg.asset.json";
 import aplicacaoHennaImg from "@/assets/aplicacao-henna.jpg.asset.json";
 import designSobrancelhasImg from "@/assets/design-sobrancelhas.jpg.asset.json";
+// Bijuterias (fotos enviadas pela cliente)
+import biju10811 from "@/assets/bijuteria-10811.jpg.asset.json";
+import biju10817 from "@/assets/bijuteria-10817.jpg.asset.json";
+import biju10821 from "@/assets/bijuteria-10821.jpg.asset.json";
+import biju10823 from "@/assets/bijuteria-10823.jpg.asset.json";
+import biju10825 from "@/assets/bijuteria-10825.jpg.asset.json";
+import biju10828 from "@/assets/bijuteria-10828.jpg.asset.json";
+import biju10830 from "@/assets/bijuteria-10830.jpg.asset.json";
+import biju10835 from "@/assets/bijuteria-10835.jpg.asset.json";
+import biju10838 from "@/assets/bijuteria-10838.jpg.asset.json";
+import biju10840 from "@/assets/bijuteria-10840.jpg.asset.json";
+import biju10843 from "@/assets/bijuteria-10843.jpg.asset.json";
+import biju10845 from "@/assets/bijuteria-10845.jpg.asset.json";
+import biju10848 from "@/assets/bijuteria-10848.jpg.asset.json";
 
 /* ---------------- DADOS DA CLÍNICA ---------------- */
 export const clinic = {
@@ -439,7 +453,86 @@ export const beforeAfter = {
 /* ---------------- BIJUTERIAS (catálogo de fotos — adicione itens aqui) ----------------
    Para cada foto enviada, adicione um item:
    { image: <asset>.url, name: "Nome da peça", description: "Descrição da peça" } */
-export const jewelry = [] as { image: string; name: string; description: string }[];
+export const jewelry = [
+  {
+    image: biju10811.url,
+    name: "Anel Pedra Vermelha",
+    description:
+      "Anel dourado com pedra central vermelha e aro vazado com detalhes cravejados. Um toque de cor e elegância para qualquer ocasião.",
+  },
+  {
+    image: biju10817.url,
+    name: "Anel Corações",
+    description:
+      "Anel prateado com dois corações vazados em encontro delicado. Romântico e leve, perfeito para o dia a dia.",
+  },
+  {
+    image: biju10821.url,
+    name: "Anel Ondas Duplas",
+    description:
+      "Anel prateado de duas voltas com desenho ondulado. Moderno e minimalista, valoriza a mão com sutileza.",
+  },
+  {
+    image: biju10823.url,
+    name: "Anel Pedra Azul com Zircônias",
+    description:
+      "Anel prateado com pedra central azul profunda cercada por zircônias brilhantes. Peça de destaque para ocasiões especiais.",
+  },
+  {
+    image: biju10825.url,
+    name: "Piercing de Umbigo com Pedra",
+    description:
+      "Piercings de umbigo com pedras brilhantes, disponíveis em dourado e prateado. Brilho discreto e charmoso.",
+  },
+  {
+    image: biju10828.url,
+    name: "Anel Ondas (variação)",
+    description:
+      "Anel prateado com traços ondulados em volta dupla. Combina com outros anéis para um mix estiloso.",
+  },
+  {
+    image: biju10830.url,
+    name: "Pulseira Medalha Gravada",
+    description:
+      "Pulseira prateada de corrente fina com medalha redonda gravada. Delicada e cheia de significado.",
+  },
+  {
+    image: biju10835.url,
+    name: "Pulseira Elos Ovais",
+    description:
+      "Pulseira prateada com elos ovais alongados e fecho mosquetão. Clássica e versátil, do casual ao elegante.",
+  },
+  {
+    image: biju10838.url,
+    name: "Anel Disco Texturizado",
+    description:
+      "Anel prateado com disco redondo texturizado que reflete a luz em leque. Estilo marcante e contemporâneo.",
+  },
+  {
+    image: biju10840.url,
+    name: "Bracelete Fio Cruzado",
+    description:
+      "Bracelete prateado de fio duplo com cruzamento central. Design limpo que abraça o pulso com leveza.",
+  },
+  {
+    image: biju10843.url,
+    name: "Anel Solitário",
+    description:
+      "Anel prateado solitário com zircônia brilhante em cravação alta. O clássico que nunca sai de moda.",
+  },
+  {
+    image: biju10845.url,
+    name: "Pulseira Elos Retangulares",
+    description:
+      "Pulseira prateada com elos retangulares vazados. Visual moderno que acompanha você em todos os momentos.",
+  },
+  {
+    image: biju10848.url,
+    name: "Anel Falange Círculos",
+    description:
+      "Anel de falange prateado com dois círculos vazados em voltas delicadas. Perfeito para compor mix de anéis.",
+  },
+] as { image: string; name: string; description: string }[];
 
 /* ---------------- DEPOIMENTOS (EXEMPLO — fácil substituir) ---------------- */
 export const testimonials = [
