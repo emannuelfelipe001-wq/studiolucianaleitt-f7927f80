@@ -28,8 +28,7 @@ export function Hero() {
           </span>
           
           <h1 className="mt-5 text-4xl leading-[1.1] md:text-6xl">
-            Sua pele cuidada com <span className="text-rose-gradient">delicadeza</span> e
-            precisão
+            Sua beleza <span className="text-rose-gradient">realçada</span> com delicadeza e precisão.
           </h1>
           <p className="mt-5 max-w-md text-base text-muted-foreground">
             Cuidados faciais personalizados para uma pele mais saudável, luminosa e radiante, com protocolos exclusivos para valorizar sua beleza natural.
