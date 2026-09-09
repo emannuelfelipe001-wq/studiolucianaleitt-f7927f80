@@ -1,5 +1,5 @@
-- [ ] Auditar todas as páginas e interações
-- [ ] Corrigir menu mobile
-- [ ] Corrigir adição ao carrinho
-- [ ] Adicionar Instagram em Contato
-- [ ] Validar celular e computador
+- [x] Auditar todas as páginas e interações
+- [x] Corrigir menu mobile
+- [x] Corrigir adição ao carrinho
+- [x] Adicionar Instagram em Contato
+- [x] Validar celular e computador
