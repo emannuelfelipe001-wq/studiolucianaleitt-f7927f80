@@ -313,7 +313,8 @@ export function LocationContact({ as: Heading = "h2" }: { as?: "h1" | "h2" }) {
             ))}
           </ul>
 
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="mt-6 flex flex-col items-start gap-3">
+            <div className="flex flex-wrap gap-3">
             <a
               href={mapsUrl}
               target="_blank"
@@ -329,6 +330,15 @@ export function LocationContact({ as: Heading = "h2" }: { as?: "h1" | "h2" }) {
               className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-5 py-3 text-sm font-medium text-whatsapp-foreground transition-transform hover:scale-[1.03]"
             >
               <MessageCircle className="size-4" /> WhatsApp
+            </a>
+            </div>
+            <a
+              href={instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+            >
+              <Instagram className="size-4" /> @{clinic.instagramDisplay}
             </a>
           </div>
         </div>

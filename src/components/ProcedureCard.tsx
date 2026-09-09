@@ -1,10 +1,27 @@
+import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Clock, Plus } from "lucide-react";
+import { Check, Clock, Plus } from "lucide-react";
 import { categoryName, formatPrice, type Procedure } from "@/config/clinic";
 import { useCart } from "@/lib/cart";
 
 export function ProcedureCard({ procedure }: { procedure: Procedure }) {
   const { add } = useCart();
+  const [added, setAdded] = useState(false);
+  const resetTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(
+    () => () => {
+      if (resetTimer.current) clearTimeout(resetTimer.current);
+    },
+    [],
+  );
+
+  const addToCart = () => {
+    add(procedure.id);
+    setAdded(true);
+    if (resetTimer.current) clearTimeout(resetTimer.current);
+    resetTimer.current = setTimeout(() => setAdded(false), 1600);
+  };
 
   return (
     <article className="card-soft group flex flex-col overflow-hidden">
@@ -39,10 +56,12 @@ export function ProcedureCard({ procedure }: { procedure: Procedure }) {
         <div className="mt-4 flex gap-2">
           <button
             type="button"
-            onClick={() => add(procedure.id)}
+            onClick={addToCart}
+            aria-label={`Adicionar ${procedure.name} ao carrinho`}
             className="flex flex-1 items-center justify-center gap-1.5 rounded-full bg-rose-gradient px-4 py-2.5 text-sm font-medium text-primary-foreground transition-transform hover:scale-[1.02]"
           >
-            <Plus className="size-4" /> Adicionar
+            {added ? <Check className="size-4" /> : <Plus className="size-4" />}
+            {added ? "Adicionado" : "Adicionar"}
           </button>
           <Link
             to="/procedimentos/$slug"
