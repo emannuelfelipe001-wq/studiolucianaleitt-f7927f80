@@ -9,6 +9,7 @@ import { OpenStatus } from "@/components/OpenStatus";
 const navItems = [
   { label: "Início", to: "/" },
   { label: "Procedimentos", to: "/catalogo" },
+  { label: "Bijuterias", to: "/bijuterias" },
   { label: "Sobre", to: "/sobre" },
   { label: "Antes e Depois", to: "/antes-e-depois" },
   { label: "Depoimentos", to: "/depoimentos" },
