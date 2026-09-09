@@ -110,7 +110,7 @@ export const benefits = [
   },
   {
     title: "Cuidado em cada detalhe",
-    text: "Produtos selecionados, protocolos cuidadosos e atenção em cada etapa para proporcionar uma experiência segura, confortável e resultados naturais.",
+    text: "Produtos selecionados, higiene rigorosa e resultado natural.",
   },
 ];
 
