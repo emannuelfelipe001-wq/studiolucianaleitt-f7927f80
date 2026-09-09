@@ -32,8 +32,7 @@ export function Hero() {
             precisão
           </h1>
           <p className="mt-5 max-w-md text-base text-muted-foreground">
-            Protocolos faciais personalizados para uma pele saudável, com viço natural e
-            atendimento exclusivo.
+            Cuidados faciais personalizados para uma pele mais saudável, luminosa e radiante, com protocolos exclusivos para valorizar sua beleza natural.
           </p>
           <OpenStatus className="mt-4 flex text-sm" />
           <div className="mt-8 flex flex-wrap gap-3">
