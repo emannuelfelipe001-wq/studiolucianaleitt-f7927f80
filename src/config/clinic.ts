@@ -56,7 +56,8 @@ export const clinic = {
   whatsapp: "5562982008960",
   whatsappDisplay: "+55 62 98200-8960",
   // Instagram: preencha quando tiver o @ oficial
-  instagram: "", // EXEMPLO: "lucianaleitt.estetica"
+  instagram: "studiolucianaleitte",
+  instagramDisplay: "Studiolucianaleitte",
   address: {
     street: "Alameda Vereador Gerson Sebastião dos Anjos",
     district: "Centro", // EXEMPLO — confirme o bairro
@@ -81,7 +82,7 @@ export const mapEmbedUrl = `https://www.openstreetmap.org/export/embed.html?bbox
   clinic.coords.lat + 0.003
 }&layer=mapnik&marker=${clinic.coords.lat}%2C${clinic.coords.lng}`;
 export const instagramUrl = clinic.instagram
-  ? `https://instagram.com/${clinic.instagram}`
+  ? "https://www.instagram.com/studiolucianaleitte/?utm_source=ig_web_button_share_sheet"
   : "";
 
 /* ---------------- SOBRE ---------------- */
