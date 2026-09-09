@@ -102,7 +102,7 @@ export const about = {
 export const benefits = [
   {
     title: "Atendimento personalizado",
-    text: "Avaliação da sua pele antes de indicar qualquer protocolo.",
+    text: "Cada pele é única. Por isso, avaliamos suas necessidades antes de definir o melhor protocolo.",
   },
   {
     title: "Foco em estética facial",
