@@ -89,8 +89,10 @@ export const about = {
   title: "Sobre a Luciana",
   // Texto editável. Não inclui formação nem certificados.
   paragraphs: [
-    "Atendimento individual, sem pressa e com foco total em estética facial. Cada pele é avaliada antes do procedimento para que o cuidado faça sentido para você.",
-    "O espaço foi pensado para ser tranquilo e acolhedor, com protocolos delicados e resultados naturais.",
+    "Sou Luciana Leitte, esteticista, esposa, mãe e uma mulher guiada pela fé, pelo propósito e pelo desejo de cuidar de outras mulheres. Sou fundadora do Studio Luciana Leitte, um espaço criado para unir beleza, acolhimento, segurança e autoestima.",
+    "Acredito que cuidar da beleza vai muito além da aparência. Para mim, cada atendimento é uma oportunidade de ouvir, acolher e valorizar a beleza única de cada mulher. Por isso, trabalho com dedicação, responsabilidade e carinho, respeitando as características, desejos e necessidades de cada cliente.",
+    "No Studio Luciana Leitte, ofereço procedimentos de estética facial, micropigmentação, extensão de cílios, design de sobrancelhas, cuidados labiais, perfuração corporal e outros serviços voltados ao bem-estar e à valorização da beleza.",
+    "Minha missão é proporcionar uma experiência na qual cada cliente se sinta especial, segura e ainda mais confiante. Sou grata a Deus por cada pessoa que confia em meu trabalho e passa pelo Studio, e desejo que minhas mãos sejam sempre instrumentos de cuidado, transformação e bênção.",
   ],
   highlights: ["Atendimento personalizado", "Foco em estética facial", "Ambiente acolhedor"],
 };
