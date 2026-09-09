@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Benefits, Featured, Hero, InstagramArea } from "@/components/Sections";
 
-const title = "Studio Luciana Leitte — Estética Facial em Goiânia";
+const title = "Studio Luciana Leitte — Estética Facial";
 const description =
-  "Clínica de estética facial com protocolos personalizados: limpeza de pele, rejuvenescimento, hidratação, lábios e contorno. Agende pelo WhatsApp.";
+  "Estética facial, cílios, sobrancelhas, micropigmentação, dermaplaning e perfurações em Nova Crixás - GO. Agende pelo WhatsApp.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

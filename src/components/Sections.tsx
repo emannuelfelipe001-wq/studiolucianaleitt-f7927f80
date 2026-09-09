@@ -57,7 +57,7 @@ export function Hero() {
           <div className="absolute -inset-3 rounded-[2.5rem] bg-rose/25 blur-2xl" aria-hidden />
           <img
             src={clinic.images.hero}
-            alt="Procedimento de estética facial em clínica"
+            alt="Luciana Leitte, fundadora do Studio Luciana Leitte"
             width={1600}
             height={1200}
             className="relative aspect-[3/4] w-full rounded-[2rem] object-cover object-[center_20%] shadow-card md:aspect-[4/3]"
