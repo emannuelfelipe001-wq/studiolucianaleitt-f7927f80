@@ -14,7 +14,87 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      jewelry: {
+        Row: {
+          created_at: string
+          description: string
+          id: string
+          image: string
+          name: string
+          sort_order: number
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string
+          id?: string
+          image?: string
+          name: string
+          sort_order?: number
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          id?: string
+          image?: string
+          name?: string
+          sort_order?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      procedures: {
+        Row: {
+          benefits: string[]
+          category: string
+          created_at: string
+          description: string
+          duration: string
+          featured: boolean
+          id: string
+          image: string
+          name: string
+          price: number
+          short_description: string
+          slug: string
+          sort_order: number
+          updated_at: string
+        }
+        Insert: {
+          benefits?: string[]
+          category: string
+          created_at?: string
+          description?: string
+          duration?: string
+          featured?: boolean
+          id?: string
+          image?: string
+          name: string
+          price?: number
+          short_description?: string
+          slug: string
+          sort_order?: number
+          updated_at?: string
+        }
+        Update: {
+          benefits?: string[]
+          category?: string
+          created_at?: string
+          description?: string
+          duration?: string
+          featured?: boolean
+          id?: string
+          image?: string
+          name?: string
+          price?: number
+          short_description?: string
+          slug?: string
+          sort_order?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
