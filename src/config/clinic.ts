@@ -110,7 +110,7 @@ export const benefits = [
   },
   {
     title: "Cuidado em cada detalhe",
-    text: "Produtos selecionados, higiene rigorosa e resultado natural.",
+    text: "Produtos selecionados, protocolos cuidadosos e atenção em cada etapa para proporcionar uma experiência segura, confortável e resultados naturais.",
   },
 ];
 
@@ -248,194 +248,340 @@ export const procedures: Procedure[] = [
     shortDescription:
       "Perfuração segura do lóbulo da orelha com material descartável e joia hipoalergênica.",
     description:
-      "A perfuração de lóbulo é realizada com técnica segura e cuidadosa, utilizando materiais descartáveis e joias adequadas para o procedimento.",
-    benefits: ["Procedimento cuidadoso", "Material adequado", "Joia hipoalergênica"],
-    duration: "30min",
-    price: 80,
+      "A perfuração de lóbulo é um procedimento realizado no lóbulo da orelha com técnica segura, material descartável e esterilizado. A joia utilizada é hipoalergênica, ideal para quem está perfurando pela primeira vez ou trocando acessório. Área do corpo: lóbulo da orelha. O procedimento é rápido, com cuidados de assepsia e orientações pós-procedimento para uma cicatrização tranquila.",
+    benefits: [
+      "Procedimento rápido e seguro",
+      "Material descartável e esterilizado",
+      "Joia hipoalergênica de primeira colocação",
+      "Orientações completas de cuidados pós-procedimento",
+    ],
+    duration: "10min",
+    price: 100,
     image: perfuracaoLobuloImg.url,
     featured: true,
   },
   {
     id: "perfuracao-helix",
-    name: "Perfuração Helix",
+    name: "Perfuração de Hélix",
     category: "piercing",
     shortDescription:
-      "Perfuração da cartilagem superior da orelha com técnica cuidadosa e joia adequada.",
+      "Perfuração na cartilagem superior da orelha com material descartável e joia hipoalergênica.",
     description:
-      "A perfuração Helix é realizada na cartilagem superior da orelha, com técnica cuidadosa e materiais apropriados para oferecer uma experiência segura e confortável.",
-    benefits: ["Técnica cuidadosa", "Joia adequada", "Orientações de cuidados"],
-    duration: "30min",
-    price: 100,
+      "A perfuração de hélix é realizada na cartilagem superior da orelha, criando um ponto de destaque delicado e moderno. O procedimento segue rigorosos cuidados de assepsia, com material descartável e esterilizado, além de joia hipoalergênica para uma cicatrização mais tranquila. Área do corpo: cartilagem da orelha (hélix). Ao final, são passadas orientações completas de cuidados pós-procedimento para garantir a saúde da perfuração.",
+    benefits: [
+      "Perfuração precisa na cartilagem",
+      "Material descartável e esterilizado",
+      "Joia hipoalergênica de qualidade",
+      "Orientações completas de cuidados pós-procedimento",
+    ],
+    duration: "20min",
+    price: 90,
     image: perfuracaoHelixImg.url,
     featured: true,
   },
-  /* ---------------- SOBRANCELHAS ---------------- */
-  {
-    id: "design-sobrancelhas",
-    name: "Design de Sobrancelhas",
-    category: "sobrancelha",
-    shortDescription:
-      "Design personalizado para harmonizar as sobrancelhas com o formato do rosto.",
-    description:
-      "O design de sobrancelhas é feito de forma personalizada, considerando o formato do rosto, os fios naturais e o resultado desejado.",
-    benefits: ["Design personalizado", "Harmonia facial", "Acabamento delicado"],
-    duration: "45min",
-    price: 50,
-    image: designSobrancelhasImg.url,
-    featured: true,
-  },
-  {
-    id: "aplicacao-henna",
-    name: "Aplicação de Henna",
-    category: "sobrancelha",
-    shortDescription:
-      "Realce das sobrancelhas com henna para um acabamento definido e harmonioso.",
-    description:
-      "A aplicação de henna realça e define visualmente as sobrancelhas, proporcionando um acabamento mais marcado e harmonioso.",
-    benefits: ["Mais definição", "Realce dos fios", "Acabamento harmonioso"],
-    duration: "45min",
-    price: 60,
-    image: aplicacaoHennaImg.url,
-    featured: false,
-  },
+  /* ---------------- SOBRANCELHA ---------------- */
   {
     id: "brow-lamination",
     name: "Brow Lamination",
     category: "sobrancelha",
     shortDescription:
-      "Técnica que organiza e direciona os fios para sobrancelhas mais alinhadas e volumosas.",
+      "Alinhamento dos fios das sobrancelhas para um visual mais disciplinado, volumoso e natural.",
     description:
-      "O Brow Lamination organiza e direciona os fios das sobrancelhas, criando um efeito alinhado e visualmente mais volumoso.",
-    benefits: ["Fios mais alinhados", "Aparência mais volumosa", "Efeito moderno"],
-    duration: "1h",
-    price: 100,
+      "O Brow Lamination é um procedimento estético para as sobrancelhas que modela e alinha os fios, deixando-as mais disciplinadas, volumosas e com efeito natural de sobrancelha 'penteada'. A técnica utiliza produtos específicos que relaxam os fios e os fixam na direção desejada. Área do corpo: sobrancelhas. O resultado dura em média algumas semanas e facilita a rotina de maquiagem, dispensando o uso de gel ou máscara para sobrancelhas no dia a dia.",
+    benefits: [
+      "Fios alinhados e disciplinados",
+      "Visual mais volumoso e natural",
+      "Efeito duradouro por várias semanas",
+      "Facilita a rotina de maquiagem",
+    ],
+    duration: "1h 20min",
+    price: 120,
     image: browLaminationImg.url,
-    featured: false,
+    featured: true,
   },
-  /* ---------------- MICROPIGMENTAÇÃO ---------------- */
+  {
+    id: "aplicacao-de-henna",
+    name: "Aplicação de Henna",
+    category: "sobrancelha",
+    shortDescription:
+      "Coloração natural das sobrancelhas com henna para fios mais definidos, preenchidos e harmoniosos.",
+    description:
+      "A Aplicação de Henna é um procedimento estético para sobrancelhas que utiliza henna vegetal para colorir a pele e os fios, criando um efeito de sobrancelha mais preenchida, definida e harmoniosa. Área do corpo: sobrancelhas. A técnica é ideal para quem deseja corrigir falhas, dar mais volume visual e uniformizar o formato das sobrancelhas de forma natural e temporária. O resultado dura em média alguns dias na pele e pode permanecer mais tempo nos fios, dependendo do tipo de pele e dos cuidados pós-procedimento.",
+    benefits: [
+      "Sobrancelhas mais preenchidas e definidas",
+      "Cor natural que harmoniza com o tom da pele",
+      "Correção discreta de falhas e assimetrias",
+      "Procedimento rápido e sem dor",
+    ],
+    duration: "20min",
+    price: 20,
+    image: aplicacaoHennaImg.url,
+    featured: true,
+  },
+  {
+    id: "design-de-sobrancelhas",
+    name: "Design de Sobrancelhas",
+    category: "sobrancelha",
+    shortDescription:
+      "Design personalizado das sobrancelhas para valorizar o formato do rosto e realçar o olhar.",
+    description:
+      "O Design de Sobrancelhas é um procedimento estético que define o formato ideal das sobrancelhas de acordo com as medidas e traços do seu rosto. Área do corpo: sobrancelhas. A técnica inclui a avaliação da simetria facial, marcação precisa e remoção dos fios extras para criar um visual harmonioso e natural. O resultado valoriza o olhar e deixa o rosto mais equilibrado, sem deixar a sobrancelha artificialmente fina. Ideal para quem quer manutenção regular ou preparar as sobrancelhas para outros procedimentos como henna ou micropigmentação.",
+    benefits: [
+      "Formato personalizado para o seu rosto",
+      "Olhar mais harmonioso e equilibrado",
+      "Resultado natural sem exageros",
+      "Preparação ideal para henna ou micropigmentação",
+    ],
+    duration: "10min",
+    price: 45,
+    image: designSobrancelhasImg.url,
+    featured: true,
+  },
+  /* ---------------- LÁBIOS / BOCA ---------------- */
   {
     id: "micropigmentacao-labial",
     name: "Micropigmentação Labial",
     category: "labios",
     shortDescription:
-      "Procedimento para realçar o contorno e a aparência dos lábios de forma delicada e personalizada.",
+      "Pigmentação delicada nos lábios para cor uniforme, efeito natural e lábios mais definidos.",
     description:
-      "A micropigmentação labial é realizada para realçar visualmente o contorno e a tonalidade dos lábios, respeitando suas características e o resultado desejado.",
-    benefits: ["Realce do contorno", "Aparência mais uniforme", "Resultado personalizado"],
+      "A Micropigmentação Labial é um procedimento que deposita pigmento na camada superficial dos lábios, corrigindo a tonalidade, definindo o contorno e criando um efeito de cor saudável e natural. Área do corpo: lábios. A técnica é ideal para quem deseja lábios mais uniformes, com contorno discreto e aparência de leve hidratação, sem o efeito de batom pesado. O procedimento é realizado com dermógrafo, anestesia tópica e pigmentos específicos para a região labial, e pode incluir retoque após a cicatrização.",
+    benefits: [
+      "Cor uniforme e natural nos lábios",
+      "Contorno labial mais definido",
+      "Efeito de lábios saudáveis e hidratados",
+      "Dispensa o uso constante de batom",
+    ],
     duration: "2h",
-    price: 450,
+    price: 650,
     image: microLabialImg.url,
     featured: true,
   },
+  /* ---------------- OLHOS ---------------- */
   {
-    id: "micropigmentacao-olhos",
-    name: "Micropigmentação de Olhos",
+    id: "micropigmentacao-olhos-delineado-inferior",
+    name: "Micropigmentação de Olhos — Delineado Inferior",
     category: "olhos",
     shortDescription:
-      "Realce delicado da região dos olhos com efeito personalizado.",
+      "Delineado inferior definitivo que realça o olhar com traço preciso e efeito natural.",
     description:
-      "Procedimento de micropigmentação voltado ao realce visual da região dos olhos, com acabamento personalizado de acordo com o formato e o resultado desejado.",
-    benefits: ["Realce do olhar", "Acabamento personalizado", "Efeito delicado"],
-    duration: "2h",
-    price: 350,
+      "A micropigmentação de olhos na linha do delineado inferior é um procedimento que deposita pigmento na região da linha d'água inferior, criando um efeito de delineado duradouro e discreto. Área do corpo: região dos olhos (pálpebra inferior). O resultado realça o contorno dos olhos, dá profundidade ao olhar e dispensa o delineador no dia a dia. O procedimento é feito com dermógrafo, anestesia tópica e pigmentos específicos para a área dos olhos, com traço fino e acabamento natural.",
+    benefits: [
+      "Olhar mais marcante e definido todos os dias",
+      "Dispensa o uso diário de delineador",
+      "Traço fino, preciso e com efeito natural",
+      "Resultado duradouro, com retoque conforme necessário",
+    ],
+    duration: "1h",
+    price: 300,
     image: microOlhosImg.url,
-    featured: false,
+    featured: true,
   },
-  /* ---------------- TRATAMENTOS FACIAIS ---------------- */
+  {
+    id: "fox-eyes",
+    name: "Fox Eyes",
+    category: "olhos",
+    shortDescription:
+      "Levantamento suave do canto externo dos olhos para um olhar mais alongado e estilizado.",
+    description:
+      "O Fox Eyes é um procedimento estético não cirúrgico que levanta a cauda das sobrancelhas e o canto externo dos olhos, criando um efeito de olhar mais alongado, aberto e estilizado, semelhante ao formato de olho de raposa. Área do corpo: região dos olhos e sobrancelhas. A técnica pode ser realizada com fios de sustentação ou com aplicação de toxina botulínica, conforme a avaliação individual. O resultado é natural, sem alterar a expressão do rosto, e ajuda a valorizar o contorno ocular.",
+    benefits: [
+      "Olhar mais alongado e estilizado",
+      "Levantamento suave do canto externo dos olhos",
+      "Procedimento não cirúrgico e rápido",
+      "Resultado natural que valoriza o contorno ocular",
+    ],
+    duration: "1h 20min",
+    price: 180,
+    image: foxEyesImg.url,
+    featured: true,
+  },
+  {
+    id: "delineado-a-lapis",
+    name: "Delineado a Lápis",
+    category: "olhos",
+    shortDescription:
+      "Delineado suave estilo lápis na linha dos cílios para olhar definido e natural.",
+    description:
+      "O Delineado a Lápis é um procedimento de micropigmentação que reproduz o efeito de um delineador de lápis rente à raiz dos cílios, criando um olhar mais definido, profundo e natural. Área do corpo: região dos olhos (linha dos cílios superiores). O traço é suave e esfumado, sem a marcação forte de um delineado líquido, ideal para quem deseja olhar maquiado de forma sutil no dia a dia. A técnica utiliza dermógrafo, anestesia tópica e pigmentos específicos para a região ocular, com acabamento delicado e duradouro.",
+    benefits: [
+      "Olhar definido e profundo com efeito natural",
+      "Efeito de lápis rente aos cílios, sem marcar demais",
+      "Dispensa o uso diário de delineador",
+      "Acabamento suave e duradouro",
+    ],
+    duration: "40min",
+    price: 300,
+    image: delineadoLapisImg.url,
+    featured: true,
+  },
+  /* ---------------- LIMPEZA DE PELE ---------------- */
   {
     id: "dermaplaning",
     name: "Dermaplaning",
-    category: "tratamentos",
+    category: "limpeza",
     shortDescription:
-      "Esfoliação superficial que ajuda a deixar a pele mais lisa, uniforme e luminosa.",
+      "Esfoliação com lâmina que remove células mortas e os pelinhos do rosto, deixando a pele lisa e iluminada.",
     description:
-      "O dermaplaning é uma técnica de esfoliação superficial que remove células acumuladas e pelos finos da superfície da pele, ajudando a melhorar a textura e a luminosidade.",
-    benefits: ["Pele mais lisa", "Melhora da textura", "Aparência mais luminosa"],
-    duration: "1h",
-    price: 150,
+      "O Dermaplaning é uma esfoliação física feita com lâmina estéril específica para estética, que remove as células mortas da superfície da pele junto com os pelinhos finos (buço facial). Área do corpo: rosto (face, testa, maçãs do rosto, queixo e buço). O resultado é uma pele imediatamente mais lisa, uniforme e iluminada, com melhor absorção dos produtos de skincare e maquiagem com acabamento impecável. É um procedimento indolor, sem agulhas e sem tempo de recuperação, indicado para deixar a pele renovada antes de eventos.",
+    benefits: [
+      "Pele lisa, uniforme e iluminada na hora",
+      "Remove pelinhos finos e células mortas",
+      "Maquiagem com acabamento mais bonito",
+      "Sem dor e sem tempo de recuperação",
+    ],
+    duration: "30min",
+    price: 190,
     image: dermaplaningImg.url,
     featured: true,
   },
 ];
 
-/* ---------------- DESTAQUES / RESULTADOS ---------------- */
-export const featuredProcedures = procedures.filter((p) => p.featured);
+/* ---------------- ANTES E DEPOIS ----------------
+   Adicione aqui as fotos reais: { image: minhaFoto, label: "Nome" } */
+export const beforeAfter = {
+  notice: "Resultados reais de clientes, publicados com autorização.",
+  items: [
+    {
+      image: baCiliosVolumeBrasileiro.url,
+      label: "Cílios Volume Brasileiro — antes (acima) e depois (abaixo)",
+    },
+    {
+      image: dermaplaningImg.url,
+      label: "Dermaplaning — antes (acima) e depois (abaixo)",
+    },
+  ] as { image: string; label: string }[],
+};
 
-export const beforeAfter = [
-  {
-    id: "resultado-1",
-    title: "Resultado de procedimento facial",
-    before: "https://placehold.co/600x800?text=Antes",
-    after: "https://placehold.co/600x800?text=Depois",
-  },
-  {
-    id: "resultado-2",
-    title: "Resultado de procedimento facial",
-    before: "https://placehold.co/600x800?text=Antes",
-    after: "https://placehold.co/600x800?text=Depois",
-  },
-];
-
-/* ---------------- BIJUTERIAS ---------------- */
+/* ---------------- BIJUTERIAS (catálogo de fotos — adicione itens aqui) ----------------
+   Para cada foto enviada, adicione um item:
+   { image: <asset>.url, name: "Nome da peça", description: "Descrição da peça" } */
 export const jewelry = [
-  { id: "10811", name: "Brinco 10811", price: 35, image: biju10811.url },
-  { id: "10817", name: "Brinco 10817", price: 35, image: biju10817.url },
-  { id: "10821", name: "Brinco 10821", price: 35, image: biju10821.url },
-  { id: "10823", name: "Brinco 10823", price: 35, image: biju10823.url },
-  { id: "10825", name: "Brinco 10825", price: 35, image: biju10825.url },
-  { id: "10828", name: "Brinco 10828", price: 35, image: biju10828.url },
-  { id: "10830", name: "Brinco 10830", price: 35, image: biju10830.url },
-  { id: "10835", name: "Brinco 10835", price: 35, image: biju10835.url },
-  { id: "10838", name: "Brinco 10838", price: 35, image: biju10838.url },
-  { id: "10840", name: "Brinco 10840", price: 35, image: biju10840.url },
-  { id: "10843", name: "Brinco 10843", price: 35, image: biju10843.url },
-  { id: "10845", name: "Brinco 10845", price: 35, image: biju10845.url },
-  { id: "10848", name: "Brinco 10848", price: 35, image: biju10848.url },
-];
+  {
+    image: biju10811.url,
+    name: "Anel Pedra Vermelha",
+    description:
+      "Anel dourado com pedra central vermelha e aro vazado com detalhes cravejados. Um toque de cor e elegância para qualquer ocasião.",
+  },
+  {
+    image: biju10817.url,
+    name: "Anel Corações",
+    description:
+      "Anel prateado com dois corações vazados em encontro delicado. Romântico e leve, perfeito para o dia a dia.",
+  },
+  {
+    image: biju10821.url,
+    name: "Anel Ondas Duplas",
+    description:
+      "Anel prateado de duas voltas com desenho ondulado. Moderno e minimalista, valoriza a mão com sutileza.",
+  },
+  {
+    image: biju10823.url,
+    name: "Anel Pedra Azul com Zircônias",
+    description:
+      "Anel prateado com pedra central azul profunda cercada por zircônias brilhantes. Peça de destaque para ocasiões especiais.",
+  },
+  {
+    image: biju10825.url,
+    name: "Piercing de Umbigo com Pedra",
+    description:
+      "Piercings de umbigo com pedras brilhantes, disponíveis em dourado e prateado. Brilho discreto e charmoso.",
+  },
+  {
+    image: biju10828.url,
+    name: "Anel Ondas (variação)",
+    description:
+      "Anel prateado com traços ondulados em volta dupla. Combina com outros anéis para um mix estiloso.",
+  },
+  {
+    image: biju10830.url,
+    name: "Pulseira Medalha Gravada",
+    description:
+      "Pulseira prateada de corrente fina com medalha redonda gravada. Delicada e cheia de significado.",
+  },
+  {
+    image: biju10835.url,
+    name: "Pulseira Elos Ovais",
+    description:
+      "Pulseira prateada com elos ovais alongados e fecho mosquetão. Clássica e versátil, do casual ao elegante.",
+  },
+  {
+    image: biju10838.url,
+    name: "Anel Disco Texturizado",
+    description:
+      "Anel prateado com disco redondo texturizado que reflete a luz em leque. Estilo marcante e contemporâneo.",
+  },
+  {
+    image: biju10840.url,
+    name: "Bracelete Fio Cruzado",
+    description:
+      "Bracelete prateado de fio duplo com cruzamento central. Design limpo que abraça o pulso com leveza.",
+  },
+  {
+    image: biju10843.url,
+    name: "Anel Solitário",
+    description:
+      "Anel prateado solitário com zircônia brilhante em cravação alta. O clássico que nunca sai de moda.",
+  },
+  {
+    image: biju10845.url,
+    name: "Pulseira Elos Retangulares",
+    description:
+      "Pulseira prateada com elos retangulares vazados. Visual moderno que acompanha você em todos os momentos.",
+  },
+  {
+    image: biju10848.url,
+    name: "Anel Falange Círculos",
+    description:
+      "Anel de falange prateado com dois círculos vazados em voltas delicadas. Perfeito para compor mix de anéis.",
+  },
+] as { image: string; name: string; description: string }[];
 
-/* ---------------- DEPOIMENTOS ---------------- */
+/* ---------------- DEPOIMENTOS (EXEMPLO — fácil substituir) ---------------- */
 export const testimonials = [
   {
-    name: "Cliente 1",
-    text: "Atendimento maravilhoso, ambiente acolhedor e muito cuidado em cada detalhe.",
-    rating: 5,
+    name: "Ana C.",
+    text: "Saí com a pele leve e o atendimento foi muito cuidadoso do início ao fim.",
   },
   {
-    name: "Cliente 2",
-    text: "Amei o resultado e me senti muito bem atendida. Recomendo!",
-    rating: 5,
+    name: "Marina S.",
+    text: "Explicou cada etapa antes de começar. Minha pele nunca esteve tão uniforme.",
   },
   {
-    name: "Cliente 3",
-    text: "Profissional cuidadosa e atenciosa. O resultado ficou lindo e natural.",
-    rating: 5,
+    name: "Beatriz L.",
+    text: "Ambiente tranquilo, sem pressa. Já virou meu cuidado mensal.",
   },
 ];
 
 /* ---------------- FAQ ---------------- */
 export const faq = [
   {
-    question: "Preciso agendar com antecedência?",
-    answer:
-      "Sim. O ideal é entrar em contato pelo WhatsApp para consultar horários disponíveis e garantir seu atendimento.",
+    q: "Preciso agendar com antecedência?",
+    a: "Sim. O atendimento é individual, então cada horário é reservado só para você.",
   },
   {
-    question: "Como escolher o procedimento ideal?",
-    answer:
-      "Durante o atendimento, suas necessidades e objetivos são avaliados para definir a opção mais adequada.",
+    q: "Como funciona a avaliação?",
+    a: "Antes do procedimento a sua pele é avaliada para confirmar o protocolo mais indicado.",
   },
   {
-    question: "O Studio atende quais procedimentos?",
-    answer:
-      "O Studio oferece serviços de estética facial, cílios, sobrancelhas, micropigmentação, perfuração corporal e outros cuidados de beleza.",
+    q: "Quantas sessões são necessárias?",
+    a: "Depende do objetivo. Alguns protocolos têm efeito imediato, outros são progressivos.",
+  },
+  {
+    q: "Posso remarcar meu horário?",
+    a: "Pode, basta avisar pelo WhatsApp com antecedência para reorganizarmos a agenda.",
+  },
+  {
+    q: "Quais as formas de pagamento?",
+    a: "Combinamos pelo WhatsApp no momento do agendamento.",
   },
 ];
 
-/* ---------------- FUNÇÕES UTILITÁRIAS ---------------- */
-export function getProcedureBySlug(slug: string) {
-  return procedures.find((p) => p.id === slug);
-}
+/* ---------------- UTILIDADES ---------------- */
+export const formatPrice = (value: number) =>
+  value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
-export function getProceduresByCategory(category: CategoryId) {
-  return procedures.filter((p) => p.category === category);
-}
+export const categoryName = (id: CategoryId) =>
+  categories.find((c) => c.id === id)?.name ?? "";
+
+export const findProcedure = (id: string) => procedures.find((p) => p.id === id);
