@@ -1,6 +1,7 @@
 import type { CategoryId } from "@/config/clinic";
 
 export type CatalogProcedure = {
+  dbId: string;
   id: string;
   name: string;
   category: CategoryId;

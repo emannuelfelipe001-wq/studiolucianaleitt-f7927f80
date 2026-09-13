@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Gem } from "lucide-react";
-import { jewelry } from "@/config/clinic";
+import { useCatalog } from "@/lib/catalog-context";
 
 const title = "Bijuterias — Studio Luciana Leitte";
 const description =
@@ -21,6 +21,7 @@ export const Route = createFileRoute("/bijuterias")({
 });
 
 function BijuteriasPage() {
+  const { jewelry } = useCatalog();
   return (
     <section className="mx-auto max-w-6xl px-4 py-16 md:py-24">
       <div className="text-center">

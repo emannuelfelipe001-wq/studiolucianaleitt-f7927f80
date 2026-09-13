@@ -12,6 +12,8 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { CartProvider } from "@/lib/cart";
+import { CatalogProvider } from "@/lib/catalog-context";
+import { getCatalogData } from "@/lib/catalog.functions";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
@@ -77,6 +79,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  loader: () => getCatalogData(),
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -124,18 +127,21 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const catalog = Route.useLoaderData();
 
   return (
     <QueryClientProvider client={queryClient}>
-      <CartProvider>
-        <Header />
-        <main>
-          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-          <Outlet />
-        </main>
-        <Footer />
-        <FloatingWhatsApp />
-      </CartProvider>
+      <CatalogProvider data={catalog}>
+        <CartProvider>
+          <Header />
+          <main>
+            {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+            <Outlet />
+          </main>
+          <Footer />
+          <FloatingWhatsApp />
+        </CartProvider>
+      </CatalogProvider>
     </QueryClientProvider>
   );
 }

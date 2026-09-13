@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AntesEDepoisRouteImport } from './routes/antes-e-depois'
 import { Route as BijuteriasRouteImport } from './routes/bijuterias'
 import { Route as CarrinhoRouteImport } from './routes/carrinho'
@@ -19,10 +20,16 @@ import { Route as DepoimentosRouteImport } from './routes/depoimentos'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as ProcedimentosSlugRouteImport } from './routes/procedimentos.$slug'
+import { Route as ApiPublicCatalogImageRouteImport } from './routes/api/public/catalog-image'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AntesEDepoisRoute = AntesEDepoisRouteImport.update({
@@ -70,9 +77,15 @@ const ProcedimentosSlugRoute = ProcedimentosSlugRouteImport.update({
   path: '/procedimentos/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicCatalogImageRoute = ApiPublicCatalogImageRouteImport.update({
+  id: '/api/public/catalog-image',
+  path: '/api/public/catalog-image',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/antes-e-depois': typeof AntesEDepoisRoute
   '/bijuterias': typeof BijuteriasRoute
   '/carrinho': typeof CarrinhoRoute
@@ -82,9 +95,11 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRoute
   '/sobre': typeof SobreRoute
   '/procedimentos/$slug': typeof ProcedimentosSlugRoute
+  '/api/public/catalog-image': typeof ApiPublicCatalogImageRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/antes-e-depois': typeof AntesEDepoisRoute
   '/bijuterias': typeof BijuteriasRoute
   '/carrinho': typeof CarrinhoRoute
@@ -94,10 +109,12 @@ export interface FileRoutesByTo {
   '/faq': typeof FaqRoute
   '/sobre': typeof SobreRoute
   '/procedimentos/$slug': typeof ProcedimentosSlugRoute
+  '/api/public/catalog-image': typeof ApiPublicCatalogImageRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/antes-e-depois': typeof AntesEDepoisRoute
   '/bijuterias': typeof BijuteriasRoute
   '/carrinho': typeof CarrinhoRoute
@@ -107,11 +124,13 @@ export interface FileRoutesById {
   '/faq': typeof FaqRoute
   '/sobre': typeof SobreRoute
   '/procedimentos/$slug': typeof ProcedimentosSlugRoute
+  '/api/public/catalog-image': typeof ApiPublicCatalogImageRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/admin'
     | '/antes-e-depois'
     | '/bijuterias'
     | '/carrinho'
@@ -121,9 +140,11 @@ export interface FileRouteTypes {
     | '/faq'
     | '/sobre'
     | '/procedimentos/$slug'
+    | '/api/public/catalog-image'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/admin'
     | '/antes-e-depois'
     | '/bijuterias'
     | '/carrinho'
@@ -133,9 +154,11 @@ export interface FileRouteTypes {
     | '/faq'
     | '/sobre'
     | '/procedimentos/$slug'
+    | '/api/public/catalog-image'
   id:
     | '__root__'
     | '/'
+    | '/admin'
     | '/antes-e-depois'
     | '/bijuterias'
     | '/carrinho'
@@ -145,10 +168,12 @@ export interface FileRouteTypes {
     | '/faq'
     | '/sobre'
     | '/procedimentos/$slug'
+    | '/api/public/catalog-image'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
   AntesEDepoisRoute: typeof AntesEDepoisRoute
   BijuteriasRoute: typeof BijuteriasRoute
   CarrinhoRoute: typeof CarrinhoRoute
@@ -158,6 +183,7 @@ export interface RootRouteChildren {
   FaqRoute: typeof FaqRoute
   SobreRoute: typeof SobreRoute
   ProcedimentosSlugRoute: typeof ProcedimentosSlugRoute
+  ApiPublicCatalogImageRoute: typeof ApiPublicCatalogImageRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -167,6 +193,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/antes-e-depois': {
@@ -232,11 +265,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProcedimentosSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/catalog-image': {
+      id: '/api/public/catalog-image'
+      path: '/api/public/catalog-image'
+      fullPath: '/api/public/catalog-image'
+      preLoaderRoute: typeof ApiPublicCatalogImageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
   AntesEDepoisRoute: AntesEDepoisRoute,
   BijuteriasRoute: BijuteriasRoute,
   CarrinhoRoute: CarrinhoRoute,
@@ -246,6 +287,7 @@ const rootRouteChildren: RootRouteChildren = {
   FaqRoute: FaqRoute,
   SobreRoute: SobreRoute,
   ProcedimentosSlugRoute: ProcedimentosSlugRoute,
+  ApiPublicCatalogImageRoute: ApiPublicCatalogImageRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

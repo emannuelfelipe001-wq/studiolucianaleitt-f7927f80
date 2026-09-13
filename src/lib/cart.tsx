@@ -7,7 +7,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { findProcedure } from "@/config/clinic";
+import { useCatalog } from "@/lib/catalog-context";
 
 const STORAGE_KEY = "llestetica-cart-v1";
 
@@ -26,6 +26,7 @@ type CartContextValue = {
 const CartContext = createContext<CartContextValue | null>(null);
 
 export function CartProvider({ children }: { children: ReactNode }) {
+  const { procedures } = useCatalog();
   const [items, setItems] = useState<CartItem[]>([]);
   const [hydrated, setHydrated] = useState(false);
 
@@ -38,7 +39,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         if (Array.isArray(parsed)) {
           setItems(
             parsed
-              .filter((i) => i && typeof i.id === "string" && findProcedure(i.id))
+              .filter((i) => i && typeof i.id === "string")
               .map((i) => ({ id: i.id, qty: Math.max(1, Number(i.qty) || 1) })),
           );
         }
@@ -48,6 +49,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
     setHydrated(true);
   }, []);
+
+  useEffect(() => {
+    if (!hydrated) return;
+    const validIds = new Set(procedures.map((procedure) => procedure.id));
+    setItems((current) => current.filter((item) => validIds.has(item.id)));
+  }, [hydrated, procedures]);
 
   useEffect(() => {
     if (!hydrated) return;
@@ -83,11 +90,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const value = useMemo<CartContextValue>(() => {
     const count = items.reduce((sum, i) => sum + i.qty, 0);
     const subtotal = items.reduce(
-      (sum, i) => sum + (findProcedure(i.id)?.price ?? 0) * i.qty,
+      (sum, i) => sum + (procedures.find((procedure) => procedure.id === i.id)?.price ?? 0) * i.qty,
       0,
     );
     return { items, count, subtotal, add, remove, setQty, clear };
-  }, [items, add, remove, setQty, clear]);
+  }, [items, procedures, add, remove, setQty, clear]);
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }
