@@ -19,6 +19,7 @@ import { Route as DepoimentosRouteImport } from './routes/depoimentos'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as ProcedimentosSlugRouteImport } from './routes/procedimentos.$slug'
+import { Route as ApiPublicCatalogImageRouteImport } from './routes/api/public/catalog-image'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -70,6 +71,11 @@ const ProcedimentosSlugRoute = ProcedimentosSlugRouteImport.update({
   path: '/procedimentos/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicCatalogImageRoute = ApiPublicCatalogImageRouteImport.update({
+  id: '/api/public/catalog-image',
+  path: '/api/public/catalog-image',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -82,6 +88,7 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRoute
   '/sobre': typeof SobreRoute
   '/procedimentos/$slug': typeof ProcedimentosSlugRoute
+  '/api/public/catalog-image': typeof ApiPublicCatalogImageRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -94,6 +101,7 @@ export interface FileRoutesByTo {
   '/faq': typeof FaqRoute
   '/sobre': typeof SobreRoute
   '/procedimentos/$slug': typeof ProcedimentosSlugRoute
+  '/api/public/catalog-image': typeof ApiPublicCatalogImageRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -107,6 +115,7 @@ export interface FileRoutesById {
   '/faq': typeof FaqRoute
   '/sobre': typeof SobreRoute
   '/procedimentos/$slug': typeof ProcedimentosSlugRoute
+  '/api/public/catalog-image': typeof ApiPublicCatalogImageRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -121,6 +130,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/sobre'
     | '/procedimentos/$slug'
+    | '/api/public/catalog-image'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -133,6 +143,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/sobre'
     | '/procedimentos/$slug'
+    | '/api/public/catalog-image'
   id:
     | '__root__'
     | '/'
@@ -145,6 +156,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/sobre'
     | '/procedimentos/$slug'
+    | '/api/public/catalog-image'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -158,6 +170,7 @@ export interface RootRouteChildren {
   FaqRoute: typeof FaqRoute
   SobreRoute: typeof SobreRoute
   ProcedimentosSlugRoute: typeof ProcedimentosSlugRoute
+  ApiPublicCatalogImageRoute: typeof ApiPublicCatalogImageRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -232,6 +245,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProcedimentosSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/catalog-image': {
+      id: '/api/public/catalog-image'
+      path: '/api/public/catalog-image'
+      fullPath: '/api/public/catalog-image'
+      preLoaderRoute: typeof ApiPublicCatalogImageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -246,6 +266,7 @@ const rootRouteChildren: RootRouteChildren = {
   FaqRoute: FaqRoute,
   SobreRoute: SobreRoute,
   ProcedimentosSlugRoute: ProcedimentosSlugRoute,
+  ApiPublicCatalogImageRoute: ApiPublicCatalogImageRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
