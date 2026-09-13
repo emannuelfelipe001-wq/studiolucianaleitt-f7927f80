@@ -162,5 +162,5 @@ export const uploadCatalogImage = createServerFn({ method: "POST" })
       upsert: false,
     });
     if (error) throw new Error("Não foi possível enviar a foto.");
-    return { url: `/api/public/catalog-image/${path}` };
+    return { url: `/api/public/catalog-image?path=${encodeURIComponent(path)}` };
   });

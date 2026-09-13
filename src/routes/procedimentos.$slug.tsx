@@ -1,13 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Check, Clock, Plus, ShoppingBag, X } from "lucide-react";
-import { categoryName, findProcedure, formatPrice, procedures } from "@/config/clinic";
+import { categoryName, formatPrice } from "@/config/clinic";
+import { getProcedureBySlug } from "@/lib/catalog.functions";
+import { useCatalog } from "@/lib/catalog-context";
 import { useCart } from "@/lib/cart";
 import { ProcedureCard } from "@/components/ProcedureCard";
 
 export const Route = createFileRoute("/procedimentos/$slug")({
-  loader: ({ params }) => {
-    const procedure = findProcedure(params.slug);
+  loader: async ({ params }) => {
+    const procedure = await getProcedureBySlug({ data: { slug: params.slug } });
     if (!procedure) throw notFound();
     return { procedure };
   },
@@ -35,6 +37,7 @@ export const Route = createFileRoute("/procedimentos/$slug")({
 
 function ProcedureDetail() {
   const { procedure } = Route.useLoaderData();
+  const { procedures } = useCatalog();
   const { add } = useCart();
   const [zoomOpen, setZoomOpen] = useState(false);
   const [added, setAdded] = useState(false);
