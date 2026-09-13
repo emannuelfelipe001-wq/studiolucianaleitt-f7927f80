@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Check, Clock, Plus } from "lucide-react";
-import { categoryName, formatPrice, type Procedure } from "@/config/clinic";
+import { categoryName, formatPrice } from "@/config/clinic";
+import type { CatalogProcedure } from "@/lib/catalog.types";
 import { useCart } from "@/lib/cart";
 
-export function ProcedureCard({ procedure }: { procedure: Procedure }) {
+export function ProcedureCard({ procedure }: { procedure: CatalogProcedure }) {
   const { add } = useCart();
   const [added, setAdded] = useState(false);
   const resetTimer = useRef<ReturnType<typeof setTimeout> | null>(null);

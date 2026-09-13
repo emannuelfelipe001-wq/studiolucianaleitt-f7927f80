@@ -104,6 +104,13 @@ export function Header() {
                     {item.label}
                   </Link>
                 ))}
+                <Link
+                  to="/admin"
+                  onClick={closeMobileMenu}
+                  className="border-b border-border/60 py-3 text-sm"
+                >
+                  Admin
+                </Link>
                 <a
                   href={whatsappLink(GENERAL_MESSAGE)}
                   target="_blank"

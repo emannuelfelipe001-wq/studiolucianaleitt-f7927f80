@@ -12,11 +12,11 @@ import {
   instagramUrl,
   mapEmbedUrl,
   mapsUrl,
-  procedures,
   testimonials,
 } from "@/config/clinic";
 import { GENERAL_MESSAGE, whatsappLink } from "@/lib/whatsapp";
 import { ProcedureCard } from "@/components/ProcedureCard";
+import { useCatalog } from "@/lib/catalog-context";
 
 export function Hero() {
   return (
@@ -83,6 +83,7 @@ export function Benefits() {
 }
 
 export function Featured() {
+  const { procedures } = useCatalog();
   const featured = procedures.filter((p) => p.featured);
   if (featured.length === 0) return null;
   return (

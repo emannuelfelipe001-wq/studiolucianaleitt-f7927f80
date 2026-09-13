@@ -3,12 +3,16 @@ import { createServerFn } from "@tanstack/react-start";
 import { useSession } from "@tanstack/react-start/server";
 import { z } from "zod";
 
-const sessionConfig = {
-  password: process.env["SESSION_SECRET"]!,
-  name: "studio-admin",
-  maxAge: 60 * 60 * 12,
-  cookie: { httpOnly: true, secure: true, sameSite: "lax" as const, path: "/" },
-};
+function getSessionConfig() {
+  const password = process.env["SESSION_SECRET"];
+  if (!password) throw new Error("Acesso administrativo não configurado.");
+  return {
+    password,
+    name: "studio-admin",
+    maxAge: 60 * 60 * 12,
+    cookie: { httpOnly: true, secure: true, sameSite: "lax" as const, path: "/" },
+  };
+}
 
 type AdminSession = { authenticated?: boolean };
 
@@ -19,12 +23,12 @@ function safeMatch(value: string, expected: string) {
 }
 
 async function requireAdmin() {
-  const session = await useSession<AdminSession>(sessionConfig);
+  const session = await useSession<AdminSession>(getSessionConfig());
   if (!session.data.authenticated) throw new Error("Acesso não autorizado.");
 }
 
 export const getAdminSession = createServerFn({ method: "GET" }).handler(async () => {
-  const session = await useSession<AdminSession>(sessionConfig);
+  const session = await useSession<AdminSession>(getSessionConfig());
   return { authenticated: session.data.authenticated === true };
 });
 
@@ -37,15 +41,16 @@ export const loginAdmin = createServerFn({ method: "POST" })
     const password = process.env["ADMIN_PASSWORD"];
     if (!username || !password) throw new Error("Acesso administrativo não configurado.");
     if (!safeMatch(data.username.trim(), username) || !safeMatch(data.password, password)) {
+      await new Promise((resolve) => setTimeout(resolve, 500));
       return { ok: false as const };
     }
-    const session = await useSession<AdminSession>(sessionConfig);
+    const session = await useSession<AdminSession>(getSessionConfig());
     await session.update({ authenticated: true });
     return { ok: true as const };
   });
 
 export const logoutAdmin = createServerFn({ method: "POST" }).handler(async () => {
-  const session = await useSession<AdminSession>(sessionConfig);
+  const session = await useSession<AdminSession>(getSessionConfig());
   await session.clear();
   return { ok: true as const };
 });
@@ -150,7 +155,7 @@ export const uploadCatalogImage = createServerFn({ method: "POST" })
     const bytes = Buffer.from(raw, "base64");
     if (bytes.byteLength > 10 * 1024 * 1024) throw new Error("A foto deve ter no máximo 10 MB.");
     const extension = data.type === "image/png" ? "png" : data.type === "image/webp" ? "webp" : "jpg";
-    const path = `catalog/${crypto.randomUUID()}.${extension}`;
+    const path = `catalog-${crypto.randomUUID()}.${extension}`;
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     const { error } = await supabaseAdmin.storage.from("catalog-images").upload(path, bytes, {
       contentType: data.type,

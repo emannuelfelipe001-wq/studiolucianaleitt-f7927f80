@@ -1,11 +1,13 @@
 import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
-import { categories, procedures } from "@/config/clinic";
+import { categories } from "@/config/clinic";
 import { ProcedureCard } from "@/components/ProcedureCard";
+import { useCatalog } from "@/lib/catalog-context";
 
 export function Catalog({ as: Heading = "h2" }: { as?: "h1" | "h2" }) {
   const [category, setCategory] = useState<string>("todos");
   const [query, setQuery] = useState("");
+  const { procedures } = useCatalog();
 
   const list = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -14,7 +16,7 @@ export function Catalog({ as: Heading = "h2" }: { as?: "h1" | "h2" }) {
         (category === "todos" || p.category === category) &&
         (q === "" || p.name.toLowerCase().includes(q)),
     );
-  }, [category, query]);
+  }, [category, query, procedures]);
 
   return (
     <section id="procedimentos" className="mx-auto max-w-6xl px-4 py-16 md:py-24">

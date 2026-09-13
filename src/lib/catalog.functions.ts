@@ -26,6 +26,7 @@ function publicClient() {
 
 function mapProcedure(row: Database["public"]["Tables"]["procedures"]["Row"]): CatalogProcedure {
   return {
+    dbId: row.id,
     id: row.slug,
     name: row.name,
     category: row.category as CategoryId,

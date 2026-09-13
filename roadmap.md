@@ -3,3 +3,5 @@
 - [x] Corrigir adição ao carrinho
 - [x] Adicionar Instagram em Contato
 - [x] Validar celular e computador
+- [ ] Concluir painel administrativo e conectar o catálogo ao banco
+- [ ] Testar login, edição, fotos, menu e carrinho

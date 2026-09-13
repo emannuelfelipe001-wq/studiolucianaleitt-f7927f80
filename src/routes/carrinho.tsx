@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Clock, Minus, Plus, ShoppingBag, Trash2 } from "lucide-react";
-import { findProcedure, formatPrice } from "@/config/clinic";
+import { formatPrice } from "@/config/clinic";
 import { useCart } from "@/lib/cart";
+import { useCatalog } from "@/lib/catalog-context";
 import { bookingMessage, whatsappLink } from "@/lib/whatsapp";
 import { formatDuration, parseDuration } from "@/lib/utils";
 
@@ -27,14 +28,15 @@ export const Route = createFileRoute("/carrinho")({
 
 function CartPage() {
   const { items, subtotal, count, add, setQty, remove, clear } = useCart();
+  const { procedures } = useCatalog();
   const [step, setStep] = useState<"cart" | "schedule">("cart");
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
 
   const detailed = items
-    .map((i) => ({ ...i, procedure: findProcedure(i.id)! }))
-    .filter((i) => i.procedure);
+    .map((item) => ({ ...item, procedure: procedures.find((procedure) => procedure.id === item.id) }))
+    .filter((item): item is typeof item & { procedure: NonNullable<typeof item.procedure> } => Boolean(item.procedure));
 
   const totalMinutes = detailed.reduce(
     (sum, i) => sum + parseDuration(i.procedure.duration) * i.qty,
