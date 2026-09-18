@@ -78,7 +78,6 @@ export function Header() {
                 </span>
               </span>
             )}
-
           </Link>
 
           <details ref={mobileMenuRef} className="group lg:hidden">

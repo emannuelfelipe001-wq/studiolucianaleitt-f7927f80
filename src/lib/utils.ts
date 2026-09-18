@@ -1,6 +1,14 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
+export function resolveAssetUrl(url: string | undefined | null) {
+  if (!url) return "";
+  if (url.startsWith("/__l5e/")) {
+    return `https://studiolucianaleitt.lovable.app${url}`;
+  }
+  return url;
+}
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -9,9 +17,7 @@ export function cn(...inputs: ClassValue[]) {
 export function parseDuration(value: string): number {
   const hours = /(\d+)\s*h/.exec(value);
   const minutes = /(\d+)\s*min/.exec(value);
-  return (
-    (hours ? Number(hours[1]) * 60 : 0) + (minutes ? Number(minutes[1]) : 0)
-  );
+  return (hours ? Number(hours[1]) * 60 : 0) + (minutes ? Number(minutes[1]) : 0);
 }
 
 /** Formata minutos totais em "1h 20min", "2h" ou "45min". */

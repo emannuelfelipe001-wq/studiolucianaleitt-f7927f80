@@ -1,3 +1,4 @@
+import { resolveAssetUrl } from "@/lib/utils";
 /**
  * ============================================================
  *  ÁREA DE EDIÇÃO CENTRAL — LUCIANA LEITT ESTÉTICA
@@ -15,8 +16,8 @@
 // Imagens demonstrativas (troque os arquivos em src/assets/ ou os imports abaixo)
 import heroAsset from "@/assets/hero.jpg.asset.json";
 import sobreAsset from "@/assets/sobre.jpg.asset.json";
-const heroImg = heroAsset.url;
-const sobreImg = sobreAsset.url;
+const heroImg = resolveAssetUrl(heroAsset.url);
+const sobreImg = resolveAssetUrl(sobreAsset.url);
 import microOlhosImg from "@/assets/micropigmentacao-olhos.jpg.asset.json";
 import perfuracaoLobuloImg from "@/assets/perfuracao-lobulo.jpg.asset.json";
 import browLaminationImg from "@/assets/brow-lamination.jpg.asset.json";
@@ -145,7 +146,6 @@ export type Procedure = {
   featured?: boolean;
 };
 
-
 /* ---------------- PROCEDIMENTOS ----------------
  *  Lista vazia: adicione aqui os procedimentos reais.
  *  Exemplo de item:
@@ -180,7 +180,7 @@ export const procedures: Procedure[] = [
     ],
     duration: "1h 30min",
     price: 170,
-    image: extensaoCiliosImg.url,
+    image: resolveAssetUrl(extensaoCiliosImg.url),
     featured: true,
   },
   {
@@ -199,7 +199,7 @@ export const procedures: Procedure[] = [
     ],
     duration: "1h 30min",
     price: 170,
-    image: extensaoCiliosHibridoImg.url,
+    image: resolveAssetUrl(extensaoCiliosHibridoImg.url),
     featured: true,
   },
   {
@@ -218,7 +218,7 @@ export const procedures: Procedure[] = [
     ],
     duration: "1h 30min",
     price: 180,
-    image: ciliosVolumeRussoImg.url,
+    image: resolveAssetUrl(ciliosVolumeRussoImg.url),
     featured: true,
   },
   {
@@ -237,7 +237,7 @@ export const procedures: Procedure[] = [
     ],
     duration: "2h",
     price: 600,
-    image: fioAFioImg.url,
+    image: resolveAssetUrl(fioAFioImg.url),
     featured: true,
   },
   /* ---------------- PIERCING / ORELHA ---------------- */
@@ -257,7 +257,7 @@ export const procedures: Procedure[] = [
     ],
     duration: "10min",
     price: 100,
-    image: perfuracaoLobuloImg.url,
+    image: resolveAssetUrl(perfuracaoLobuloImg.url),
     featured: true,
   },
   {
@@ -276,7 +276,7 @@ export const procedures: Procedure[] = [
     ],
     duration: "20min",
     price: 90,
-    image: perfuracaoHelixImg.url,
+    image: resolveAssetUrl(perfuracaoHelixImg.url),
     featured: true,
   },
   /* ---------------- SOBRANCELHA ---------------- */
@@ -296,7 +296,7 @@ export const procedures: Procedure[] = [
     ],
     duration: "1h 20min",
     price: 120,
-    image: browLaminationImg.url,
+    image: resolveAssetUrl(browLaminationImg.url),
     featured: true,
   },
   {
@@ -315,7 +315,7 @@ export const procedures: Procedure[] = [
     ],
     duration: "20min",
     price: 20,
-    image: aplicacaoHennaImg.url,
+    image: resolveAssetUrl(aplicacaoHennaImg.url),
     featured: true,
   },
   {
@@ -334,7 +334,7 @@ export const procedures: Procedure[] = [
     ],
     duration: "10min",
     price: 45,
-    image: designSobrancelhasImg.url,
+    image: resolveAssetUrl(designSobrancelhasImg.url),
     featured: true,
   },
   /* ---------------- LÁBIOS / BOCA ---------------- */
@@ -354,7 +354,7 @@ export const procedures: Procedure[] = [
     ],
     duration: "2h",
     price: 650,
-    image: microLabialImg.url,
+    image: resolveAssetUrl(microLabialImg.url),
     featured: true,
   },
   /* ---------------- OLHOS ---------------- */
@@ -374,7 +374,7 @@ export const procedures: Procedure[] = [
     ],
     duration: "1h",
     price: 300,
-    image: microOlhosImg.url,
+    image: resolveAssetUrl(microOlhosImg.url),
     featured: true,
   },
   {
@@ -393,7 +393,7 @@ export const procedures: Procedure[] = [
     ],
     duration: "1h 20min",
     price: 180,
-    image: foxEyesImg.url,
+    image: resolveAssetUrl(foxEyesImg.url),
     featured: true,
   },
   {
@@ -412,7 +412,7 @@ export const procedures: Procedure[] = [
     ],
     duration: "40min",
     price: 300,
-    image: delineadoLapisImg.url,
+    image: resolveAssetUrl(delineadoLapisImg.url),
     featured: true,
   },
   /* ---------------- LIMPEZA DE PELE ---------------- */
@@ -432,7 +432,7 @@ export const procedures: Procedure[] = [
     ],
     duration: "30min",
     price: 190,
-    image: dermaplaningImg.url,
+    image: resolveAssetUrl(dermaplaningImg.url),
     featured: true,
   },
 ];
@@ -443,11 +443,11 @@ export const beforeAfter = {
   notice: "Resultados reais de clientes, publicados com autorização.",
   items: [
     {
-      image: baCiliosVolumeBrasileiro.url,
+      image: resolveAssetUrl(baCiliosVolumeBrasileiro.url),
       label: "Cílios Volume Brasileiro — antes (acima) e depois (abaixo)",
     },
     {
-      image: dermaplaningImg.url,
+      image: resolveAssetUrl(dermaplaningImg.url),
       label: "Dermaplaning — antes (acima) e depois (abaixo)",
     },
   ] as { image: string; label: string }[],
@@ -458,79 +458,79 @@ export const beforeAfter = {
    { image: <asset>.url, name: "Nome da peça", description: "Descrição da peça" } */
 export const jewelry = [
   {
-    image: biju10811.url,
+    image: resolveAssetUrl(biju10811.url),
     name: "Anel Pedra Vermelha",
     description:
       "Anel dourado com pedra central vermelha e aro vazado com detalhes cravejados. Um toque de cor e elegância para qualquer ocasião.",
   },
   {
-    image: biju10817.url,
+    image: resolveAssetUrl(biju10817.url),
     name: "Anel Corações",
     description:
       "Anel prateado com dois corações vazados em encontro delicado. Romântico e leve, perfeito para o dia a dia.",
   },
   {
-    image: biju10821.url,
+    image: resolveAssetUrl(biju10821.url),
     name: "Anel Ondas Duplas",
     description:
       "Anel prateado de duas voltas com desenho ondulado. Moderno e minimalista, valoriza a mão com sutileza.",
   },
   {
-    image: biju10823.url,
+    image: resolveAssetUrl(biju10823.url),
     name: "Anel Pedra Azul com Zircônias",
     description:
       "Anel prateado com pedra central azul profunda cercada por zircônias brilhantes. Peça de destaque para ocasiões especiais.",
   },
   {
-    image: biju10825.url,
+    image: resolveAssetUrl(biju10825.url),
     name: "Piercing de Umbigo com Pedra",
     description:
       "Piercings de umbigo com pedras brilhantes, disponíveis em dourado e prateado. Brilho discreto e charmoso.",
   },
   {
-    image: biju10828.url,
+    image: resolveAssetUrl(biju10828.url),
     name: "Anel Ondas (variação)",
     description:
       "Anel prateado com traços ondulados em volta dupla. Combina com outros anéis para um mix estiloso.",
   },
   {
-    image: biju10830.url,
+    image: resolveAssetUrl(biju10830.url),
     name: "Pulseira Medalha Gravada",
     description:
       "Pulseira prateada de corrente fina com medalha redonda gravada. Delicada e cheia de significado.",
   },
   {
-    image: biju10835.url,
+    image: resolveAssetUrl(biju10835.url),
     name: "Pulseira Elos Ovais",
     description:
       "Pulseira prateada com elos ovais alongados e fecho mosquetão. Clássica e versátil, do casual ao elegante.",
   },
   {
-    image: biju10838.url,
+    image: resolveAssetUrl(biju10838.url),
     name: "Anel Disco Texturizado",
     description:
       "Anel prateado com disco redondo texturizado que reflete a luz em leque. Estilo marcante e contemporâneo.",
   },
   {
-    image: biju10840.url,
+    image: resolveAssetUrl(biju10840.url),
     name: "Bracelete Fio Cruzado",
     description:
       "Bracelete prateado de fio duplo com cruzamento central. Design limpo que abraça o pulso com leveza.",
   },
   {
-    image: biju10843.url,
+    image: resolveAssetUrl(biju10843.url),
     name: "Anel Solitário",
     description:
       "Anel prateado solitário com zircônia brilhante em cravação alta. O clássico que nunca sai de moda.",
   },
   {
-    image: biju10845.url,
+    image: resolveAssetUrl(biju10845.url),
     name: "Pulseira Elos Retangulares",
     description:
       "Pulseira prateada com elos retangulares vazados. Visual moderno que acompanha você em todos os momentos.",
   },
   {
-    image: biju10848.url,
+    image: resolveAssetUrl(biju10848.url),
     name: "Anel Falange Círculos",
     description:
       "Anel de falange prateado com dois círculos vazados em voltas delicadas. Perfeito para compor mix de anéis.",
@@ -581,7 +581,6 @@ export const faq = [
 export const formatPrice = (value: number) =>
   value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
-export const categoryName = (id: CategoryId) =>
-  categories.find((c) => c.id === id)?.name ?? "";
+export const categoryName = (id: CategoryId) => categories.find((c) => c.id === id)?.name ?? "";
 
 export const findProcedure = (id: string) => procedures.find((p) => p.id === id);
