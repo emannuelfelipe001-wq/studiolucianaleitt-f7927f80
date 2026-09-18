@@ -1,3 +1,4 @@
+import { resolveAssetUrl } from "./utils";
 import { createServerFn } from "@tanstack/react-start";
 import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
@@ -35,7 +36,7 @@ function mapProcedure(row: Database["public"]["Tables"]["procedures"]["Row"]): C
     benefits: row.benefits,
     duration: row.duration,
     price: Number(row.price),
-    image: row.image,
+    image: resolveAssetUrl(row.image),
     featured: row.featured,
     sortOrder: row.sort_order,
   };
@@ -46,7 +47,7 @@ function mapJewelry(row: Database["public"]["Tables"]["jewelry"]["Row"]): Catalo
     id: row.id,
     name: row.name,
     description: row.description,
-    image: row.image,
+    image: resolveAssetUrl(row.image),
     sortOrder: row.sort_order,
   };
 }

@@ -1,6 +1,14 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
+export function resolveAssetUrl(url: string | undefined | null) {
+  if (!url) return "";
+  if (url.startsWith("/__l5e/")) {
+    return `https://studiolucianaleitt.lovable.app${url}`;
+  }
+  return url;
+}
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
