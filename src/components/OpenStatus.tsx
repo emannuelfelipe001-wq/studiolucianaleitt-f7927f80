@@ -34,9 +34,7 @@ function isOpenNow() {
   const minute = Number(get("minute"));
   const minutes = hour * 60 + minute;
 
-  return (
-    OPEN_DAYS.includes(day) && minutes >= OPEN_HOUR * 60 && minutes < CLOSE_HOUR * 60
-  );
+  return OPEN_DAYS.includes(day) && minutes >= OPEN_HOUR * 60 && minutes < CLOSE_HOUR * 60;
 }
 
 export function OpenStatus({ className = "" }: { className?: string }) {

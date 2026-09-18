@@ -26,12 +26,14 @@ export function Hero() {
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-[0.15em] text-primary uppercase">
             <Sparkles className="size-3.5" /> Estética facial
           </span>
-          
+
           <h1 className="mt-5 text-4xl leading-[1.1] md:text-6xl">
-            Sua beleza <span className="text-rose-gradient">realçada</span> com delicadeza e precisão.
+            Sua beleza <span className="text-rose-gradient">realçada</span> com delicadeza e
+            precisão.
           </h1>
           <p className="mt-5 max-w-md text-base text-muted-foreground">
-            Cuidados faciais personalizados para uma pele mais saudável, luminosa e radiante, com protocolos exclusivos para valorizar sua beleza natural.
+            Cuidados faciais personalizados para uma pele mais saudável, luminosa e radiante, com
+            protocolos exclusivos para valorizar sua beleza natural.
           </p>
           <OpenStatus className="mt-4 flex text-sm" />
           <div className="mt-8 flex flex-wrap gap-3">
@@ -150,9 +152,7 @@ export function BeforeAfter({ as: Heading = "h2" }: { as?: "h1" | "h2" }) {
       <div className="text-center">
         <span className="text-xs tracking-[0.25em] text-primary uppercase">Resultados</span>
         <Heading className="mt-3 text-3xl md:text-4xl">Antes e depois</Heading>
-        <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">
-          {beforeAfter.notice}
-        </p>
+        <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">{beforeAfter.notice}</p>
       </div>
       {beforeAfter.items.length > 0 && (
         <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
@@ -241,10 +241,7 @@ export function Faq({ as: Heading = "h2" }: { as?: "h1" | "h2" }) {
       </div>
       <div className="mt-8 space-y-3">
         {faq.map((item) => (
-          <details
-            key={item.q}
-            className="card-soft group px-5 py-4 [&[open]]:bg-blush/40"
-          >
+          <details key={item.q} className="card-soft group px-5 py-4 [&[open]]:bg-blush/40">
             <summary className="cursor-pointer list-none text-sm font-medium marker:hidden">
               <span className="flex items-center justify-between gap-3">
                 {item.q}
@@ -277,8 +274,8 @@ export function InstagramArea() {
         ) : (
           <p className="max-w-md text-sm text-muted-foreground">
             {/* Adicione o @ oficial em src/config/clinic.ts para ativar este botão */}
-            Espaço reservado para o perfil oficial. Assim que o @ for informado, ele aparece
-            aqui com link direto.
+            Espaço reservado para o perfil oficial. Assim que o @ for informado, ele aparece aqui
+            com link direto.
           </p>
         )}
       </div>
@@ -314,22 +311,22 @@ export function LocationContact({ as: Heading = "h2" }: { as?: "h1" | "h2" }) {
 
           <div className="mt-6 flex flex-col items-start gap-3">
             <div className="flex flex-wrap gap-3">
-            <a
-              href={mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-primary/30 px-5 py-3 text-sm font-medium text-primary transition-colors hover:bg-blush"
-            >
-              Como chegar
-            </a>
-            <a
-              href={whatsappLink(GENERAL_MESSAGE)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-5 py-3 text-sm font-medium text-whatsapp-foreground transition-transform hover:scale-[1.03]"
-            >
-              <MessageCircle className="size-4" /> WhatsApp
-            </a>
+              <a
+                href={mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-primary/30 px-5 py-3 text-sm font-medium text-primary transition-colors hover:bg-blush"
+              >
+                Como chegar
+              </a>
+              <a
+                href={whatsappLink(GENERAL_MESSAGE)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-5 py-3 text-sm font-medium text-whatsapp-foreground transition-transform hover:scale-[1.03]"
+              >
+                <MessageCircle className="size-4" /> WhatsApp
+              </a>
             </div>
             <a
               href={instagramUrl}

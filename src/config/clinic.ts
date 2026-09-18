@@ -145,7 +145,6 @@ export type Procedure = {
   featured?: boolean;
 };
 
-
 /* ---------------- PROCEDIMENTOS ----------------
  *  Lista vazia: adicione aqui os procedimentos reais.
  *  Exemplo de item:
@@ -581,7 +580,6 @@ export const faq = [
 export const formatPrice = (value: number) =>
   value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
-export const categoryName = (id: CategoryId) =>
-  categories.find((c) => c.id === id)?.name ?? "";
+export const categoryName = (id: CategoryId) => categories.find((c) => c.id === id)?.name ?? "";
 
 export const findProcedure = (id: string) => procedures.find((p) => p.id === id);

@@ -34,7 +34,9 @@ export const getAdminSession = createServerFn({ method: "GET" }).handler(async (
 
 export const loginAdmin = createServerFn({ method: "POST" })
   .inputValidator((input) =>
-    z.object({ username: z.string().min(1).max(100), password: z.string().min(1).max(200) }).parse(input),
+    z
+      .object({ username: z.string().min(1).max(100), password: z.string().min(1).max(200) })
+      .parse(input),
   )
   .handler(async ({ data }) => {
     const username = process.env["ADMIN_USERNAME"];
@@ -57,7 +59,12 @@ export const logoutAdmin = createServerFn({ method: "POST" }).handler(async () =
 
 const procedureSchema = z.object({
   id: z.string().uuid().optional(),
-  slug: z.string().trim().min(1).max(160).regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
+  slug: z
+    .string()
+    .trim()
+    .min(1)
+    .max(160)
+    .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
   name: z.string().trim().min(1).max(160),
   category: z.string().trim().min(1).max(80),
   shortDescription: z.string().trim().min(1).max(500),
@@ -102,7 +109,11 @@ export const saveProcedure = createServerFn({ method: "POST" })
     const { error } = await query;
     if (error) {
       console.error("Save procedure failed", error);
-      throw new Error(error.code === "23505" ? "Já existe um procedimento com esse endereço." : "Não foi possível salvar.");
+      throw new Error(
+        error.code === "23505"
+          ? "Já existe um procedimento com esse endereço."
+          : "Não foi possível salvar.",
+      );
     }
     return { ok: true as const };
   });
@@ -122,7 +133,12 @@ export const saveJewelry = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     await requireAdmin();
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const payload = { name: data.name, description: data.description, image: data.image, sort_order: data.sortOrder };
+    const payload = {
+      name: data.name,
+      description: data.description,
+      image: data.image,
+      sort_order: data.sortOrder,
+    };
     const query = data.id
       ? supabaseAdmin.from("jewelry").update(payload).eq("id", data.id)
       : supabaseAdmin.from("jewelry").insert(payload);
@@ -143,18 +159,21 @@ export const deleteJewelry = createServerFn({ method: "POST" })
 
 export const uploadCatalogImage = createServerFn({ method: "POST" })
   .inputValidator((input) =>
-    z.object({
-      name: z.string().min(1).max(200),
-      type: z.enum(["image/jpeg", "image/png", "image/webp"]),
-      base64: z.string().min(1).max(14_000_000),
-    }).parse(input),
+    z
+      .object({
+        name: z.string().min(1).max(200),
+        type: z.enum(["image/jpeg", "image/png", "image/webp"]),
+        base64: z.string().min(1).max(14_000_000),
+      })
+      .parse(input),
   )
   .handler(async ({ data }) => {
     await requireAdmin();
-    const raw = data.base64.includes(",") ? data.base64.split(",").pop() ?? "" : data.base64;
+    const raw = data.base64.includes(",") ? (data.base64.split(",").pop() ?? "") : data.base64;
     const bytes = Buffer.from(raw, "base64");
     if (bytes.byteLength > 10 * 1024 * 1024) throw new Error("A foto deve ter no máximo 10 MB.");
-    const extension = data.type === "image/png" ? "png" : data.type === "image/webp" ? "webp" : "jpg";
+    const extension =
+      data.type === "image/png" ? "png" : data.type === "image/webp" ? "webp" : "jpg";
     const path = `catalog-${crypto.randomUUID()}.${extension}`;
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     const { error } = await supabaseAdmin.storage.from("catalog-images").upload(path, bytes, {

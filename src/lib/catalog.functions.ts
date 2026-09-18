@@ -51,21 +51,23 @@ function mapJewelry(row: Database["public"]["Tables"]["jewelry"]["Row"]): Catalo
   };
 }
 
-export const getCatalogData = createServerFn({ method: "GET" }).handler(async (): Promise<CatalogData> => {
-  const client = publicClient();
-  const [proceduresResult, jewelryResult] = await Promise.all([
-    client.from("procedures").select("*").order("sort_order").order("created_at"),
-    client.from("jewelry").select("*").order("sort_order").order("created_at"),
-  ]);
-  if (proceduresResult.error || jewelryResult.error) {
-    console.error("Catalog read failed", proceduresResult.error ?? jewelryResult.error);
-    throw new Error("Não foi possível carregar o catálogo.");
-  }
-  return {
-    procedures: (proceduresResult.data ?? []).map(mapProcedure),
-    jewelry: (jewelryResult.data ?? []).map(mapJewelry),
-  };
-});
+export const getCatalogData = createServerFn({ method: "GET" }).handler(
+  async (): Promise<CatalogData> => {
+    const client = publicClient();
+    const [proceduresResult, jewelryResult] = await Promise.all([
+      client.from("procedures").select("*").order("sort_order").order("created_at"),
+      client.from("jewelry").select("*").order("sort_order").order("created_at"),
+    ]);
+    if (proceduresResult.error || jewelryResult.error) {
+      console.error("Catalog read failed", proceduresResult.error ?? jewelryResult.error);
+      throw new Error("Não foi possível carregar o catálogo.");
+    }
+    return {
+      procedures: (proceduresResult.data ?? []).map(mapProcedure),
+      jewelry: (jewelryResult.data ?? []).map(mapJewelry),
+    };
+  },
+);
 
 export const getProcedureBySlug = createServerFn({ method: "GET" })
   .inputValidator((input) => z.object({ slug: z.string().min(1).max(160) }).parse(input))
