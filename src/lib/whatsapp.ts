@@ -6,8 +6,7 @@ export function whatsappLink(message: string) {
 }
 
 /** Mensagem padrão do botão flutuante e dos CTAs do site */
-export const GENERAL_MESSAGE =
-  "Olá Luciana, gostaria de saber mais sobre os procedimentos.";
+export const GENERAL_MESSAGE = "Olá Luciana, gostaria de saber mais sobre os procedimentos.";
 
 /** Formata a data (yyyy-mm-dd) para dd/mm/aaaa */
 export function formatDate(value: string) {

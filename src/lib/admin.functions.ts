@@ -23,6 +23,8 @@ function safeMatch(value: string, expected: string) {
 }
 
 async function requireAdmin() {
+  // This is TanStack's server-session API, not a React hook.
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const session = await useSession<AdminSession>(getSessionConfig());
   if (!session.data.authenticated) throw new Error("Acesso não autorizado.");
 }

@@ -35,8 +35,13 @@ function CartPage() {
   const [time, setTime] = useState("");
 
   const detailed = items
-    .map((item) => ({ ...item, procedure: procedures.find((procedure) => procedure.id === item.id) }))
-    .filter((item): item is typeof item & { procedure: NonNullable<typeof item.procedure> } => Boolean(item.procedure));
+    .map((item) => ({
+      ...item,
+      procedure: procedures.find((procedure) => procedure.id === item.id),
+    }))
+    .filter((item): item is typeof item & { procedure: NonNullable<typeof item.procedure> } =>
+      Boolean(item.procedure),
+    );
 
   const totalMinutes = detailed.reduce(
     (sum, i) => sum + parseDuration(i.procedure.duration) * i.qty,
@@ -163,9 +168,7 @@ function CartPage() {
         <aside className="card-soft h-fit p-6 lg:sticky lg:top-24">
           <div className="flex items-center justify-between border-b border-border pb-4">
             <span className="text-sm text-muted-foreground">Subtotal</span>
-            <span className="font-display text-2xl text-rose-deep">
-              {formatPrice(subtotal)}
-            </span>
+            <span className="font-display text-2xl text-rose-deep">{formatPrice(subtotal)}</span>
           </div>
 
           {count >= 2 && (

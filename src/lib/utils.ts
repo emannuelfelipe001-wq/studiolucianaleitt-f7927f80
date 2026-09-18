@@ -9,9 +9,7 @@ export function cn(...inputs: ClassValue[]) {
 export function parseDuration(value: string): number {
   const hours = /(\d+)\s*h/.exec(value);
   const minutes = /(\d+)\s*min/.exec(value);
-  return (
-    (hours ? Number(hours[1]) * 60 : 0) + (minutes ? Number(minutes[1]) : 0)
-  );
+  return (hours ? Number(hours[1]) * 60 : 0) + (minutes ? Number(minutes[1]) : 0);
 }
 
 /** Formata minutos totais em "1h 20min", "2h" ou "45min". */
