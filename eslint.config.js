@@ -11,8 +11,7 @@ export default tseslint.config(
       "dist",
       ".output",
       ".vinxi",
-      "src/integrations/supabase/auth-attacher.ts",
-      "src/integrations/supabase/auth-middleware.ts",
+      "src/integrations/supabase/**",
     ],
   },
   {
