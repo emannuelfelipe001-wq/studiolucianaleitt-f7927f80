@@ -305,7 +305,7 @@ function ImageField({ value, onChange }: { value: string; onChange: (url: string
       });
       onChange(result.url);
     } catch {
-      setError("Não foi possível enviar esta foto. Use JPG, PNG ou WebP de até 10 MB.");
+      setError("Não foi possível enviar esta imagem. Use qualquer formato de imagem de até 10 MB.");
     } finally {
       setBusy(false);
     }
@@ -325,7 +325,7 @@ function ImageField({ value, onChange }: { value: string; onChange: (url: string
           {busy ? "Enviando..." : "Escolher foto"}
           <input
             type="file"
-            accept="image/jpeg,image/png,image/webp"
+            accept="image/*"
             disabled={busy}
             onChange={(e) => void select(e.target.files?.[0])}
             className="sr-only"
