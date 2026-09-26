@@ -3,9 +3,16 @@ import { twMerge } from "tailwind-merge";
 
 export function resolveAssetUrl(url: string | undefined | null) {
   if (!url) return "";
+
+  // Lovable asset references are intentionally relative. Keeping the
+  // /__l5e/... path on the current origin makes the images work on the
+  // Lovable preview, published domain, and any custom domain instead of
+  // depending on an old hard-coded lovable.app hostname.
   if (url.startsWith("/__l5e/")) {
-    return `https://studiolucianaleitt.lovable.app${url}`;
+    return url;
   }
+
+  // Preserve absolute URLs and normal local/public paths.
   return url;
 }
 
