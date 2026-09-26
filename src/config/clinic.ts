@@ -83,7 +83,7 @@ export const mapEmbedUrl = `https://www.openstreetmap.org/export/embed.html?bbox
   clinic.coords.lat + 0.003
 }&layer=mapnik&marker=${clinic.coords.lat}%2C${clinic.coords.lng}`;
 export const instagramUrl = clinic.instagram
-  ? "https://www.instagram.com/studiolucianaleitte/?utm_source=ig_web_button_share_sheet"
+  ? `https://www.instagram.com/${clinic.instagram.replace(/^@/, "")}/`
   : "";
 
 /* ---------------- SOBRE ---------------- */
@@ -440,7 +440,7 @@ export const procedures: Procedure[] = [
 /* ---------------- ANTES E DEPOIS ----------------
    Adicione aqui as fotos reais: { image: minhaFoto, label: "Nome" } */
 export const beforeAfter = {
-  notice: "Resultados reais de clientes, publicados com autorização.",
+  notice: "Imagens demonstrativas. Substitua por resultados reais somente quando houver autorização para publicação.",
   items: [
     {
       image: resolveAssetUrl(baCiliosVolumeBrasileiro.url),
