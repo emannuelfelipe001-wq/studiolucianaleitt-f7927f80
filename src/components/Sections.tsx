@@ -39,9 +39,9 @@ export function Hero() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               to="/catalogo"
-              className="rounded-full bg-rose-gradient px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-soft transition-transform hover:scale-[1.03]"
+              className="rounded-full border border-primary/30 bg-card px-6 py-3.5 text-sm font-medium text-primary shadow-soft transition-colors hover:bg-blush hover:scale-[1.03]"
             >
-              Ver procedimentos
+              Catálogo
             </Link>
             <a
               href={whatsappLink(GENERAL_MESSAGE)}
