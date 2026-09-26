@@ -4,12 +4,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/*
- * Design system — Luciana Leitte Estética
- * Rosa suave + branco, detalhes em rosa/vermelho, degradês discretos.
- * Todas as cores em oklch e usadas via classes semânticas.
- */
-
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -111,6 +105,27 @@
     font-family: var(--font-display);
     letter-spacing: -0.01em;
   }
+
+  ::selection {
+    background: var(--rose);
+    color: var(--foreground);
+  }
+}
+
+/* Smooth page entrance */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  animation: page-enter 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 /* Degradês discretos reutilizáveis */
@@ -138,32 +153,146 @@
   color: transparent;
 }
 
+/* Elegant interactive cards */
 @utility card-soft {
   background-color: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-soft);
   transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
 
   &:hover {
-    transform: translateY(-4px);
+    transform: translateY(-7px);
     box-shadow: var(--shadow-card);
+    border-color: var(--rose);
   }
 }
 
+/* Reusable entrance animations */
 @utility fade-up {
-  animation: fade-up 0.6s ease both;
+  animation: fade-up 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@utility fade-in {
+  animation: fade-in 0.7s ease both;
+}
+
+@utility slide-left {
+  animation: slide-left 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@utility slide-right {
+  animation: slide-right 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@utility scale-in {
+  animation: scale-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@utility float-soft {
+  animation: float-soft 5s ease-in-out infinite;
+}
+
+@utility glow-soft {
+  animation: glow-soft 3s ease-in-out infinite;
 }
 
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(24px);
   }
   to {
     opacity: 1;
-    transform: none;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float-soft {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes glow-soft {
+  0%, 100% {
+    box-shadow: 0 10px 30px -18px oklch(0.55 0.14 15 / 0.18);
+  }
+  50% {
+    box-shadow: 0 16px 40px -16px oklch(0.55 0.14 15 / 0.32);
+  }
+}
+
+/* Stagger helpers for lists/grids */
+.stagger-children > * {
+  animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.10s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.15s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.20s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.25s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.30s; }
+.stagger-children > *:nth-child(7) { animation-delay: 0.35s; }
+.stagger-children > *:nth-child(8) { animation-delay: 0.40s; }
+
+/* Respect reduced-motion accessibility preferences. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
