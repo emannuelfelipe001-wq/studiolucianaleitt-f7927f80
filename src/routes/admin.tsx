@@ -3,6 +3,7 @@ import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { Check, ImagePlus, LogOut, Pencil, Plus, Trash2, X } from "lucide-react";
 import { useServerFn } from "@tanstack/react-start";
 import { categories } from "@/config/clinic";
+import { supabase } from "@/integrations/supabase/client";
 import { useCatalog } from "@/lib/catalog-context";
 import type { CatalogJewelry, CatalogProcedure } from "@/lib/catalog.types";
 import {
@@ -290,22 +291,30 @@ function ImageField({ value, onChange }: { value: string; onChange: (url: string
     setBusy(true);
     setError("");
     try {
-      const base64 = await new Promise<string>((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = () => resolve(String(reader.result));
-        reader.onerror = reject;
-        reader.readAsDataURL(file);
-      });
+      const MAX_IMAGE_SIZE = 50 * 1024 * 1024;
+      if (file.size > MAX_IMAGE_SIZE) {
+        throw new Error("A foto deve ter no máximo 50 MB.");
+      }
+      if (!file.type.startsWith("image/")) {
+        throw new Error("O arquivo precisa ser uma imagem.");
+      }
       const result = await upload({
         data: {
           name: file.name,
-          type: file.type as "image/jpeg" | "image/png" | "image/webp",
-          base64,
+          type: file.type,
+          size: file.size,
         },
       });
+      const { error: uploadError } = await supabase.storage
+        .from("catalog-images")
+        .uploadToSignedUrl(result.path, result.token, file, {
+          contentType: file.type,
+          cacheControl: "31536000",
+        });
+      if (uploadError) throw uploadError;
       onChange(result.url);
     } catch {
-      setError("Não foi possível enviar esta imagem. Use qualquer formato de imagem de até 10 MB.");
+      setError("Não foi possível enviar esta imagem. Use qualquer formato de imagem de até 50 MB.");
     } finally {
       setBusy(false);
     }
