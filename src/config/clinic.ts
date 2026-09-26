@@ -29,7 +29,6 @@ import extensaoCiliosHibridoImg from "@/assets/extensao-cilios-hibrido.jpg.asset
 import dermaplaningImg from "@/assets/dermaplaning.jpg.asset.json";
 import foxEyesImg from "@/assets/fox-eyes.jpg.asset.json";
 import fioAFioImg from "@/assets/fio-a-fio.jpg.asset.json";
-import delineadoLapisImg from "@/assets/delineado-a-lapis.jpg.asset.json";
 import ciliosVolumeRussoImg from "@/assets/cilios-volume-russo.jpg.asset.json";
 import aplicacaoHennaImg from "@/assets/aplicacao-henna.jpg.asset.json";
 import designSobrancelhasImg from "@/assets/design-sobrancelhas.jpg.asset.json";
@@ -412,7 +411,7 @@ export const procedures: Procedure[] = [
     ],
     duration: "40min",
     price: 300,
-    image: resolveAssetUrl(delineadoLapisImg.url),
+    image: "/procedimentos/delineado-a-lapis.webp",
     featured: true,
   },
   /* ---------------- LIMPEZA DE PELE ---------------- */
