@@ -159,29 +159,34 @@ export const deleteJewelry = createServerFn({ method: "POST" })
     return { ok: true as const };
   });
 
+const MAX_CATALOG_IMAGE_BYTES = 50 * 1024 * 1024;
+
 export const uploadCatalogImage = createServerFn({ method: "POST" })
   .inputValidator((input) =>
     z
       .object({
         name: z.string().min(1).max(200),
         type: z.string().trim().regex(/^image\/.+$/, "O arquivo precisa ser uma imagem."),
-        base64: z.string().min(1).max(14_000_000),
+        size: z.number().int().positive().max(MAX_CATALOG_IMAGE_BYTES),
       })
       .parse(input),
   )
   .handler(async ({ data }) => {
     await requireAdmin();
-    const raw = data.base64.includes(",") ? (data.base64.split(",").pop() ?? "") : data.base64;
-    const bytes = Buffer.from(raw, "base64");
-    if (bytes.byteLength > 10 * 1024 * 1024) throw new Error("A foto deve ter no máximo 10 MB.");
-    const extension = data.name.includes(".") ? data.name.split(".").pop()!.toLowerCase().replace(/[^a-z0-9]/g, "") : "img";
+    const extension = data.name.includes(".")
+      ? data.name.split(".").pop()!.toLowerCase().replace(/[^a-z0-9]/g, "")
+      : "img";
     const safeExtension = extension.slice(0, 10) || "img";
     const path = `catalog-${crypto.randomUUID()}.${safeExtension}`;
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const { error } = await supabaseAdmin.storage.from("catalog-images").upload(path, bytes, {
-      contentType: data.type,
-      upsert: false,
-    });
-    if (error) throw new Error("Não foi possível enviar a foto.");
-    return { url: `/api/public/catalog-image?path=${encodeURIComponent(path)}` };
+    const { data: signed, error } = await supabaseAdmin.storage
+      .from("catalog-images")
+      .createSignedUploadUrl(path);
+    if (error || !signed?.token) throw new Error("Não foi possível preparar o envio da foto.");
+    return {
+      path,
+      token: signed.token,
+      maxBytes: MAX_CATALOG_IMAGE_BYTES,
+      url: `/api/public/catalog-image?path=${encodeURIComponent(path)}`,
+    };
   });
