@@ -96,7 +96,10 @@ export const getCatalogData = createServerFn({ method: "GET" }).handler(
       ]);
 
       if (proceduresResult.error || jewelryResult.error) {
-        console.error("Catalog read failed; using local catalog fallback.", proceduresResult.error ?? jewelryResult.error);
+        console.error(
+          "Catalog read failed; using local catalog fallback.",
+          proceduresResult.error ?? jewelryResult.error,
+        );
         return getLocalCatalogData();
       }
 
@@ -123,12 +126,16 @@ export const getProcedureBySlug = createServerFn({ method: "GET" })
 
       if (error) {
         console.error("Procedure read failed; using local catalog fallback.", error);
-        return getLocalCatalogData().procedures.find((procedure) => procedure.id === data.slug) ?? null;
+        return (
+          getLocalCatalogData().procedures.find((procedure) => procedure.id === data.slug) ?? null
+        );
       }
 
       return row ? mapProcedure(row) : null;
     } catch (error) {
       console.error("Procedure initialization failed; using local catalog fallback.", error);
-      return getLocalCatalogData().procedures.find((procedure) => procedure.id === data.slug) ?? null;
+      return (
+        getLocalCatalogData().procedures.find((procedure) => procedure.id === data.slug) ?? null
+      );
     }
   });

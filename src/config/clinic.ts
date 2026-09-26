@@ -439,7 +439,8 @@ export const procedures: Procedure[] = [
 /* ---------------- ANTES E DEPOIS ----------------
    Adicione aqui as fotos reais: { image: minhaFoto, label: "Nome" } */
 export const beforeAfter = {
-  notice: "Imagens demonstrativas. Substitua por resultados reais somente quando houver autorização para publicação.",
+  notice:
+    "Imagens demonstrativas. Substitua por resultados reais somente quando houver autorização para publicação.",
   items: [
     {
       image: resolveAssetUrl(baCiliosVolumeBrasileiro.url),
