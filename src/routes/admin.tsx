@@ -413,6 +413,7 @@ function ProcedureEditor({
         <Text label="Nome" value={form.name} onChange={(v) => update("name", v)} />
         <Text
           label="Endereço da página"
+          disabled={Boolean(form.dbId)}
           value={form.id}
           onChange={(v) =>
             update(
@@ -632,16 +633,19 @@ function Text({
   label,
   value,
   onChange,
+  disabled = false,
 }: {
   label: string;
   value: string;
   onChange: (value: string) => void;
+  disabled?: boolean;
 }) {
   return (
     <label className="block text-sm font-medium">
       {label}
       <input
         aria-label={label}
+        disabled={disabled}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         className={field}
