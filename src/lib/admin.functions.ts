@@ -159,7 +159,7 @@ export const deleteJewelry = createServerFn({ method: "POST" })
     return { ok: true as const };
   });
 
-const MAX_CATALOG_IMAGE_BYTES = 50 * 1024 * 1024;
+const MAX_CATALOG_IMAGE_BYTES = 10 * 1024 * 1024;
 
 export const uploadCatalogImage = createServerFn({ method: "POST" })
   .inputValidator((input) =>

@@ -291,9 +291,9 @@ function ImageField({ value, onChange }: { value: string; onChange: (url: string
     setBusy(true);
     setError("");
     try {
-      const MAX_IMAGE_SIZE = 50 * 1024 * 1024;
+      const MAX_IMAGE_SIZE = 10 * 1024 * 1024;
       if (file.size > MAX_IMAGE_SIZE) {
-        throw new Error("A foto deve ter no máximo 50 MB.");
+        throw new Error("A foto deve ter no máximo 10 MB.");
       }
       if (!file.type.startsWith("image/")) {
         throw new Error("O arquivo precisa ser uma imagem.");
@@ -314,7 +314,7 @@ function ImageField({ value, onChange }: { value: string; onChange: (url: string
       if (uploadError) throw uploadError;
       onChange(result.url);
     } catch {
-      setError("Não foi possível enviar esta imagem. Use qualquer formato de imagem de até 50 MB.");
+      setError("Não foi possível enviar esta imagem. Use uma imagem de até 10 MB.");
     } finally {
       setBusy(false);
     }
