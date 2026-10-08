@@ -9,7 +9,8 @@ export function resolveAssetUrl(url: string | undefined | null) {
   // to this project and must follow its current preview or published origin.
   try {
     const parsed = new URL(url, "https://project.invalid");
-    const isProjectOrigin = parsed.hostname === "project.invalid" || parsed.hostname.endsWith(".lovable.app");
+    const isProjectOrigin =
+      parsed.hostname === "project.invalid" || parsed.hostname.endsWith(".lovable.app");
     if (isProjectOrigin && parsed.pathname.startsWith("/__l5e/assets-v1/")) {
       const filename = decodeURIComponent(parsed.pathname.split("/").pop() ?? "");
       return projectAssetUrls[filename] ?? `${parsed.pathname}${parsed.search}`;
