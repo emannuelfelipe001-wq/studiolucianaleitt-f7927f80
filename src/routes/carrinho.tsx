@@ -55,7 +55,7 @@ function CartPage() {
     const names = detailed.flatMap((i) =>
       i.qty > 1 ? [`${i.procedure.name} (${i.qty}x)`] : [i.procedure.name],
     );
-    const message = bookingMessage(names, date, time);
+    const message = `Meu nome é ${name.trim()}. ${bookingMessage(names, date, time)}`;
     window.open(whatsappLink(message), "_blank", "noopener,noreferrer");
     clear();
     setStep("cart");

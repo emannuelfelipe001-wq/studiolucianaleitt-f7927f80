@@ -1,5 +1,6 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { projectAssetUrls } from "./asset-urls";
 
 export function resolveAssetUrl(url: string | undefined | null) {
   if (!url) return "";
@@ -7,12 +8,11 @@ export function resolveAssetUrl(url: string | undefined | null) {
   // Legacy catalog rows contain the former published hostname. Assets belong
   // to this project and must follow its current preview or published origin.
   try {
-    const parsed = new URL(url);
-    if (
-      parsed.hostname.endsWith(".lovable.app") &&
-      parsed.pathname.startsWith("/__l5e/assets-v1/")
-    ) {
-      return `${parsed.pathname}${parsed.search}`;
+    const parsed = new URL(url, "https://project.invalid");
+    const isProjectOrigin = parsed.hostname === "project.invalid" || parsed.hostname.endsWith(".lovable.app");
+    if (isProjectOrigin && parsed.pathname.startsWith("/__l5e/assets-v1/")) {
+      const filename = decodeURIComponent(parsed.pathname.split("/").pop() ?? "");
+      return projectAssetUrls[filename] ?? `${parsed.pathname}${parsed.search}`;
     }
   } catch {
     // Relative project assets already resolve against the current origin.

@@ -8,3 +8,7 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Resolve legacy catalog image references through the project's asset-pointer registry, preserving custom uploads; old database asset IDs may no longer exist.
+- Administrative writes require the encrypted server-verified admin session; public catalog access remains read-only.
+- Declare public browser configuration types in an app-owned declaration file instead of editing generated integration modules.
