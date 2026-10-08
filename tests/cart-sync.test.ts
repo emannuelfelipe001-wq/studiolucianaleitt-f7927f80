@@ -9,7 +9,10 @@ test("temporary catalog failure preserves saved selections", () => {
 test("confirmed catalog removes deleted procedures only", () => {
   expect(
     syncCartItems(
-      [{ id: "existing", qty: 2 }, { id: "deleted", qty: 1 }],
+      [
+        { id: "existing", qty: 2 },
+        { id: "deleted", qty: 1 },
+      ],
       new Set(["existing"]),
       false,
     ),
