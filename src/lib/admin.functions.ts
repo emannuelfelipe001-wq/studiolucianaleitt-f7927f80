@@ -176,9 +176,7 @@ export const uploadCatalogImage = createServerFn({ method: "POST" })
   )
   .handler(async ({ data }) => {
     await requireAdmin();
-    const extension = (data.name.split(".").pop() ?? "img")
-      .toLowerCase()
-      .replace(/[^a-z0-9]/g, "");
+    const extension = (data.name.split(".").pop() ?? "img").toLowerCase().replace(/[^a-z0-9]/g, "");
     const safeExtension = extension.slice(0, 10) || "img";
     const path = `catalog-${crypto.randomUUID()}.${safeExtension}`;
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");

@@ -8,7 +8,10 @@ export function resolveAssetUrl(url: string | undefined | null) {
   // to this project and must follow its current preview or published origin.
   try {
     const parsed = new URL(url);
-    if (parsed.hostname.endsWith(".lovable.app") && parsed.pathname.startsWith("/__l5e/assets-v1/")) {
+    if (
+      parsed.hostname.endsWith(".lovable.app") &&
+      parsed.pathname.startsWith("/__l5e/assets-v1/")
+    ) {
       return `${parsed.pathname}${parsed.search}`;
     }
   } catch {
