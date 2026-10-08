@@ -1,6 +1,6 @@
 import { createHash, timingSafeEqual } from "node:crypto";
 import { createServerFn } from "@tanstack/react-start";
-import { useSession } from "@tanstack/react-start/server";
+import { useSession, setResponseHeader } from "@tanstack/react-start/server";
 import { z } from "zod";
 
 function getSessionConfig() {
@@ -30,6 +30,7 @@ async function requireAdmin() {
 }
 
 export const getAdminSession = createServerFn({ method: "GET" }).handler(async () => {
+  setResponseHeader("cache-control", "no-store");
   const session = await useSession<AdminSession>(getSessionConfig());
   return { authenticated: session.data.authenticated === true };
 });
@@ -159,7 +160,7 @@ export const deleteJewelry = createServerFn({ method: "POST" })
     return { ok: true as const };
   });
 
-const MAX_CATALOG_IMAGE_BYTES = 50 * 1024 * 1024;
+const MAX_CATALOG_IMAGE_BYTES = 10 * 1024 * 1024;
 
 export const uploadCatalogImage = createServerFn({ method: "POST" })
   .inputValidator((input) =>

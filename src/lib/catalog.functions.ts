@@ -62,6 +62,7 @@ function getLocalCatalogData(): CatalogData {
   const validCategories = new Set<string>(categories.map((category) => category.id));
 
   return {
+    isFallback: true,
     procedures: localProcedures.map((procedure, index) => ({
       dbId: `local-${procedure.id}`,
       id: procedure.id,
