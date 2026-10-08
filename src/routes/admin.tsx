@@ -135,6 +135,7 @@ function AdminPanel({ onLogout }: { onLogout: () => void }) {
           onClick={async () => {
             await logout();
             onLogout();
+            await router.invalidate();
           }}
           className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2.5 text-sm"
         >
@@ -639,7 +640,7 @@ function Text({
   return (
     <label className="block text-sm font-medium">
       {label}
-      <input value={value} onChange={(e) => onChange(e.target.value)} className={field} required />
+      <input aria-label={label} value={value} onChange={(e) => onChange(e.target.value)} className={field} required />
     </label>
   );
 }
@@ -658,6 +659,7 @@ function Area({
     <label className="block text-sm font-medium">
       {label}
       <textarea
+        aria-label={label}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         rows={rows}
