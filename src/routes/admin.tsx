@@ -126,10 +126,10 @@ function AdminPanel({ onLogout }: { onLogout: () => void }) {
 
   return (
     <section className="mx-auto max-w-6xl px-4 py-10 md:py-16">
-      <div className="flex flex-wrap items-center justify-between gap-4">
-        <div>
+      <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 sm:flex sm:justify-between">
+        <div className="min-w-0">
           <p className="text-xs tracking-[0.2em] text-primary uppercase">Área reservada</p>
-          <h1 className="mt-1 text-3xl md:text-4xl">Gerenciar catálogos</h1>
+          <h1 className="mt-1 text-2xl md:text-4xl">Gerenciar catálogos</h1>
         </div>
         <button
           onClick={async () => {
@@ -159,7 +159,7 @@ function AdminPanel({ onLogout }: { onLogout: () => void }) {
           >
             <Plus className="size-4" /> Novo procedimento
           </button>
-          <div className="mt-6 grid gap-3">
+          <div className="mt-6 grid min-w-0 grid-cols-1 gap-3">
             {procedures.map((item) => (
               <AdminRow
                 key={item.dbId}
@@ -186,7 +186,7 @@ function AdminPanel({ onLogout }: { onLogout: () => void }) {
           >
             <Plus className="size-4" /> Nova bijuteria
           </button>
-          <div className="mt-6 grid gap-3">
+          <div className="mt-6 grid min-w-0 grid-cols-1 gap-3">
             {jewelry.map((item) => (
               <AdminRow
                 key={item.id}
@@ -237,7 +237,7 @@ function AdminRow({
   onEdit: () => void;
 }) {
   return (
-    <article className="flex items-center gap-4 rounded-xl border border-border bg-card p-3">
+    <article className="grid min-w-0 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4 rounded-xl border border-border bg-card p-3">
       <img src={image} alt="" className="size-16 shrink-0 rounded-lg object-cover" />
       <div className="min-w-0 flex-1">
         <h2 className="truncate text-lg">{title}</h2>
