@@ -640,7 +640,13 @@ function Text({
   return (
     <label className="block text-sm font-medium">
       {label}
-      <input aria-label={label} value={value} onChange={(e) => onChange(e.target.value)} className={field} required />
+      <input
+        aria-label={label}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className={field}
+        required
+      />
     </label>
   );
 }
