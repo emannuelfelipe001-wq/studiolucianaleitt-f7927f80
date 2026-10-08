@@ -8,3 +8,4 @@
 - [ ] Verificar acessos indevidos e automações externas
 
 - [ ] Verificação final em celular e computador: login, edição, filtros, menu, carrinho e WhatsApp
+- [ ] Entregar ZIP com código-fonte e fotos, sem segredos nem arquivos gerados
