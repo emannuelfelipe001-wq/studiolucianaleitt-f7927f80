@@ -166,16 +166,19 @@ export const uploadCatalogImage = createServerFn({ method: "POST" })
     z
       .object({
         name: z.string().min(1).max(200),
-        type: z.string().trim().regex(/^image\/.+$/, "O arquivo precisa ser uma imagem."),
+        type: z
+          .string()
+          .trim()
+          .regex(/^image\/.+$/, "O arquivo precisa ser uma imagem."),
         size: z.number().int().positive().max(MAX_CATALOG_IMAGE_BYTES),
       })
       .parse(input),
   )
   .handler(async ({ data }) => {
     await requireAdmin();
-    const extension = data.name.includes(".")
-      ? data.name.split(".").pop()!.toLowerCase().replace(/[^a-z0-9]/g, "")
-      : "img";
+    const extension = (data.name.split(".").pop() ?? "img")
+      .toLowerCase()
+      .replace(/[^a-z0-9]/g, "");
     const safeExtension = extension.slice(0, 10) || "img";
     const path = `catalog-${crypto.randomUUID()}.${safeExtension}`;
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");

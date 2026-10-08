@@ -5,7 +5,7 @@ export const Route = createFileRoute("/api/public/catalog-image")({
     handlers: {
       GET: async ({ request }) => {
         const path = new URL(request.url).searchParams.get("path") ?? "";
-        if (!/^catalog-[0-9a-f-]+\.(?:jpg|png|webp)$/.test(path)) {
+        if (!/^catalog-[0-9a-f-]+\.[a-z0-9]{1,10}$/.test(path)) {
           return new Response("Imagem inválida", { status: 400 });
         }
         const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
@@ -16,6 +16,7 @@ export const Route = createFileRoute("/api/public/catalog-image")({
             "content-type": data.type || "application/octet-stream",
             "cache-control": "public, max-age=31536000, immutable",
             "x-content-type-options": "nosniff",
+            "content-security-policy": "default-src 'none'; sandbox",
           },
         });
       },

@@ -4,12 +4,15 @@ import { twMerge } from "tailwind-merge";
 export function resolveAssetUrl(url: string | undefined | null) {
   if (!url) return "";
 
-  // Lovable asset references are intentionally relative. Keeping the
-  // /__l5e/... path on the current origin makes the images work on the
-  // Lovable preview, published domain, and any custom domain instead of
-  // depending on an old hard-coded lovable.app hostname.
-  if (url.startsWith("/__l5e/")) {
-    return url;
+  // Legacy catalog rows contain the former published hostname. Assets belong
+  // to this project and must follow its current preview or published origin.
+  try {
+    const parsed = new URL(url);
+    if (parsed.hostname.endsWith(".lovable.app") && parsed.pathname.startsWith("/__l5e/assets-v1/")) {
+      return `${parsed.pathname}${parsed.search}`;
+    }
+  } catch {
+    // Relative project assets already resolve against the current origin.
   }
 
   // Preserve absolute URLs and normal local/public paths.
