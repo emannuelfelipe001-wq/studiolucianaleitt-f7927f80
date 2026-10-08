@@ -14,3 +14,4 @@
 - Resolve legacy catalog image references through the project's asset-pointer registry, preserving custom uploads; old database asset IDs may no longer exist.
 - Administrative writes require the encrypted server-verified admin session; public catalog access remains read-only.
 - Declare public browser configuration types in an app-owned declaration file instead of editing generated integration modules.
+- Mark fallback catalog data explicitly and preserve saved cart selections during fallback reads, because temporary outages must not erase customer choices.

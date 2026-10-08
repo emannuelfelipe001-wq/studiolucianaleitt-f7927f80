@@ -24,6 +24,7 @@ export type CatalogJewelry = {
 };
 
 export type CatalogData = {
+  isFallback?: boolean;
   procedures: CatalogProcedure[];
   jewelry: CatalogJewelry[];
 };

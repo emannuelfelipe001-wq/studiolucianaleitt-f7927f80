@@ -8,6 +8,7 @@ import {
   type ReactNode,
 } from "react";
 import { useCatalog } from "@/lib/catalog-context";
+import { syncCartItems } from "@/lib/cart-sync";
 
 const STORAGE_KEY = "llestetica-cart-v1";
 
@@ -26,7 +27,7 @@ type CartContextValue = {
 const CartContext = createContext<CartContextValue | null>(null);
 
 export function CartProvider({ children }: { children: ReactNode }) {
-  const { procedures } = useCatalog();
+  const { procedures, isFallback } = useCatalog();
   const [items, setItems] = useState<CartItem[]>([]);
   const [hydrated, setHydrated] = useState(false);
 
@@ -53,8 +54,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (!hydrated) return;
     const validIds = new Set(procedures.map((procedure) => procedure.id));
-    setItems((current) => current.filter((item) => validIds.has(item.id)));
-  }, [hydrated, procedures]);
+    setItems((current) => syncCartItems(current, validIds, Boolean(isFallback)));
+  }, [hydrated, procedures, isFallback]);
 
   useEffect(() => {
     if (!hydrated) return;
