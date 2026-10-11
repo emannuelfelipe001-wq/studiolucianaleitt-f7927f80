@@ -103,7 +103,7 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
   }
 
   ::selection {
@@ -124,9 +124,36 @@
   }
 }
 
-body {
+main {
   animation: page-enter 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
+
+.hero-photo {
+  object-position: center 20%;
+  animation: hero-settle 1.4s ease-out both;
+}
+
+.hero-veil {
+  background: linear-gradient(to top, var(--background) 0%, color-mix(in oklch, var(--background) 97%, transparent) 28%, transparent 78%);
+}
+
+@media (min-width: 768px) {
+  .hero-photo { object-position: right 20%; }
+  .hero-veil { background: linear-gradient(to right, var(--background) 0%, color-mix(in oklch, var(--background) 95%, transparent) 35%, transparent 78%); }
+}
+
+@keyframes hero-settle {
+  from { transform: scale(1.025); }
+  to { transform: scale(1); }
+}
+
+.reveal-enter { animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.booking-cta { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+@media (hover: hover) {
+  .booking-cta:hover { transform: translateY(-3px); box-shadow: var(--shadow-card); }
+}
+.booking-cta:active { transform: scale(0.98); }
+details[open] > div, details[open] > p { animation: fade-up 0.3s ease both; }
 
 /* Degradês discretos reutilizáveis */
 @utility bg-soft-gradient {

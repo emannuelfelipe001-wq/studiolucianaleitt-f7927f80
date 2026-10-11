@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { OpenStatus } from "@/components/OpenStatus";
+import { Button } from "@/components/ui/button";
 import { Clock, Heart, Instagram, MapPin, MessageCircle, Sparkles } from "lucide-react";
 import {
   about,
@@ -20,48 +21,37 @@ import { useCatalog } from "@/lib/catalog-context";
 
 export function Hero() {
   return (
-    <section id="topo" className="bg-soft-gradient">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 md:grid-cols-2 md:py-24">
-        <div className="fade-up">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-[0.15em] text-primary uppercase">
-            <Sparkles className="size-3.5" /> Estética facial
+    <section id="topo" className="booking-hero relative isolate overflow-hidden">
+      <img src={clinic.images.hero} alt="Luciana Leitte, fundadora do Studio Luciana Leitte" width={1600} height={1200} fetchPriority="high" className="hero-photo absolute inset-0 -z-20 h-full w-full object-cover" />
+      <div className="hero-veil absolute inset-0 -z-10" aria-hidden />
+      <div className="mx-auto flex min-h-[650px] max-w-6xl items-end px-4 py-8 md:min-h-[580px] md:items-center md:py-14">
+        <div className="fade-up max-w-xl">
+          <span className="inline-flex items-center gap-2 text-xs text-primary uppercase">
+            <Sparkles className="size-3.5" /> Estética facial · Nova Crixás
           </span>
 
-          <h1 className="mt-5 text-4xl leading-[1.1] md:text-6xl">
-            Sua beleza <span className="text-rose-gradient">realçada</span> com delicadeza e
-            precisão.
+          <h1 className="mt-3 text-4xl leading-[1.1] md:text-6xl">
+            Studio<br />Luciana Leitte
           </h1>
-          <p className="mt-5 max-w-md text-base text-muted-foreground">
-            Cuidados faciais personalizados para uma pele mais saudável, luminosa e radiante, com
-            protocolos exclusivos para valorizar sua beleza natural.
+          <p className="mt-3 max-w-md text-base text-foreground/85">
+            Um cuidado só seu. Realce seu olhar, valorize seus traços e reserve um momento para você.
           </p>
           <OpenStatus className="mt-4 flex text-sm" />
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              to="/catalogo"
-              className="rounded-full border border-primary/30 bg-card px-6 py-3.5 text-sm font-medium text-primary shadow-soft transition-colors hover:bg-blush hover:scale-[1.03]"
-            >
-              Catálogo
-            </Link>
-            <a
+          <div className="mt-5 flex flex-wrap gap-3">
+            <Button asChild className="booking-cta h-auto rounded-full bg-whatsapp px-6 py-3.5 text-whatsapp-foreground hover:bg-whatsapp">
+              <a
               href={whatsappLink(GENERAL_MESSAGE)}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-primary/30 bg-card px-6 py-3.5 text-sm font-medium text-primary transition-colors hover:bg-blush"
-            >
-              Agendar pelo WhatsApp
-            </a>
+              >
+                <MessageCircle className="size-4" /> Agendar pelo WhatsApp
+              </a>
+            </Button>
+            <Button asChild variant="outline" className="h-auto rounded-full bg-card/85 px-6 py-3.5 text-primary">
+              <Link to="/catalogo">Ver procedimentos</Link>
+            </Button>
           </div>
-        </div>
-        <div className="relative">
-          <div className="absolute -inset-3 rounded-[2.5rem] bg-rose/25 blur-2xl" aria-hidden />
-          <img
-            src={clinic.images.hero}
-            alt="Luciana Leitte, fundadora do Studio Luciana Leitte"
-            width={1600}
-            height={1200}
-            className="relative aspect-[3/4] w-full rounded-[2rem] object-cover object-[center_20%] shadow-card md:aspect-[4/3]"
-          />
+          <p className="mt-4 flex items-center gap-2 text-xs text-muted-foreground"><MapPin className="size-3.5" /> Nova Crixás – GO</p>
         </div>
       </div>
     </section>
@@ -73,7 +63,7 @@ export function Benefits() {
     <section className="mx-auto max-w-6xl px-4 py-12 md:py-16">
       <div className="grid gap-5 md:grid-cols-3">
         {benefits.map((b) => (
-          <div key={b.title} className="card-soft p-6">
+          <div key={b.title} className="border-b border-border pb-6 md:border-r md:border-b-0 md:pr-6">
             <Heart className="size-5 text-primary" />
             <h3 className="mt-3 text-xl">{b.title}</h3>
             <p className="mt-2 text-sm text-muted-foreground">{b.text}</p>
@@ -93,17 +83,30 @@ export function Featured() {
       <div className="flex items-end justify-between gap-4">
         <div>
           <span className="text-xs tracking-[0.25em] text-primary uppercase">Destaques</span>
-          <h2 className="mt-2 text-3xl md:text-4xl">Mais procurados</h2>
+          <h2 className="mt-2 text-3xl md:text-4xl">Escolha seu próximo cuidado</h2>
         </div>
-        <Link to="/catalogo" className="hidden text-sm text-primary hover:underline md:inline">
+        <Link to="/catalogo" className="text-sm text-primary hover:underline">
           Ver catálogo completo
         </Link>
       </div>
-      <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="stagger-children mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {featured.map((p) => (
           <ProcedureCard key={p.id} procedure={p} />
         ))}
       </div>
+    </section>
+  );
+}
+
+export function BookingInvitation() {
+  return (
+    <section className="mt-12 bg-blush px-4 py-14 text-center md:py-20">
+      <Heart className="mx-auto size-6 text-primary" />
+      <h2 className="mt-4 text-3xl md:text-4xl">Seu momento de cuidado começa aqui</h2>
+      <p className="mx-auto mt-3 max-w-lg text-sm text-muted-foreground">Já sabe o que deseja ou quer conversar com a Luciana? Consulte os horários e encontre o cuidado ideal para você.</p>
+      <Button asChild className="booking-cta mt-6 h-auto rounded-full bg-whatsapp px-6 py-3.5 text-whatsapp-foreground hover:bg-whatsapp">
+        <a href={whatsappLink(GENERAL_MESSAGE)} target="_blank" rel="noopener noreferrer"><MessageCircle className="size-4" /> Agendar pelo WhatsApp</a>
+      </Button>
     </section>
   );
 }

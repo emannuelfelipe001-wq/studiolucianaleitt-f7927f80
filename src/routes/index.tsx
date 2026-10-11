@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Benefits, Featured, Hero, InstagramArea } from "@/components/Sections";
+import { Benefits, BookingInvitation, Featured, Hero, InstagramArea } from "@/components/Sections";
+import { Reveal } from "@/components/Reveal";
 
 const title = "Studio Luciana Leitte — Estética Facial";
 const description =
@@ -23,9 +24,10 @@ function Index() {
   return (
     <>
       <Hero />
-      <Benefits />
-      <Featured />
-      <InstagramArea />
+      <Reveal><Benefits /></Reveal>
+      <Reveal><Featured /></Reveal>
+      <Reveal><BookingInvitation /></Reveal>
+      <Reveal><InstagramArea /></Reveal>
     </>
   );
 }
