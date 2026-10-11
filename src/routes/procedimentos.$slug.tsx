@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, Check, Clock, Plus, ShoppingBag, X } from "lucide-react";
+import { ArrowLeft, Check, Clock, ShoppingBag, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { categoryName, formatPrice } from "@/config/clinic";
 import { getProcedureBySlug } from "@/lib/catalog.functions";
 import { useCatalog } from "@/lib/catalog-context";
@@ -111,14 +112,14 @@ function ProcedureDetail() {
           </div>
 
           <div className="mt-6 flex flex-wrap gap-3">
-            <button
+            <Button
               type="button"
               onClick={addToCart}
-              className="inline-flex items-center gap-2 rounded-full bg-rose-gradient px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-soft transition-transform hover:scale-[1.03]"
+              className="inline-flex h-auto items-center gap-2 rounded-full bg-rose-gradient px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-soft transition-transform hover:scale-[1.03]"
             >
-              {added ? <Check className="size-4" /> : <Plus className="size-4" />}
-              {added ? "Adicionado ao carrinho" : "Adicionar ao carrinho"}
-            </button>
+              {added && <Check className="size-4" />}
+              {added ? "Adicionado ao carrinho" : "Agendar"}
+            </Button>
             <Link
               to="/carrinho"
               className="inline-flex items-center gap-2 rounded-full border border-primary/30 px-6 py-3.5 text-sm font-medium text-primary transition-colors hover:bg-blush"

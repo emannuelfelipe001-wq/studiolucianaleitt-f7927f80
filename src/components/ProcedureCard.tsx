@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Check, Clock, Plus } from "lucide-react";
+import { Check, Clock } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { categoryName, formatPrice } from "@/config/clinic";
 import type { CatalogProcedure } from "@/lib/catalog.types";
 import { useCart } from "@/lib/cart";
@@ -55,15 +56,15 @@ export function ProcedureCard({ procedure }: { procedure: CatalogProcedure }) {
           </span>
         </div>
         <div className="mt-4 flex gap-2">
-          <button
+          <Button
             type="button"
             onClick={addToCart}
-            aria-label={`Adicionar ${procedure.name} ao carrinho`}
-            className="flex flex-1 items-center justify-center gap-1.5 rounded-full bg-rose-gradient px-4 py-2.5 text-sm font-medium text-primary-foreground transition-transform hover:scale-[1.02]"
+            aria-label={`Agendar ${procedure.name}`}
+            className="flex h-auto flex-1 items-center justify-center gap-1.5 rounded-full bg-rose-gradient px-4 py-2.5 text-sm font-medium text-primary-foreground transition-transform hover:scale-[1.02]"
           >
-            {added ? <Check className="size-4" /> : <Plus className="size-4" />}
-            {added ? "Adicionado" : "Adicionar"}
-          </button>
+            {added && <Check className="size-4" />}
+            {added ? "Adicionado" : "Agendar"}
+          </Button>
           <Link
             to="/procedimentos/$slug"
             params={{ slug: procedure.id }}
