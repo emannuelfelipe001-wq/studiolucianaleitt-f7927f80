@@ -28,10 +28,10 @@ export function Hero() {
         width={1600}
         height={1200}
         fetchPriority="high"
-        className="hero-photo absolute inset-0 -z-20 h-full w-full object-cover"
+        className="hero-photo absolute inset-0 -z-20 h-full w-full object-cover md:left-auto md:w-[65%]"
       />
       <div className="hero-veil absolute inset-0 -z-10" aria-hidden />
-      <div className="mx-auto flex min-h-[650px] max-w-6xl items-end px-4 py-8 md:min-h-[580px] md:items-center md:py-14">
+      <div className="mx-auto flex min-h-[530px] max-w-6xl items-end px-4 py-5 md:min-h-[580px] md:items-center md:py-14">
         <div className="fade-up max-w-xl">
           <span className="inline-flex items-center gap-2 text-xs text-primary uppercase">
             <Sparkles className="size-3.5" /> Estética facial · Nova Crixás
