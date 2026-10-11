@@ -28,11 +28,11 @@ export function Hero() {
         width={1600}
         height={1200}
         fetchPriority="high"
-        className="hero-photo absolute inset-0 -z-20 h-full w-full object-cover md:left-auto md:w-[65%]"
+        className="hero-photo absolute inset-0 -z-20 h-full w-full object-cover md:left-auto md:w-[60%]"
       />
       <div className="hero-veil absolute inset-0 -z-10" aria-hidden />
-      <div className="mx-auto flex min-h-[530px] max-w-6xl items-end px-4 py-5 md:min-h-[580px] md:items-center md:py-14">
-        <div className="fade-up max-w-xl">
+      <div className="mx-auto flex min-h-[550px] max-w-6xl items-end px-4 py-5 md:min-h-[560px] md:items-center md:py-14">
+        <div className="fade-up min-w-0 max-w-xl md:max-w-[48%]">
           <span className="inline-flex items-center gap-2 text-xs text-primary uppercase">
             <Sparkles className="size-3.5" /> Estética facial · Nova Crixás
           </span>
@@ -47,7 +47,7 @@ export function Hero() {
             você.
           </p>
           <OpenStatus className="mt-4 flex text-sm" />
-          <div className="mt-5 flex flex-wrap gap-3">
+          <div className="mt-5 flex flex-col items-start gap-3 md:flex-row md:flex-wrap">
             <Button
               asChild
               className="booking-cta h-auto rounded-full bg-whatsapp px-6 py-3.5 text-whatsapp-foreground hover:bg-whatsapp"

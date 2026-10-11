@@ -129,29 +129,31 @@ main {
 }
 
 .hero-photo {
-  object-position: center 20%;
+  object-position: center top;
   animation: hero-settle 1.4s ease-out both;
 }
 
 .hero-veil {
   background: linear-gradient(
     to top,
-    var(--background) 0%,
-    color-mix(in oklch, var(--background) 97%, transparent) 48%,
-    transparent 78%
+    color-mix(in oklch, var(--background) 78%, transparent) 0%,
+    color-mix(in oklch, var(--background) 64%, transparent) 35%,
+    color-mix(in oklch, var(--background) 28%, transparent) 65%,
+    transparent 90%
   );
 }
 
 @media (min-width: 768px) {
   .hero-photo {
-    object-position: right 20%;
+    object-position: center 15%;
   }
   .hero-veil {
     background: linear-gradient(
       to right,
       var(--background) 0%,
-      color-mix(in oklch, var(--background) 95%, transparent) 35%,
-      transparent 78%
+      color-mix(in oklch, var(--background) 96%, transparent) 32%,
+      color-mix(in oklch, var(--background) 40%, transparent) 50%,
+      transparent 68%
     );
   }
 }
