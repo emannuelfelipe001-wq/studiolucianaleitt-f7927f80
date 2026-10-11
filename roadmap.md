@@ -9,3 +9,5 @@
 
 - [x] Verificação final em celular e computador: login, edição, filtros, menu, carrinho e WhatsApp
 - [x] Entregar ZIP com código-fonte e fotos, sem segredos nem arquivos gerados
+- [ ] Ampliar envio de fotos no painel e verificar formatos e limites
+- [ ] Melhorar a página inicial e os convites para agendar, preservando fotos e funcionalidades

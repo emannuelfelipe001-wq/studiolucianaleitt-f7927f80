@@ -6,6 +6,7 @@ import { categories } from "@/config/clinic";
 import { supabase } from "@/integrations/supabase/client";
 import { useCatalog } from "@/lib/catalog-context";
 import type { CatalogJewelry, CatalogProcedure } from "@/lib/catalog.types";
+import { IMAGE_UPLOAD_ACCEPT, validateCatalogImage } from "@/lib/image-upload";
 import {
   deleteJewelry,
   deleteProcedure,
@@ -292,30 +293,24 @@ function ImageField({ value, onChange }: { value: string; onChange: (url: string
     setBusy(true);
     setError("");
     try {
-      const MAX_IMAGE_SIZE = 10 * 1024 * 1024;
-      if (file.size > MAX_IMAGE_SIZE) {
-        throw new Error("A foto deve ter no máximo 10 MB.");
-      }
-      if (!file.type.startsWith("image/")) {
-        throw new Error("O arquivo precisa ser uma imagem.");
-      }
+      const contentType = validateCatalogImage(file.name, file.type, file.size);
       const result = await upload({
         data: {
           name: file.name,
-          type: file.type,
+          type: contentType,
           size: file.size,
         },
       });
       const { error: uploadError } = await supabase.storage
         .from("catalog-images")
         .uploadToSignedUrl(result.path, result.token, file, {
-          contentType: file.type,
+          contentType: result.contentType,
           cacheControl: "31536000",
         });
       if (uploadError) throw uploadError;
       onChange(result.url);
-    } catch {
-      setError("Não foi possível enviar esta imagem. Use uma imagem de até 10 MB.");
+    } catch (err) {
+      setError(err instanceof Error && !err.message.includes("Storage") ? err.message : "Não foi possível enviar esta imagem. Tente novamente.");
     } finally {
       setBusy(false);
     }
@@ -335,9 +330,10 @@ function ImageField({ value, onChange }: { value: string; onChange: (url: string
           {busy ? "Enviando..." : "Escolher foto"}
           <input
             type="file"
-            accept="image/*"
+            accept={IMAGE_UPLOAD_ACCEPT}
             disabled={busy}
             onChange={(e) => void select(e.target.files?.[0])}
+            onClick={(e) => { e.currentTarget.value = ""; }}
             className="sr-only"
           />
         </label>

@@ -16,3 +16,4 @@
 - Declare public browser configuration types in an app-owned declaration file instead of editing generated integration modules.
 - Mark fallback catalog data explicitly and preserve saved cart selections during fallback reads, because temporary outages must not erase customer choices.
 - Keep existing procedure page addresses read-only in the admin editor, because cart selections and shared links depend on their stability.
+- Keep upload validation shared between browser and server and send original images directly to private storage with admin-issued signed URLs, so size/type rules agree without routing large files through server functions.

@@ -2,6 +2,7 @@ import { createHash, timingSafeEqual } from "node:crypto";
 import { createServerFn } from "@tanstack/react-start";
 import { useSession, setResponseHeader } from "@tanstack/react-start/server";
 import { z } from "zod";
+import { MAX_CATALOG_IMAGE_BYTES, validateCatalogImage } from "@/lib/image-upload";
 
 function getSessionConfig() {
   const password = process.env["SESSION_SECRET"];
@@ -160,23 +161,19 @@ export const deleteJewelry = createServerFn({ method: "POST" })
     return { ok: true as const };
   });
 
-const MAX_CATALOG_IMAGE_BYTES = 10 * 1024 * 1024;
-
 export const uploadCatalogImage = createServerFn({ method: "POST" })
   .inputValidator((input) =>
     z
       .object({
         name: z.string().min(1).max(200),
-        type: z
-          .string()
-          .trim()
-          .regex(/^image\/.+$/, "O arquivo precisa ser uma imagem."),
+        type: z.string().trim().max(100),
         size: z.number().int().positive().max(MAX_CATALOG_IMAGE_BYTES),
       })
       .parse(input),
   )
   .handler(async ({ data }) => {
     await requireAdmin();
+    const contentType = validateCatalogImage(data.name, data.type, data.size);
     const extension = (data.name.split(".").pop() ?? "img").toLowerCase().replace(/[^a-z0-9]/g, "");
     const safeExtension = extension.slice(0, 10) || "img";
     const path = `catalog-${crypto.randomUUID()}.${safeExtension}`;
@@ -188,6 +185,7 @@ export const uploadCatalogImage = createServerFn({ method: "POST" })
     return {
       path,
       token: signed.token,
+      contentType,
       maxBytes: MAX_CATALOG_IMAGE_BYTES,
       url: `/api/public/catalog-image?path=${encodeURIComponent(path)}`,
     };
