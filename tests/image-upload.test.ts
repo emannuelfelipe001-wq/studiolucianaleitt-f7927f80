@@ -13,7 +13,14 @@ test("JPG and PNG uploads are accepted", () => {
 });
 
 test("other browser-compatible formats and absent device MIME metadata are accepted", () => {
-  for (const [extension, type] of Object.entries({webp: "image/webp", gif: "image/gif", avif: "image/avif", bmp: "image/bmp", ico: "image/x-icon", jfif: "image/jpeg"})) {
+  for (const [extension, type] of Object.entries({
+    webp: "image/webp",
+    gif: "image/gif",
+    avif: "image/avif",
+    bmp: "image/bmp",
+    ico: "image/x-icon",
+    jfif: "image/jpeg",
+  })) {
     expect(validateCatalogImage(`foto.${extension}`, "", 200)).toBe(type);
   }
 });

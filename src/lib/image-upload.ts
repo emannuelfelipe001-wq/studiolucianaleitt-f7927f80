@@ -18,17 +18,28 @@ export function catalogImageType(name: string, suppliedType: string): string {
   const extension = name.split(".").pop()?.toLowerCase() ?? "";
   const expected = imageTypes[extension];
   if (!expected) {
-    throw new Error("Use JPG, JPEG, PNG, WebP, GIF, AVIF, BMP ou ICO. Para HEIC ou TIFF, exporte como JPG ou PNG.");
+    throw new Error(
+      "Use JPG, JPEG, PNG, WebP, GIF, AVIF, BMP ou ICO. Para HEIC ou TIFF, exporte como JPG ou PNG.",
+    );
   }
   const type = suppliedType.toLowerCase();
-  if (type && type !== "application/octet-stream" && type !== expected && !(extension === "bmp" && type === "image/x-ms-bmp") && !(extension === "ico" && type === "image/vnd.microsoft.icon")) {
-    throw new Error("O formato da imagem não corresponde ao arquivo. Exporte como JPG ou PNG e tente novamente.");
+  if (
+    type &&
+    type !== "application/octet-stream" &&
+    type !== expected &&
+    !(extension === "bmp" && type === "image/x-ms-bmp") &&
+    !(extension === "ico" && type === "image/vnd.microsoft.icon")
+  ) {
+    throw new Error(
+      "O formato da imagem não corresponde ao arquivo. Exporte como JPG ou PNG e tente novamente.",
+    );
   }
   return expected;
 }
 
 export function validateCatalogImage(name: string, type: string, size: number): string {
-  if (!Number.isSafeInteger(size) || size <= 0) throw new Error("Escolha uma imagem válida, não vazia.");
+  if (!Number.isSafeInteger(size) || size <= 0)
+    throw new Error("Escolha uma imagem válida, não vazia.");
   if (size > MAX_CATALOG_IMAGE_BYTES) throw new Error("A foto deve ter no máximo 50 MB.");
   return catalogImageType(name, type);
 }

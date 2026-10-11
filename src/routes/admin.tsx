@@ -310,7 +310,11 @@ function ImageField({ value, onChange }: { value: string; onChange: (url: string
       if (uploadError) throw uploadError;
       onChange(result.url);
     } catch (err) {
-      setError(err instanceof Error && !err.message.includes("Storage") ? err.message : "Não foi possível enviar esta imagem. Tente novamente.");
+      setError(
+        err instanceof Error && !err.message.includes("Storage")
+          ? err.message
+          : "Não foi possível enviar esta imagem. Tente novamente.",
+      );
     } finally {
       setBusy(false);
     }
@@ -333,7 +337,9 @@ function ImageField({ value, onChange }: { value: string; onChange: (url: string
             accept={IMAGE_UPLOAD_ACCEPT}
             disabled={busy}
             onChange={(e) => void select(e.target.files?.[0])}
-            onClick={(e) => { e.currentTarget.value = ""; }}
+            onClick={(e) => {
+              e.currentTarget.value = "";
+            }}
             className="sr-only"
           />
         </label>

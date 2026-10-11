@@ -24,10 +24,18 @@ function Index() {
   return (
     <>
       <Hero />
-      <Reveal><Benefits /></Reveal>
-      <Reveal><Featured /></Reveal>
-      <Reveal><BookingInvitation /></Reveal>
-      <Reveal><InstagramArea /></Reveal>
+      <Reveal>
+        <Benefits />
+      </Reveal>
+      <Reveal>
+        <Featured />
+      </Reveal>
+      <Reveal>
+        <BookingInvitation />
+      </Reveal>
+      <Reveal>
+        <InstagramArea />
+      </Reveal>
     </>
   );
 }
