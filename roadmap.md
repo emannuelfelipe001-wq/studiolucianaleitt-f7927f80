@@ -12,3 +12,5 @@
 - [x] Ampliar envio de fotos no painel e verificar formatos e limites
 - [x] Melhorar a página inicial e os convites para agendar, preservando fotos e funcionalidades
 - [x] Adicionar animações suaves respeitando preferências de movimento reduzido
+- [x] Exportar ZIP atualizado com códigos, fotos e catálogo atual
+- [ ] Confirmar sincronização com GitHub (depende da conexão do projeto no editor)
