@@ -68,6 +68,8 @@
   --border: oklch(0.92 0.018 20);
   --input: oklch(0.92 0.018 20);
   --ring: oklch(0.7 0.1 15);
+  --hero-shadow-color: oklch(0.26 0.03 15);
+  --hero-edge: oklch(1 0 0 / 0.55);
 }
 
 @layer base {
@@ -164,6 +166,58 @@ main {
   }
   to {
     transform: scale(1);
+  }
+}
+
+/* Only the desktop photograph changes: the mobile crop and layout stay intact. */
+@media (min-width: 1024px) {
+  .hero-photo-stage {
+    inset: 24px 24px 24px auto;
+    width: 56%;
+    perspective: 1200px;
+  }
+
+  .hero-photo-surface {
+    --hero-rotate-x: 10;
+    --hero-rotate-y: -16;
+    --hero-scale: 0.94;
+    --hero-shadow-opacity: 0.23;
+    --hero-shadow-distance: 24;
+    position: relative;
+    border-radius: 8px;
+    transform-origin: center;
+    transform: rotateX(calc(var(--hero-rotate-x) * 1deg)) rotateY(calc(var(--hero-rotate-y) * 1deg))
+      scale(var(--hero-scale));
+    box-shadow: 0 calc(var(--hero-shadow-distance) * 1px) 38px -12px
+      color-mix(
+        in oklch,
+        var(--hero-shadow-color) calc(var(--hero-shadow-opacity) * 100%),
+        transparent
+      );
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+
+  .hero-photo-surface::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--hero-edge);
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  .hero-photo-surface .hero-photo {
+    border-radius: inherit;
+    animation: none;
+  }
+}
+
+@media (min-width: 1024px) and (prefers-reduced-motion: reduce) {
+  .hero-photo-surface {
+    transform: none;
+    box-shadow: none;
+    will-change: auto;
   }
 }
 
