@@ -186,10 +186,14 @@ main {
     position: relative;
     border-radius: 8px;
     transform-origin: center;
-    transform: rotateX(calc(var(--hero-rotate-x) * 1deg))
-      rotateY(calc(var(--hero-rotate-y) * 1deg)) scale(var(--hero-scale));
+    transform: rotateX(calc(var(--hero-rotate-x) * 1deg)) rotateY(calc(var(--hero-rotate-y) * 1deg))
+      scale(var(--hero-scale));
     box-shadow: 0 calc(var(--hero-shadow-distance) * 1px) 38px -12px
-      color-mix(in oklch, var(--hero-shadow-color) calc(var(--hero-shadow-opacity) * 100%), transparent);
+      color-mix(
+        in oklch,
+        var(--hero-shadow-color) calc(var(--hero-shadow-opacity) * 100%),
+        transparent
+      );
     will-change: transform;
     backface-visibility: hidden;
   }
