@@ -7,17 +7,19 @@ export function HeroPhoto({ target }: { target: RefObject<HTMLElement | null> })
   const reducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({ target, offset: ["start start", "end start"] });
   const progress = useSpring(scrollYProgress, { stiffness: 300, damping: 45, mass: 0.3 });
-  const rotateX = useTransform(progress, [0, 0.55], [10, 0]);
-  const rotateY = useTransform(progress, [0, 0.55], [-16, 0]);
-  const scale = useTransform(progress, [0, 0.55], [0.94, 1]);
-  const shadowOpacity = useTransform(progress, [0, 0.55], [0.23, 0.04]);
-  const shadowDistance = useTransform(progress, [0, 0.55], [24, 2]);
+  const rotateX = useTransform(progress, [0, 0.55], [8, 0]);
+  const rotateY = useTransform(progress, [0, 0.55], [25, 0]);
+  const scale = useTransform(progress, [0, 0.55], [0.92, 1]);
+  const shadowOpacity = useTransform(progress, [0, 0.55], [0.3, 0.04]);
+  const shadowDistance = useTransform(progress, [0, 0.55], [32, 2]);
+  const depth = useTransform(progress, [0, 0.55], [9, 0]);
   const photoStyle: MotionStyle & Record<`--hero-${string}`, number | MotionValue<number>> = {
     "--hero-rotate-x": reducedMotion ? 0 : rotateX,
     "--hero-rotate-y": reducedMotion ? 0 : rotateY,
     "--hero-scale": reducedMotion ? 1 : scale,
     "--hero-shadow-opacity": reducedMotion ? 0 : shadowOpacity,
     "--hero-shadow-distance": reducedMotion ? 0 : shadowDistance,
+    "--hero-depth": reducedMotion ? 0 : depth,
   };
 
   return (

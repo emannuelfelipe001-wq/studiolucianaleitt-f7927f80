@@ -70,6 +70,9 @@
   --ring: oklch(0.7 0.1 15);
   --hero-shadow-color: oklch(0.26 0.03 15);
   --hero-edge: oklch(1 0 0 / 0.55);
+  --hero-frame: oklch(0.34 0.018 15);
+  --hero-frame-light: oklch(0.76 0.025 15);
+  --hero-frame-dark: oklch(0.22 0.014 15);
 }
 
 @layer base {
@@ -172,28 +175,38 @@ main {
 /* Only the desktop photograph changes: the mobile crop and layout stay intact. */
 @media (min-width: 1024px) {
   .hero-photo-stage {
-    inset: 24px 24px 24px auto;
+    inset: 40px 36px 40px auto;
     width: 56%;
     perspective: 1200px;
   }
 
   .hero-photo-surface {
-    --hero-rotate-x: 10;
-    --hero-rotate-y: -16;
-    --hero-scale: 0.94;
-    --hero-shadow-opacity: 0.23;
-    --hero-shadow-distance: 24;
+    --hero-rotate-x: 8;
+    --hero-rotate-y: 25;
+    --hero-scale: 0.92;
+    --hero-shadow-opacity: 0.3;
+    --hero-shadow-distance: 32;
+    --hero-depth: 9;
     position: relative;
+    padding: 7px;
     border-radius: 8px;
+    background: linear-gradient(
+      145deg,
+      var(--hero-frame-light),
+      var(--hero-frame) 35%,
+      var(--hero-frame-dark)
+    );
     transform-origin: center;
     transform: rotateX(calc(var(--hero-rotate-x) * 1deg)) rotateY(calc(var(--hero-rotate-y) * 1deg))
       scale(var(--hero-scale));
-    box-shadow: 0 calc(var(--hero-shadow-distance) * 1px) 38px -12px
-      color-mix(
-        in oklch,
-        var(--hero-shadow-color) calc(var(--hero-shadow-opacity) * 100%),
-        transparent
-      );
+    box-shadow:
+      calc(var(--hero-depth) * 1px) 3px 0 var(--hero-frame-dark),
+      0 calc(var(--hero-shadow-distance) * 1px) 48px -12px
+        color-mix(
+          in oklch,
+          var(--hero-shadow-color) calc(var(--hero-shadow-opacity) * 100%),
+          transparent
+        );
     will-change: transform;
     backface-visibility: hidden;
   }
@@ -203,7 +216,7 @@ main {
     position: absolute;
     inset: 0;
     border: 1px solid var(--hero-edge);
-    border-radius: inherit;
+    border-radius: 3px;
     pointer-events: none;
   }
 
