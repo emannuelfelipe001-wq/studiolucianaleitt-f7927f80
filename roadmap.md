@@ -14,4 +14,4 @@
 - [x] Adicionar animações suaves respeitando preferências de movimento reduzido
 - [x] Exportar ZIP atualizado com códigos, fotos e catálogo atual
 - [ ] Confirmar sincronização com GitHub (depende da conexão do projeto no editor)
-- [ ] Aplicar perspectiva 3D ligada à rolagem somente na foto principal desktop e verificar desktop/mobile
+- [x] Aplicar perspectiva 3D ligada à rolagem somente na foto principal desktop e verificar desktop/mobile
