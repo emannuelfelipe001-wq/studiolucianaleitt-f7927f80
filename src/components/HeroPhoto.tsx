@@ -22,10 +22,7 @@ export function HeroPhoto({ target }: { target: RefObject<HTMLElement | null> })
 
   return (
     <div className="hero-photo-stage absolute inset-0 -z-20 md:left-auto md:w-[60%]">
-      <motion.div
-        className="hero-photo-surface h-full w-full"
-        style={photoStyle}
-      >
+      <motion.div className="hero-photo-surface h-full w-full" style={photoStyle}>
         <img
           src={clinic.images.hero}
           alt="Luciana Leitte, fundadora do Studio Luciana Leitte"
