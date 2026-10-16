@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { HeroPhoto } from "@/components/HeroPhoto";
 import { Link } from "@tanstack/react-router";
 import { OpenStatus } from "@/components/OpenStatus";
 import { Button } from "@/components/ui/button";
@@ -20,16 +21,10 @@ import { ProcedureCard } from "@/components/ProcedureCard";
 import { useCatalog } from "@/lib/catalog-context";
 
 export function Hero() {
+  const heroRef = useRef<HTMLElement>(null);
   return (
-    <section id="topo" className="booking-hero relative isolate overflow-hidden">
-      <img
-        src={clinic.images.hero}
-        alt="Luciana Leitte, fundadora do Studio Luciana Leitte"
-        width={1600}
-        height={1200}
-        fetchPriority="high"
-        className="hero-photo absolute inset-0 -z-20 h-full w-full object-cover md:left-auto md:w-[60%]"
-      />
+    <section ref={heroRef} id="topo" className="booking-hero relative isolate overflow-hidden">
+      <HeroPhoto target={heroRef} />
       <div className="hero-veil absolute inset-0 -z-10" aria-hidden />
       <div className="mx-auto flex min-h-[550px] max-w-6xl items-end px-4 py-5 md:min-h-[560px] md:items-center md:py-14">
         <div className="fade-up min-w-0 max-w-xl md:max-w-[48%]">
