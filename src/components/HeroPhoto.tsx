@@ -1,4 +1,5 @@
 import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "motion/react";
+import type { MotionStyle, MotionValue } from "motion/react";
 import type { RefObject } from "react";
 import { clinic } from "@/config/clinic";
 
@@ -11,18 +12,19 @@ export function HeroPhoto({ target }: { target: RefObject<HTMLElement | null> })
   const scale = useTransform(progress, [0, 0.55], [0.94, 1]);
   const shadowOpacity = useTransform(progress, [0, 0.55], [0.23, 0.04]);
   const shadowDistance = useTransform(progress, [0, 0.55], [24, 2]);
+  const photoStyle: MotionStyle & Record<`--hero-${string}`, number | MotionValue<number>> = {
+    "--hero-rotate-x": reducedMotion ? 0 : rotateX,
+    "--hero-rotate-y": reducedMotion ? 0 : rotateY,
+    "--hero-scale": reducedMotion ? 1 : scale,
+    "--hero-shadow-opacity": reducedMotion ? 0 : shadowOpacity,
+    "--hero-shadow-distance": reducedMotion ? 0 : shadowDistance,
+  };
 
   return (
     <div className="hero-photo-stage absolute inset-0 -z-20 md:left-auto md:w-[60%]">
       <motion.div
         className="hero-photo-surface h-full w-full"
-        style={{
-          "--hero-rotate-x": reducedMotion ? 0 : rotateX,
-          "--hero-rotate-y": reducedMotion ? 0 : rotateY,
-          "--hero-scale": reducedMotion ? 1 : scale,
-          "--hero-shadow-opacity": reducedMotion ? 0 : shadowOpacity,
-          "--hero-shadow-distance": reducedMotion ? 0 : shadowDistance,
-        }}
+        style={photoStyle}
       >
         <img
           src={clinic.images.hero}
